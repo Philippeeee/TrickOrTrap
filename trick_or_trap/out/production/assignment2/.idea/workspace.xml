@@ -5,6 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2">
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/help.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/BIRD.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/BOOK.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/CHEST.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objects.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/rooms.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain1-long.mp3" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain1-short.mp3" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain2-long.mp3" afterDir="false" />
@@ -25,44 +41,7 @@
       <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/valley-beside-a-stream-short.mp3" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/victory-long.mp3" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/victory-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/help.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/objectImages/BIRD.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/objectImages/BOOK.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/objectImages/CHEST.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/objects.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/rooms.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain1-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain1-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain2-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain2-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain3-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain3-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/end-of-road-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/end-of-road-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/inside-building-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/inside-building-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/missing-treasures-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/missing-treasures-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/outside-building-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/outside-building-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/slit-in-rock-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/slit-in-rock-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/valley-beside-a-stream-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/valley-beside-a-stream-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/victory-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/victory-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/synonyms.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/synonyms.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +49,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="general_gui" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
@@ -95,8 +69,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Rebasing Develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/popot/CSC207/group_39/trick_or_trap&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;general__gui&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/popot/CSC207/group_39/trick_or_trap/Games&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -141,11 +115,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.AdventureGameApp" />
-      <item itemvalue="JUnit.BasicAdventureTest.getCommandsTest" />
-      <item itemvalue="JUnit.BasicAdventureTest.getObjectString" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.AdventureGameApp" />
@@ -196,9 +165,7 @@
       <workItem from="1699989606987" duration="550000" />
       <workItem from="1700437743739" duration="763000" />
       <workItem from="1700439663520" duration="6762000" />
-      <workItem from="1700497303388" duration="2297000" />
-      <workItem from="1701361605311" duration="65000" />
-      <workItem from="1701361694783" duration="20000" />
+      <workItem from="1700497303388" duration="631000" />
     </task>
     <task id="LOCAL-00001" summary="assignment2">
       <option name="closed" value="true" />
@@ -227,19 +194,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/display_room_text" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
