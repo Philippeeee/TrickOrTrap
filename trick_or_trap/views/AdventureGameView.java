@@ -22,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import javafx.event.EventHandler; //you will need this too!
 import javafx.scene.AccessibleRole;
+import views.SaveView.*;
 
 
 import java.io.File;
@@ -204,11 +205,7 @@ public class AdventureGameView {
         this.stage.setScene(scene);
         this.stage.setResizable(false);
         this.stage.show();
-
-
     }
-
-
 
 
     /**
@@ -307,7 +304,7 @@ public class AdventureGameView {
         stopArticulation(); //if speaking, stop
 
 
-        if (text.equalsIgnoreCase("LOOK") || text.equalsIgnoreCase("L")) {
+        if (text.equalsIgnoreCase("OBSERVE") || text.equalsIgnoreCase("L")) {
             String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription();
             String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
             if (!objectString.isEmpty()) roomDescLabel.setText(roomDesc + "\n\nObjects in this room:\n" + objectString);
@@ -327,8 +324,17 @@ public class AdventureGameView {
 
 
         if (output == null || (!output.equals("GAME OVER") && !output.equals("FORCED") && !output.equals("HELP"))) {
-            updateScene(output);
-            updateItems();
+            if (output.equals("INVENTORY!")){
+                if (settingsToggle) {
+                    showSettings();
+                }
+                showInventory();
+            } else if (output.equals("SAVE!")) {
+                SaveView.quickSaveGame(model);
+            } else {
+                updateScene(output);
+                updateItems();
+            }
         } else if (output.equals("GAME OVER")) {
             updateScene("");
             updateItems();
@@ -743,6 +749,11 @@ public class AdventureGameView {
             gridPane.requestFocus();
             SaveView saveView = new SaveView(this);
         });
+    }
+
+    public void addSaveEvent2() {
+        gridPane.requestFocus();
+        SaveView saveView = new SaveView(this);
     }
 
 
