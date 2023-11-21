@@ -4,51 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdventureModel/AdventureGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdventureModel/AdventureGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/help.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Games/TrickOrTrap/help.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/synonyms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Games/TrickOrTrap/synonyms.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/help.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/objectImages/BIRD.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/objectImages/BOOK.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/objectImages/CHEST.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/objects.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/room-images/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/rooms.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain1-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain1-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain2-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain2-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain3-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/curtain3-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/end-of-road-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/end-of-road-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/inside-building-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/inside-building-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/missing-treasures-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/missing-treasures-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/outside-building-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/outside-building-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/slit-in-rock-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/slit-in-rock-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/valley-beside-a-stream-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/valley-beside-a-stream-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/victory-long.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/sounds/victory-short.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/Games/TrickOrTrap/synonyms.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/AdventureGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/AdventureGameView.java" afterDir="false" />
+    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="[1.7] - added quick save">
       <change beforePath="$PROJECT_DIR$/views/SaveView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/SaveView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +136,7 @@
       <workItem from="1699988408289" duration="180000" />
       <workItem from="1699989606987" duration="550000" />
       <workItem from="1700437743739" duration="763000" />
-      <workItem from="1700516604107" duration="10324000" />
+      <workItem from="1700516604107" duration="10705000" />
     </task>
     <task id="LOCAL-00001" summary="assignment2">
       <option name="closed" value="true" />
@@ -198,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698445460649</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="[1.7] - added quick save">
+      <option name="closed" value="true" />
+      <created>1700527214925</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700527214925</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +181,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="assignment2" />
-    <option name="LAST_COMMIT_MESSAGE" value="assignment2" />
+    <MESSAGE value="[1.7] - added quick save" />
+    <option name="LAST_COMMIT_MESSAGE" value="[1.7] - added quick save" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
