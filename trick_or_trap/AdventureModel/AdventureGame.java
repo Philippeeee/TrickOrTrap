@@ -150,10 +150,17 @@ public class AdventureGame implements Serializable {
                 else return "FORCED";
             } //something is up here! We are dead or we won.
             return null;
+        } else if (inputArray[0].equals("SAVE")){
+            return "SAVE!";
         } else if(Arrays.asList(this.actionVerbs).contains(inputArray[0])) {
-            if(inputArray[0].equals("QUIT")) { return "GAME OVER"; } //time to stop!
-            else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() == 0) return "INVENTORY IS EMPTY";
-            else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() > 0) return "THESE OBJECTS ARE IN YOUR INVENTORY:\n" + this.player.getInventory().toString();
+            if(inputArray[0].equals("QUIT")) {
+                return "GAME OVER"; } //time to stop!
+            else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() == 0){
+                return "INVENTORY!";
+            }
+            else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() > 0){
+                return "INVENTORY!";
+            }
             else if(inputArray[0].equals("TAKE") && inputArray.length < 2) return "THE TAKE COMMAND REQUIRES AN OBJECT";
             else if(inputArray[0].equals("DROP") && inputArray.length < 2) return "THE DROP COMMAND REQUIRES AN OBJECT";
             else if(inputArray[0].equals("TAKE") && inputArray.length == 2) {
