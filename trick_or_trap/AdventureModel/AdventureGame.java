@@ -168,6 +168,8 @@ public class AdventureGame implements Serializable {
                 }
             } //something is up here! We are dead or we won.
             return null;
+        } else if (inputArray[0].equals("SAVE")){
+            return "SAVE!";
         } else if(Arrays.asList(this.actionVerbs).contains(inputArray[0])) {
             if(inputArray[0].equals("QUIT")) { //time to stop!
                 // added for summary feature

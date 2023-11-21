@@ -1,6 +1,7 @@
 package views;
 
 import AdventureModel.AdventureGame;
+import AdventureModel.Player;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
