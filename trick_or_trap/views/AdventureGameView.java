@@ -886,6 +886,11 @@ public class AdventureGameView {
         });
     }
 
+    public void addSaveEvent2() {
+        gridPane.requestFocus();
+        SaveView saveView = new SaveView(this);
+    }
+
 
     /**
      * This method handles the event related to the
