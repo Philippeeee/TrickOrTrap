@@ -22,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import javafx.event.EventHandler; //you will need this too!
 import javafx.scene.AccessibleRole;
+import views.SaveView.*;
 
 
 import java.io.File;
@@ -216,11 +217,7 @@ public class AdventureGameView {
         this.stage.setScene(scene);
         this.stage.setResizable(false);
         this.stage.show();
-
-
     }
-
-
 
 
     /**
@@ -880,6 +877,11 @@ public class AdventureGameView {
             gridPane.requestFocus();
             SaveView saveView = new SaveView(this);
         });
+    }
+
+    public void addSaveEvent2() {
+        gridPane.requestFocus();
+        SaveView saveView = new SaveView(this);
     }
 
 
