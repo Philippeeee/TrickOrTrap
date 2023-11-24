@@ -42,10 +42,11 @@ public class AdventureGameView {
 
     AdventureGame model; //model of the game
     Stage stage; //stage on which all is rendered
-    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton; //buttons
+    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton, summaryButton, summaryBackButton; //buttons
     Boolean helpToggle = false; //is help on display?
     Boolean settingsToggle = false; //is settings on display?
     Boolean inventoryToggle = false; //is inventory on display?
+    Boolean summaryToggle = false; // is summary tab on display?
     ImageView pfp; //to hold character headshot if applicable
     GridPane gridPane = new GridPane(); //to hold images and buttons
     Label roomDescLabel = new Label(); //to hold room description and/or instructions
@@ -166,6 +167,17 @@ public class AdventureGameView {
         makeButtonAccessible(inventoryBackButton, "Inventory Back Button", "This button will return to the view before pressing 'Inventory'", "This button will return to the view before pressing 'Inventory'. Click it to return.");
         addInventoryBackEvent();
 
+        summaryButton = new Button("Summary");
+        summaryButton.setId("Summary");
+        customizeButton(summaryButton, 100, 100);
+        makeButtonAccessible(summaryButton, "Summary Button", "This button opens the summary tab", "This button opens the summary tab, which will show what's happened in the game so far. Click to open the menu.");
+        addSummaryEvent();
+
+        summaryBackButton = new Button("SummaryBack");
+        summaryBackButton.setId("SummaryBack");
+        customizeButton(summaryBackButton, 100, 100);
+        makeButtonAccessible(summaryBackButton, "Summary Back Button", "This button closes the summary tab", "This button closes the summary tab and reverts the button UI to the default. Click to close the menu.");
+        addSummaryBackEvent();
 
         inputTextField = new TextField();
         inputTextField.setFont(new Font("Arial", 16));
@@ -321,21 +333,21 @@ public class AdventureGameView {
             return;
         }
 
+
         //try to move!
         String output = this.model.interpretAction(text); //process the command!
 
+
         if (output == null || (!output.equals("GAME OVER") && !output.equals("FORCED") && !output.equals("HELP"))) {
-            if (output == null){
-                updateScene(output);
-                updateItems();
-            } else if (output.equals("INVENTORY!")){
-                if (settingsToggle) {
-                    showSettings();
-                }
-                showInventory();
-            } else if (output.equals("SAVE!")) {
-                SaveView.quickSaveGame(model);
+            updateScene(output);
+            updateItems();
+        } else if (output.equals("INVENTORY!")) {
+            if (settingsToggle) {
+                showSettings();
             }
+            showInventory();
+        } else if (output.equals("SAVE!")) {
+            SaveView.quickSaveGame(model);
         } else if (output.equals("GAME OVER")) {
             updateScene("");
             updateItems();
@@ -571,6 +583,9 @@ public class AdventureGameView {
         box2.setPadding(new Insets(10));
         box2.getChildren().add(settingsButton);
         box2.getChildren().add(inventoryButton);
+
+        box2.getChildren().add(summaryButton);
+
         if (settingsToggle) {
             settingsToggle = false;
             addSettingsBackEvent();
@@ -579,6 +594,10 @@ public class AdventureGameView {
             inventoryToggle = false;
             addInventoryBackEvent();
         }
+        if (summaryToggle) {
+            addSummaryBackEvent();
+        }
+
         scI.setContent(box2);
         /////////////////////////////////////
         ///////////////////////////////////
@@ -717,6 +736,43 @@ public class AdventureGameView {
     }
 
 
+    public void showSummary() {
+        javafx.scene.Node n = null;
+        for (javafx.scene.Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
+                n = node;
+                break;
+            }
+        }
+
+        Column = n;
+        gridPane.getChildren().remove(n);
+
+        VBox box = new VBox();
+        box.setSpacing(10);
+        box.setPadding(new Insets(11));
+        box.getChildren().add(summaryBackButton);
+        gridPane.add(box, 2, 0, 1, 2);
+
+        summaryToggle = true;
+    }
+
+    public void hideSummary() {
+        javafx.scene.Node n = null;
+        for (javafx.scene.Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
+                n = node;
+                break;
+            }
+        }
+
+        gridPane.getChildren().remove(n);
+        gridPane.add(Column, 2, 0);
+
+        summaryToggle = false;
+    }
+
+
     /**
      * This method handles the event related to the
      * settings button.
@@ -765,6 +821,19 @@ public class AdventureGameView {
     }
 
 
+    public void addSummaryEvent() {
+        summaryButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            showSummary();
+        });
+    }
+
+    public void addSummaryBackEvent() {
+        summaryBackButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            hideSummary();
+        });
+    }
 
 
     /**
