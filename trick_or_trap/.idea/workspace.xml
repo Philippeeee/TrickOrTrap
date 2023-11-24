@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/assignment2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/AdventureGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/AdventureGameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Develop",
+    "git-widget-placeholder": "Rebasing Develop",
     "last_opened_file_path": "C:/Users/popot/CSC207/group_39/trick_or_trap",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -85,6 +85,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.AdventureGameApp" />
+      <item itemvalue="JUnit.BasicAdventureTest.getCommandsTest" />
+      <item itemvalue="JUnit.BasicAdventureTest.getObjectString" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.AdventureGameApp" />
@@ -186,7 +191,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="assignment2" />
-    <option name="LAST_COMMIT_MESSAGE" value="assignment2" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
