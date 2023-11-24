@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/assignment2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/AdventureGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/AdventureGameView.java" afterDir="false" />
-    </list>
+    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
