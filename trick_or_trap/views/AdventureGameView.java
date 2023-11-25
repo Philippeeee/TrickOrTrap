@@ -825,6 +825,7 @@ public class AdventureGameView {
         summaryButton.setOnAction(e -> {
             gridPane.requestFocus();
             showSummary();
+            SummaryView summaryView = new SummaryView(this);
         });
     }
 
