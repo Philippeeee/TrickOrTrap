@@ -779,7 +779,6 @@ public class AdventureGameView {
         // store room image
         temp_img = j;
 
-        //bug
         // remove room image
         gridPane.getChildren().remove(j);
 
