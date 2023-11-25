@@ -735,7 +735,11 @@ public class AdventureGameView {
         }
     }
 
-
+    /**
+     * showSummary
+     * __________________________
+     * This method displays the summary and updates the buttons accordingly.
+     */
     public void showSummary() {
         // find three buttons' node
         javafx.scene.Node n = null;
@@ -765,6 +769,7 @@ public class AdventureGameView {
                 n = node;
             }
         }
+
         // store room image
         imageNode = n;
 
@@ -783,6 +788,11 @@ public class AdventureGameView {
         gridPane.add(label, 0, 0);
     }
 
+    /**
+     * hideSummary
+     * __________________________
+     * This method closes the summary and updates the buttons accordingly.
+     */
     public void hideSummary() {
         javafx.scene.Node j = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
@@ -860,7 +870,11 @@ public class AdventureGameView {
         });
     }
 
-
+    /**
+     * addSummaryEvent
+     * __________________________
+     * This method handles the event related to the summary button.
+     */
     public void addSummaryEvent() {
         summaryButton.setOnAction(e -> {
             gridPane.requestFocus();
@@ -868,6 +882,12 @@ public class AdventureGameView {
         });
     }
 
+    /**
+     * addSummaryBackEvent
+     * __________________________
+     * This method handles the event related to the button that brings the user "back"
+     * from the summary menu
+     */
     public void addSummaryBackEvent() {
         summaryBackButton.setOnAction(e -> {
             gridPane.requestFocus();

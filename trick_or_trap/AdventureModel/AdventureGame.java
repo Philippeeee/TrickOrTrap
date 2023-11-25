@@ -14,6 +14,8 @@ public class AdventureGame implements Serializable {
     private final String[] actionVerbs = {"QUIT","INVENTORY","TAKE","DROP"}; //List of action verbs (other than motions) that exist in all games. Motion vary depending on the room and game.
     public Player player; //The Player of the game.
 
+    private String summaryText; // A variable to store the Summary text of the game. This text is displayed when the user clicks the "Summary" button.
+
     /**
      * Adventure Game Constructor
      * __________________________
@@ -235,5 +237,11 @@ public class AdventureGame implements Serializable {
         this.helpText = help;
     }
 
-
+    /**
+     * getSummaryText
+     * __________________________
+     * Getter method for summaryText
+     * @return summaryText
+     */
+    public String getSummaryText() {return this.summaryText;}
 }
