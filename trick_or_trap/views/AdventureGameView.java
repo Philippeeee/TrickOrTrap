@@ -57,11 +57,8 @@ public class AdventureGameView {
     ScrollPane inventory; //to hold player inventory
     private MediaPlayer mediaPlayer; //to play audio
     private boolean mediaPlaying; //to know if the audio is playing
-    private javafx.scene.Node imageNode; // store the image and text after displaying instructions
-    private javafx.scene.Node Column; // store the icons column after displaying settings
-
-    private javafx.scene.Node temp_column; // temp for summary
-    private javafx.scene.Node temp_img; // temp for summary
+    private javafx.scene.Node imageNode; // store the image and text after displaying instructions/summary
+    private javafx.scene.Node Column; // store the icons column after displaying settings/summary/inventory
 
 
     /**
@@ -398,7 +395,7 @@ public class AdventureGameView {
      * Show the current room, and print some text below it.
      * If the input parameter is not null, it will be displayed
      * below the image.
-     * Otherwise, the current room description will be dispplayed
+     * Otherwise, the current room description will be displayed
      * below the image.
      *
      * @param textToDisplay the text to display below the image.
@@ -764,7 +761,7 @@ public class AdventureGameView {
         }
 
         // store + remove three buttons' node
-        temp_column = n;
+        Column = n;
         gridPane.getChildren().remove(n);
 
         // add "back" button
@@ -785,7 +782,7 @@ public class AdventureGameView {
         }
 
         // store room image
-        temp_img = j;
+        imageNode = j;
 
         // remove room image
         gridPane.getChildren().remove(j);
@@ -830,7 +827,7 @@ public class AdventureGameView {
 
         // change the back button to the original 3 buttons
         gridPane.getChildren().remove(k);
-        gridPane.add(temp_column, 2, 0);
+        gridPane.add(Column, 2, 0);
 
         summaryToggle = false;
 
@@ -846,7 +843,7 @@ public class AdventureGameView {
         gridPane.getChildren().remove(l);
 
         // put the room image back
-        gridPane.add(temp_img, 0, 0);
+        gridPane.add(imageNode, 0, 0);
     }
 
 
