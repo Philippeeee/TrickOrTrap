@@ -244,4 +244,15 @@ public class AdventureGame implements Serializable {
      * @return summaryText
      */
     public String getSummaryText() {return this.summaryText;}
+
+    /**
+     * addToSummaryText
+     * __________________________
+     * Method that adds new text to summaryText
+     * @param new_event which is text to add
+     */
+    public void addToSummaryText(String new_event) {
+        this.summaryText += "\n";
+        this.summaryText += new_event;
+    }
 }

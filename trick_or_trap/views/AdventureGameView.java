@@ -777,7 +777,7 @@ public class AdventureGameView {
         gridPane.getChildren().remove(n);
 
         // replace room image with summary
-        Label label = new Label(model.getInstructions());
+        Label label = new Label(model.getSummaryText());
         label.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
         label.setFont(new Font("Arial", 12));
         label.setAlignment(Pos.CENTER);
