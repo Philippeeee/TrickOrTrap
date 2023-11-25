@@ -62,6 +62,8 @@ public class AdventureGameView {
     private javafx.scene.Node imageNode; // store the image and text after displaying instructions
     private javafx.scene.Node Column; // store the icons column after displaying settings
 
+    private javafx.scene.Node temp_column; // temp for summary
+
 
     /**
      * Adventure Game View Constructor
@@ -585,7 +587,6 @@ public class AdventureGameView {
         box2.setPadding(new Insets(10));
         box2.getChildren().add(settingsButton);
         box2.getChildren().add(inventoryButton);
-
         box2.getChildren().add(summaryButton);
 
         if (settingsToggle) {
@@ -597,8 +598,10 @@ public class AdventureGameView {
             addInventoryBackEvent();
         }
         if (summaryToggle) {
-            addSummaryBackEvent();
+            addSummaryEvent();
         }
+
+
 
         scI.setContent(box2);
         /////////////////////////////////////
@@ -748,12 +751,11 @@ public class AdventureGameView {
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
                 n = node;
-                break;
             }
         }
 
         // store + remove three buttons' node
-        Column = n;
+        temp_column = n;
         gridPane.getChildren().remove(n);
 
         // add "back" button
@@ -766,17 +768,18 @@ public class AdventureGameView {
         summaryToggle = true;
 
         // find room image
+        javafx.scene.Node j = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(0)) {
-                n = node;
+                j = node;
             }
         }
 
         // store room image
-        imageNode = n;
+        imageNode = j;
 
         // remove room image
-        gridPane.getChildren().remove(n);
+        gridPane.getChildren().remove(j);
 
         // replace room image with summary
 
@@ -808,13 +811,13 @@ public class AdventureGameView {
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
                 j = node;
-                break;
+                // ask matthew why tf break here no good
             }
         }
 
         // change the back button to the original 3 buttons
         gridPane.getChildren().remove(j);
-        gridPane.add(Column, 2, 0);
+        gridPane.add(temp_column, 2, 0);
 
         summaryToggle = false;
 
@@ -887,7 +890,7 @@ public class AdventureGameView {
      */
     public void addSummaryEvent() {
         summaryButton.setOnAction(e -> {
-            gridPane.requestFocus();
+            stopArticulation();
             showSummary();
         });
     }
@@ -900,7 +903,7 @@ public class AdventureGameView {
      */
     public void addSummaryBackEvent() {
         summaryBackButton.setOnAction(e -> {
-            gridPane.requestFocus();
+            stopArticulation();
             hideSummary();
         });
     }
