@@ -63,7 +63,7 @@ public class AdventureGameView {
     private javafx.scene.Node Column; // store the icons column after displaying settings
 
     private javafx.scene.Node temp_column; // temp for summary
-    private javafx.scene.Node temp_imgnode; // temp for summary
+    private javafx.scene.Node temp_img; // temp for summary
 
 
     /**
@@ -777,11 +777,12 @@ public class AdventureGameView {
         }
 
         // store room image
-        temp_imgnode = j;
+        temp_img = j;
 
+        //bug
         // remove room image
         gridPane.getChildren().remove(j);
-        System.out.println(j);
+
 
         // replace room image with summary
 
@@ -809,32 +810,33 @@ public class AdventureGameView {
      * This method closes the summary and updates the buttons accordingly.
      */
     public void hideSummary() {
-        javafx.scene.Node j = null;
+        javafx.scene.Node k = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
-                j = node;
+                k = node;
                 // ask matthew why tf break here no good
             }
         }
 
         // change the back button to the original 3 buttons
-        gridPane.getChildren().remove(j);
+        gridPane.getChildren().remove(k);
         gridPane.add(temp_column, 2, 0);
 
         summaryToggle = false;
 
         // find the summary
+        javafx.scene.Node l = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(0)) {
-                j = node;
+                l = node;
             }
         }
 
         // remove the summary
-        gridPane.getChildren().remove(j);
+        gridPane.getChildren().remove(l);
 
         // put the room image back
-        gridPane.add(temp_imgnode, 0, 0);
+        gridPane.add(temp_img, 0, 0);
     }
 
 
