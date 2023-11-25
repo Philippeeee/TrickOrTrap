@@ -406,6 +406,16 @@ public class AdventureGameView {
      * @param textToDisplay the text to display below the image.
      */
     public void updateScene(String textToDisplay) {
+        // find room image
+        javafx.scene.Node j = null;
+        for (javafx.scene.Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(0)) {
+                j = node;
+            }
+        }
+        // remove room image
+        gridPane.getChildren().remove(j);
+
         getRoomImage(); //get the image of the current room
         formatText(textToDisplay); //format the text to display
         roomDescLabel.setPrefWidth(555);
