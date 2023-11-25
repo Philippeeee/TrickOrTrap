@@ -800,7 +800,7 @@ public class AdventureGameView {
         // put summary text in ScrollPane
         summary_scroll.setContent(summary_text);
         // display ScrollPane (where room image was)
-        gridPane.add(summary_scroll, 0, 0);
+//        gridPane.add(summary_scroll, 0, 0);
     }
 
     /**
