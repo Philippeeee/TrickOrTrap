@@ -282,7 +282,7 @@ public class AdventureGame implements Serializable {
      */
     public void addToSummaryText(String new_event) {
         this.summaryText += new_event;
-        this.summaryText += "\n";
+        this.summaryText += "\n\n\n";
 
         addtoNumSumLines();
     }

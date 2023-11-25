@@ -173,7 +173,7 @@ public class AdventureGameView {
         makeButtonAccessible(summaryButton, "Summary Button", "This button opens the summary tab", "This button opens the summary tab, which will show what's happened in the game so far. Click to open the menu.");
         addSummaryEvent();
 
-        summaryBackButton = new Button("SummaryBack");
+        summaryBackButton = new Button("Back");
         summaryBackButton.setId("SummaryBack");
         customizeButton(summaryBackButton, 100, 100);
         makeButtonAccessible(summaryBackButton, "Summary Back Button", "This button closes the summary tab", "This button closes the summary tab and reverts the button UI to the default. Click to close the menu.");
@@ -796,7 +796,7 @@ public class AdventureGameView {
         summary_text.setFont(new Font("Arial", 12));
         summary_text.setAlignment(Pos.CENTER);
         summary_text.setPrefWidth(721);
-        summary_text.setPrefHeight(this.model.getNumSumLines() * 20);
+        summary_text.setPrefHeight(this.model.getNumSumLines() * 50);
 //        summary_text.setTextOverrun(OverrunStyle.CLIP);
         summary_text.setWrapText(true);
 
