@@ -737,6 +737,7 @@ public class AdventureGameView {
 
 
     public void showSummary() {
+        // find three buttons' node
         javafx.scene.Node n = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
@@ -745,9 +746,11 @@ public class AdventureGameView {
             }
         }
 
+        // store + remove three buttons' node
         Column = n;
         gridPane.getChildren().remove(n);
 
+        // add "back" button
         VBox box = new VBox();
         box.setSpacing(10);
         box.setPadding(new Insets(11));
@@ -755,21 +758,58 @@ public class AdventureGameView {
         gridPane.add(box, 2, 0, 1, 2);
 
         summaryToggle = true;
+
+        // find room image
+        for (javafx.scene.Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(0)) {
+                n = node;
+            }
+        }
+        // store room image
+        imageNode = n;
+
+        // remove room image
+        gridPane.getChildren().remove(n);
+
+        // replace room image with summary
+        Label label = new Label(model.getInstructions());
+        label.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
+        label.setFont(new Font("Arial", 12));
+        label.setAlignment(Pos.CENTER);
+        label.setPrefWidth(735);
+        label.setPrefHeight(421);
+        label.setTextOverrun(OverrunStyle.CLIP);
+        label.setWrapText(true);
+        gridPane.add(label, 0, 0);
     }
 
     public void hideSummary() {
-        javafx.scene.Node n = null;
+        javafx.scene.Node j = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
-                n = node;
+                j = node;
                 break;
             }
         }
 
-        gridPane.getChildren().remove(n);
+        // change the back button to the original 3 buttons
+        gridPane.getChildren().remove(j);
         gridPane.add(Column, 2, 0);
 
         summaryToggle = false;
+
+        // find the summary
+        for (javafx.scene.Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(0)) {
+                j = node;
+            }
+        }
+
+        // remove the summary
+        gridPane.getChildren().remove(j);
+
+        // put the room image back
+        gridPane.add(imageNode, 0, 0);
     }
 
 
