@@ -15,6 +15,7 @@ public class AdventureGame implements Serializable {
     public Player player; //The Player of the game.
 
     private String summaryText = ""; // A variable to store the Summary text of the game. This text is displayed when the user clicks the "Summary" button.
+    private int numSumTextLines = 0; // A counter to store the number of lines of text in the Summary, in order to scale the ScrollPane appropriately
 
     /**
      * Adventure Game Constructor
@@ -136,7 +137,6 @@ public class AdventureGame implements Serializable {
 
         // added for summary feature
         addToSummaryText("You have moved from " + temp.getRoomName() + " to " + this.player.getCurrentRoom().getRoomName() + ".");
-
 
         return !this.player.getCurrentRoom().getMotionTable().getDirection().get(0).getDirection().equals("FORCED");
     }
@@ -283,5 +283,26 @@ public class AdventureGame implements Serializable {
     public void addToSummaryText(String new_event) {
         this.summaryText += new_event;
         this.summaryText += "\n";
+
+        addtoNumSumLines();
+    }
+
+    /**
+     * addtoNumSumLines
+     * __________________________
+     * Method that increments the counter for the number of lines of text in the summary
+     */
+    private void addtoNumSumLines() {
+        this.numSumTextLines += 1;
+    }
+
+    /**
+     * getNumSumLines
+     * __________________________
+     * Getter for number of lines of text in the summary
+     * @return the number of lines of text in the summary
+     */
+    public int getNumSumLines() {
+        return this.numSumTextLines;
     }
 }
