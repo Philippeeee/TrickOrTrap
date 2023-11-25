@@ -63,6 +63,7 @@ public class AdventureGameView {
     private javafx.scene.Node Column; // store the icons column after displaying settings
 
     private javafx.scene.Node temp_column; // temp for summary
+    private javafx.scene.Node temp_imgnode; // temp for summary
 
 
     /**
@@ -776,10 +777,11 @@ public class AdventureGameView {
         }
 
         // store room image
-        imageNode = j;
+        temp_imgnode = j;
 
         // remove room image
         gridPane.getChildren().remove(j);
+        System.out.println(j);
 
         // replace room image with summary
 
@@ -832,7 +834,7 @@ public class AdventureGameView {
         gridPane.getChildren().remove(j);
 
         // put the room image back
-        gridPane.add(imageNode, 0, 0);
+        gridPane.add(temp_imgnode, 0, 0);
     }
 
 
