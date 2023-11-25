@@ -23,6 +23,8 @@ import javafx.util.Duration;
 import javafx.event.EventHandler; //you will need this too!
 import javafx.scene.AccessibleRole;
 
+import javafx.scene.control.ScrollPane; // for the summary
+
 
 import java.io.File;
 import java.io.IOException;
@@ -777,15 +779,23 @@ public class AdventureGameView {
         gridPane.getChildren().remove(n);
 
         // replace room image with summary
-        Label label = new Label(model.getSummaryText());
-        label.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
-        label.setFont(new Font("Arial", 12));
-        label.setAlignment(Pos.CENTER);
-        label.setPrefWidth(735);
-        label.setPrefHeight(421);
-        label.setTextOverrun(OverrunStyle.CLIP);
-        label.setWrapText(true);
-        gridPane.add(label, 0, 0);
+
+        // create Label (for ScrollPane)
+        Label summary_text = new Label(model.getSummaryText());
+        summary_text.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
+        summary_text.setFont(new Font("Arial", 12));
+        summary_text.setAlignment(Pos.CENTER);
+        summary_text.setPrefWidth(735);
+        summary_text.setPrefHeight(421);
+        summary_text.setTextOverrun(OverrunStyle.CLIP);
+        summary_text.setWrapText(true);
+
+        // create ScrollPane
+        ScrollPane summary_scroll = new ScrollPane();
+        // put summary text in ScrollPane
+        summary_scroll.setContent(summary_text);
+        // display ScrollPane (where room image was)
+        gridPane.add(summary_scroll, 0, 0);
     }
 
     /**
