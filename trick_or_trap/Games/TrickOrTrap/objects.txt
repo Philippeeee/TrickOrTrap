@@ -1,11 +1,11 @@
-BIRD
-a water bird
-1
+ICEPICK
+An icepick to stab through ice.
+45
 
-CHEST
-a pirate chest
-2
+FIREPLACEKEY
+A key.
+30
 
-BOOK
-a copy of an illuminated manuscript
-3
+SALTANDPEPPERKEY
+A key.
+16
