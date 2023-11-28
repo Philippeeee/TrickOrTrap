@@ -1,10 +1,9 @@
+import AdventureModel.AdventureGame;
+import org.junit.Test;
 
 import java.io.IOException;
 
-import AdventureModel.AdventureGame;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BasicAdventureTest {
     @Test
