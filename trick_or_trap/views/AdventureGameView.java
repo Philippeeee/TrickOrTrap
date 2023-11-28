@@ -921,7 +921,6 @@ public class AdventureGameView {
         });
     }
 
-
     /**
      * This method articulates Room Descriptions
      */
