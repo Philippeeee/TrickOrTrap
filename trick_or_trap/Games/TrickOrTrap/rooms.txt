@@ -233,7 +233,7 @@ EXIT      27
 35
 First Floor - Library Globe 2
 It looks highly accurate. At least to whatever geography you learned from school. You’re not that great at geography.
-------
+-----
 FORCED      27
 
 36
