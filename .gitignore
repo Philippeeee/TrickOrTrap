@@ -1,3 +1,6 @@
-.idea
-out
-*.iml
+.*/
+out/
+.xml
+.iml
+.log
+.class
