@@ -107,6 +107,17 @@ public class SaveView {
         }
     }
 
-
+    /**
+     * Saves the Game
+     * Save the game to a serialized (binary) file.
+     * Files will be saved to the Games/Saved directory.
+     * load the file and set the saveFileErrorLabel to the text in saveFileSuccess
+     */
+    public static void quickSaveGame(AdventureGame model) {
+        // TODO: add current game time / or current number of moves
+        String time = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        String filename = model.getPlayer().getCurrentRoom().getRoomName() + time + ".ser";
+        File file = new File("Games/Saved", filename);
+        model.saveModel(file);
+    }
 }
-
