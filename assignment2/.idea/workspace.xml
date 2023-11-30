@@ -4,56 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2">
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/help.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/BIRD.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/BOOK.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/CHEST.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objects.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/rooms.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain1-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain1-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain2-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain2-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain3-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain3-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/end-of-road-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/end-of-road-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/inside-building-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/inside-building-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/missing-treasures-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/missing-treasures-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/outside-building-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/outside-building-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/slit-in-rock-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/slit-in-rock-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/valley-beside-a-stream-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/valley-beside-a-stream-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/victory-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/victory-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/synonyms.txt" afterDir="false" />
-    </list>
+    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="general_gui" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
@@ -64,32 +21,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "C:/Users/popot/CSC207/group_39/trick_or_trap",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/popot/CSC207/filiatr6/lab07&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\popot\CSC207\group_39\trick_or_trap\Games" />
-    </key>
-  </component>
+}</component>
   <component name="RunManager" selected="Application.AdventureGameApp">
     <configuration name="AdventureGameApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AdventureGameApp" />
@@ -161,15 +114,7 @@
       <workItem from="1698861056023" duration="43000" />
       <workItem from="1699305708809" duration="1695000" />
       <workItem from="1699379361002" duration="2000" />
-      <workItem from="1699382071237" duration="1311000" />
-      <workItem from="1699906652819" duration="93000" />
-      <workItem from="1699910476782" duration="7123000" />
-      <workItem from="1699929106336" duration="2594000" />
-      <workItem from="1699988408289" duration="180000" />
-      <workItem from="1699989606987" duration="550000" />
-      <workItem from="1700437743739" duration="763000" />
-      <workItem from="1700439663520" duration="6762000" />
-      <workItem from="1700497303388" duration="2297000" />
+      <workItem from="1699382071237" duration="1069000" />
     </task>
     <task id="LOCAL-00001" summary="assignment2">
       <option name="closed" value="true" />
@@ -198,19 +143,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/display_room_text" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>

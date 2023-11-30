@@ -5,43 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2">
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/help.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/BIRD.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/BOOK.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/CHEST.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objects.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/rooms.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain1-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain1-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain2-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain2-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain3-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain3-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/end-of-road-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/end-of-road-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/inside-building-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/inside-building-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/missing-treasures-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/missing-treasures-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/outside-building-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/outside-building-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/slit-in-rock-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/slit-in-rock-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/valley-beside-a-stream-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/valley-beside-a-stream-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/victory-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/victory-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/synonyms.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="general_gui" />
+        <entry key="$PROJECT_DIR$/.." value="Develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -74,7 +39,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "C:/Users/popot/CSC207/group_39/trick_or_trap",
+    "git-widget-placeholder": "Develop",
+    "jdk.selected.JAVA_MODULE": "openjdk-20",
+    "last_opened_file_path": "/Users/bonniema/Documents/CSC207/group_39/trick_or_trap",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,11 +57,11 @@
       <recent name="C:\Users\popot\CSC207\group_39\trick_or_trap\Games" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AdventureGameApp">
-    <configuration name="AdventureGameApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AdventureGameApp" />
-      <module name="assignment2" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <module name="trick_or_trap" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/Library/javafx-sdk-21.0.1/lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media  " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -119,9 +86,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="JUnit.BasicAdventureTest.getCommandsTest" />
+      <item itemvalue="JUnit.BasicAdventureTest.getObjectString" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AdventureGameApp" />
         <item itemvalue="JUnit.BasicAdventureTest.getCommandsTest" />
         <item itemvalue="JUnit.BasicAdventureTest.getObjectString" />
       </list>
@@ -170,6 +141,8 @@
       <workItem from="1700437743739" duration="763000" />
       <workItem from="1700439663520" duration="6762000" />
       <workItem from="1700497303388" duration="2297000" />
+      <workItem from="1701361605311" duration="65000" />
+      <workItem from="1701361694783" duration="20000" />
     </task>
     <task id="LOCAL-00001" summary="assignment2">
       <option name="closed" value="true" />
