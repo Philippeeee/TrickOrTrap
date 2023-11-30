@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="80fc5a6a-b40c-482e-98ba-0bdbda013660" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/.idea/libraries/junit_jupiter.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/assignment2/assignment2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/assignment2/assignment2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/AdventureGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/AdventureGameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +27,6 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "general__gui",
     "last_opened_file_path": "/Users/bonniema/Documents/CSC207/group_39/trick_or_trap",
     "project.structure.last.edited": "Libraries",
