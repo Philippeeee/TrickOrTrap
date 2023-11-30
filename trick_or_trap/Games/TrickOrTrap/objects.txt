@@ -9,3 +9,7 @@ A key.
 SALTANDPEPPERKEY
 A key.
 16
+
+STAIRSKEY
+A key.
+47
