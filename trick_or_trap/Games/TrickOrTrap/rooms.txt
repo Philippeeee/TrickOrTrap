@@ -1,91 +1,70 @@
 1
 First Floor - Main Room
-You find yourself at the entrance of the mansion you and your friends entered. The room seems old. Dust fills your lungs.
-*
-You notice a flight of carpeted stairs to your left, it has some rust coloured stain. You see a fireplace in front of some antique carpet with a strange design and windows that seem to be boarded shut.
-**
-STAIRS: The door at the top and side of the stairs are locked.
-FIREPLACE: There are burnt logs in the fireplace. The ash seems odd. You need a key to open the protective cover. > You push away the logs and wipe away the ash. There seems to be an engraving on the stone. "XXXX".
-CARPET: The pattern on the carpet reminds you of your grandparents house. There is a small bump underneath. > You pull back the carpet to reveal a safe! You need a combination to open it.
-WINDOW: The window is boarded shut. Be careful not to get scratched by those rusty nails. > OUCH! You got cut by the nail attempting to pull off the wooden boards.
+You find yourself at the entrance of the mansion you and your friends entered. The room seems old. Dust fills your lungs. You notice a flight of carpeted stairs to your left, it has some rust-colored stain. You see an antique carpet, a vanity mirror, and a doorway in front.
 -----
-
+LEFT   2
+FORWARD   8
+STAIRS   100/SAFEKEY
+STAIRS   2
+CARPET 5/OPENEDCARPET
+CARPET   3
+MIRROR   5
 
 2
-First Floor - Kitchen (Left)
-You are in the kitchen, looking on the left side. There is a dinner table with four chairs. Behind the table you see a window.
-*
-The rest of the kitchen is on the right side of the room.
-**
-WINDOW: The window is boarded shut. Be careful not to get scratched by those rusty nails. > OUCH! You got cut by the nail attempting to pull off the wooden boards.
-TABLE: There seems to be a meal on the table. It's still warm. > You'd rather not touch it.
-CHAIR: A wooden chair. It seems to be broken. > OUCH! You got a splinter from touching the chair.
+First Floor - Main Room Stairs
+The door at the top of the stairs is locked.
 -----
-
+FORCED 1
 
 3
-First Floor - Kitchen (Right)
-You are in the kitchen, looking on the right side. You see a fridge with a freezer, oven, and a sink.
-*
-You also notice a trash can under the sink. The rest of the kitchen is on the left side of the room.
-**
-FRIDGE: ???
-FREEZER: There is a lot of moldy food. > I'm not touching that.
-OVEN: ???
-SINK: No dirty dishes! You notice something in the drain. > You found a key!
-TRASH: The trash is empty. > It's still empty. What did you expect?
+First Floor - Main Room Carpet
+The pattern on the carpet reminds you of your grandparent's house. There is a small bump underneath.
 -----
-
+INSPECT   4
 
 4
-First Floor - Library
-You are in the library. If it weren't for all the dust, it would have been a cozy spot to read some books.
-*
-You see a bookshelf, a desk, a chair, and a globe.
-**
-BOOKSHELF: Theres a book that seems a little odd. It's less dusty than the rest. > You open the book to find a code written in it! "7|N"
-DESK:
-CHAIR:
-GLOBE:
+First Floor - Main Room Carpet 2
+You pull back the carpet to reveal a safe! You need a three-letter combination to open it.
 -----
-
+FORCED   5
 
 5
-First Floor - Living Room
-
+First Floor - SAFE
+What is the combination? OPEN A GAME WINDOW FOR THIS
 -----
-
+FORCED   1
 
 6
-Curtain1
-You are passing through a curtain!
+First Floor - Main Room Mirror
+You see yourself.
 -----
-FORCED    7/BIRD
-FORCED    9
+INSPECT   7
 
 7
-Curtain2
-You are passing through another curtain!
+First Floor - Main Room Mirror 2
+…You look scared.
 -----
-FORCED    8
+FORCED   1
 
 8
-Curtain3
-Yet another curtain here!
+First Floor - Corridor
+You are in a small corridor. To the left, you see the entrance to the kitchen, and to the right, you see the entrance to the library.
 -----
-FORCED    10
-
-9
-Missing Treasures
-You can pass through this curtain only if you're carrying all the treasures.  You don't yet have all of them.
------
-FORCED     3
+BACK   1
+LEFT   10
+RIGHT   27
 
 10
-Victory
-You have collected all the treasures and are admitted to the Adventurer's Hall of Fame.  Congratulations!
+First Floor - Kitchen
+You are in the kitchen. You see a fridge, a freezer chest, and a sink. You also notice a trash can under the sink. The dining room is on the left side of the room.
 -----
-FORCED     0
+LEFT   20
+BACK   8
+FRIDGE   11
+FREEZER   13
+SINK   17/SALTANDPEPPERKEY
+SINK   15
+TRASH 18
 
 100
 1 cut
