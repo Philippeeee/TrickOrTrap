@@ -66,255 +66,87 @@ SINK   17/SALTANDPEPPERKEY
 SINK   15
 TRASH 18
 
-11
-First Floor - Kitchen Fridge
-There’s moldy food in the fridge. It makes you gag. There seems to be something in the corner…
------
-INSPECT 12
-EXIT 10
-
-12
-First Floor - Kitchen Fridge 2
-You see two fridge magnets! The number “2” and an “R”.
------
-FORCED 10
-
-13
-First Floor - Kitchen Freezer
-Everything is covered in ice. You see a faint outline underneath all the ice. You’ll need something to get to it.
------
-INSPECT 14/ICEPICK
-INSPECT 13
-EXIT 10
-
-14
-First Floor - Kitchen Freezer 2
-You broke through the ice using your ice pick. You found a code at the bottom of the freezer! “N” and “7”.
------
-FORCED 10
-
-15
-First Floor - Kitchen Sink
-No dirty dishes! You notice something in the drain…
------
-INSPECT 16
-EXIT 10
-
-16
-First Floor - Kitchen Sink 2
-You found a key in the drain! It's quite small.
------
-FORCED 10
-
-17
-First Floor - Kitchen Sink 3
-It’s empty.
------
-FORCED 10
-
-18
-First Floor - Kitchen Trash
-The trash is empty. It still reeks.
------
-INSPECT 19
-EXIT 10
-
-19
-First Floor - Kitchen Trash 2
-It's still empty. What did you expect?
------
-FORCED 10
-
-20
-First Floor - Dining Room
-You are in the dining room. There is a dinner table with four chairs. Behind the table, you see a window. The kitchen is on the right side of the room.
------
-RIGHT 10
-WINDOW 21
-CHAIR 23
-TABLE 25
-
-21
-First Floor - Dining Room Window
-The window is boarded shut. Be careful not to get scratched by those rusty nails.
------
-INSPECT 22
-EXIT 20
-
-22
-First Floor - Dining Room Window 2
-OUCH! You got cut by the nail attempting to pull off the wooden boards.
------
-FORCED 20
-
-23
-First Floor - Dining Room Chair
-A wooden chair. It seems to be broken.
------
-INSPECT 24
-EXIT 20
-
-24
-First Floor - Dining Room Chair 2
-OUCH! You got a splinter from touching the chair.
------
-FORCED 20
-
-25
-First Floor - Dining Room Table
-There seems to be a meal on the table. It's still warm. You notice a box on the table. It needs a key to be opened.
------
-INSPECT 26/SALTANDPEPPERKEY
-INSPECT 25
-EXIT 20
-
-26
-First Floor - Dining Room Table
-There’s a salt and pepper shaker inside! The salt is labeled “0” and the pepper is labeled “U”.
------
-FORCED 20
-
-27
-First Floor - Library
-You are in the library. If it weren't for all the dust, it would have been a cozy spot to read some books. You see a bookshelf, a desk, a chair, and a globe. To the left is the corridor and to the right is the living room.
------
-LEFT 8
-RIGHT 36
-BOOKSHELF 28
-DESK 31/FIREPLACEKEY
-DESK 30
-CHAIR 32
-GLOBE 34
-
-28
-First Floor - Library Bookshelf
-There are a lot of books. Whoever lived here must have been a nerd. There is a book that seems a little odd. It's less dusty than the rest.
------
-INSPECT 29
-EXIT 27
-
-29
-First Floor - Library Bookshelf 2
-You open the strange book to find a code written in it! It says “M” and “3”.
------
-FORCED 27
-
-30
-First Floor - Library Desk
-MINIGAME? You open the drawer. You found a key!
------
-FORCED 27
-
-31
-First Floor - Library Desk 2
-The drawer of the desk is empty.
------
-FORCED 27
-
-32
-First Floor - Library Chair
-The chair looks expensive. I wonder where it’s from.
------
-INSPECT 33
-EXIT 27
-
-33
-First Floor - Library Chair 2
-You sit in the chair. It’s pretty comfy. It would probably sell well.
------
-FORCED 27
-
-34
-First Floor - Library Globe
-The globe looks rusty. You’d like to spin it but it's too high.
------
-INSPECT 35
-EXIT 27
-
-35
-First Floor - Library Globe 2
-It looks highly accurate. At least to whatever geography you learned from school. You’re not that great at geography.
-------
-FORCED 27
-
-36
-First Floor - Living Room
-You are in the living room. You see a couch, a table, a carpet underneath, and an old TV. At the edges of the room, there is a lamp, a painting, and a fireplace.
------
-LEFT 27
-FIREPLACE 38/FIREPLACEKEY
-FIREPLACE 37
-LAMP 39
-PAINTING 41
-TABLE 42
-CARPET 43
-COUCH 46/ICEPICK
-COUCH 44
-
-37
-First Floor - Living Room Fireplace
-There are burnt logs in the fireplace. The ash seems odd. You need a key to open the protective cover.
------
-FORCED 36
-
-38
-First Floor - Living Room Fireplace 2
-You open the fireplace’s protective cover and move it aside. You wipe away the ash. There seems to be an engraving on the stone. "207".
------
-FORCED 36
-
-39
-First Floor - Living Room Lamp
-The lamp looks antique. The light is flickering.
------
-INSPECT 40
-EXIT 36
-
-40
-First Floor - Living Room Lamp 2
-The lamp is unplugged…
------
-FORCED 36
-
-41
-First Floor - Living Room Painting
-A funky little painting, there is a code on it. “4” and an ”E”.
------
-FORCED 36
-
-42
-First Floor - Living Room Table
-It’s just a table.
------
-FORCED 36
-
-43
-First Floor - Living Room Carpet
-Another carpet. Nothing strange here.
------
-FORCED 36
-
-44
-First Floor - Living Room Couch
-The couch looks uncomfortable. There seems to be something in between the cushions.
------
-INSPECT 45
-EXIT 36
-
-45
-First Floor - Living Room Couch 2
-You search in between the cushions. You found an ice pick!
------
-FORCED 36
-
-46
-First Floor - Living Room Couch 3
-There’s nothing in between the couch cushions.
------
-FORCED 36
-
 100
-TEMPORARY WIN
-YOU WON!
+1 cut
+Trick or Treat!
 -----
-FORCED    0
+FORCED     101
+
+101
+2 cut
+Happy Halloween kids!
+-----
+FORCED     102
+
+102
+3 cut
+Let's hit up a few more houses and then we can compare our candy!
+-----
+FORCED     103
+
+103
+4 cut
+That house had laffy taffies!
+-----
+FORCED     104
+
+104
+5 cut
+Hey guys! Wait up!
+-----
+FORCED     105
+
+105
+6 cut
+Hey Billy, know any candy facts?
+-----
+FORCED     106
+
+106
+7 cut
+Did you guys know that the first candy was invented in ancient Eqypt? Krrr over
+-----
+FORCED     107
+
+107
+8 cut
+Bahahaha of course you'd know that! Krrr over... huh? I think my walkie talky's broken!
+-----
+FORCED     108
+
+108
+9 cut
+That's what you get for only getting walky talkies for the two of you!
+-----
+FORCED     109
+
+109
+10 cut
+Hey, is that house open for trick or treating?
+-----
+FORCED     110
+
+110
+11 cut
+It doesn't have any lights on. Besides, it looks creepy...
+-----
+FORCED     111
+
+111
+12 cut
+Was this house always here?
+-----
+FORCED     112
+
+112
+13 cut
+Guys its fine! There's a kid there, let's go!
+-----
+FORCED     113
+
+113
+14 cut
+Huh...?
+-----
+FORCED     1
+
