@@ -29,9 +29,10 @@ FORCED        5
 
 5
 First Floor - SAFE
-What is the combination? OPEN A GAME WINDOW FOR THIS
+What is the combination?
 -----
-FORCED        1
+EXIT         1
+RUN               47
 
 6
 First Floor - Main Room Mirror
@@ -311,6 +312,12 @@ First Floor - Living Room Couch 3
 There’s nothing in between the couch cushions.
 -----
 FORCED      36
+
+47
+First Floor - Stairs Key
+You got a key!
+-----
+FORCED     1
 
 100
 TEMPORARY WIN
