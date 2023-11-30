@@ -320,7 +320,86 @@ You got a key!
 FORCED     1
 
 100
-TEMPORARY WIN
-YOU WON!
+1 cut
+Trick or Treat!
 -----
-FORCED      0
+FORCED     101
+
+101
+2 cut
+Happy Halloween kids!
+-----
+FORCED     102
+
+102
+3 cut
+Let's hit up a few more houses and then we can compare our candy!
+-----
+FORCED     103
+
+103
+4 cut
+That house had laffy taffies!
+-----
+FORCED     104
+
+104
+5 cut
+Hey guys! Wait up!
+-----
+FORCED     105
+
+105
+6 cut
+Hey Billy, know any candy facts?
+-----
+FORCED     106
+
+106
+7 cut
+Did you guys know that the first candy was invented in ancient Eqypt? Krrr over
+-----
+FORCED     107
+
+107
+8 cut
+Bahahaha of course you'd know that! Krrr over... huh? I think my walkie talky's broken!
+-----
+FORCED     108
+
+108
+9 cut
+That's what you get for only getting walky talkies for the two of you!
+-----
+FORCED     109
+
+109
+10 cut
+Hey, is that house open for trick or treating?
+-----
+FORCED     110
+
+110
+11 cut
+It doesn't have any lights on. Besides, it looks creepy...
+-----
+FORCED     111
+
+111
+12 cut
+Was this house always here?
+-----
+FORCED     112
+
+112
+13 cut
+Guys its fine! There's a kid there, let's go!
+-----
+FORCED     113
+
+113
+14 cut
+Huh...?
+-----
+FORCED     1
+
