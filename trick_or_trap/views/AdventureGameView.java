@@ -307,7 +307,7 @@ public class AdventureGameView {
         stopArticulation(); //if speaking, stop
 
 
-        if (text.equalsIgnoreCase("LOOK") || text.equalsIgnoreCase("L")) {
+        if (text.equalsIgnoreCase("OBSERVE") || text.equalsIgnoreCase("O")) {
             String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription();
             String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
             if (!objectString.isEmpty()) roomDescLabel.setText(roomDesc + "\n\nObjects in this room:\n" + objectString);
@@ -321,14 +321,21 @@ public class AdventureGameView {
             return;
         }
 
-
         //try to move!
         String output = this.model.interpretAction(text); //process the command!
 
-
         if (output == null || (!output.equals("GAME OVER") && !output.equals("FORCED") && !output.equals("HELP"))) {
-            updateScene(output);
-            updateItems();
+            if (output == null){
+                updateScene(output);
+                updateItems();
+            } else if (output.equals("INVENTORY!")){
+                if (settingsToggle) {
+                    showSettings();
+                }
+                showInventory();
+            } else if (output.equals("SAVE!")) {
+                SaveView.quickSaveGame(model);
+            }
         } else if (output.equals("GAME OVER")) {
             updateScene("");
             updateItems();
@@ -764,22 +771,22 @@ public class AdventureGameView {
      * This method articulates Room Descriptions
      */
     public void articulateRoomDescription() {
-        String musicFile;
-        String adventureName = this.model.getDirectoryName();
-        String roomName = this.model.getPlayer().getCurrentRoom().getRoomName();
-
-
-        if (!this.model.getPlayer().getCurrentRoom().getVisited()) musicFile = "./" + adventureName + "/sounds/" + roomName.toLowerCase() + "-long.mp3" ;
-        else musicFile = "./" + adventureName + "/sounds/" + roomName.toLowerCase() + "-short.mp3" ;
-        musicFile = musicFile.replace(" ","-");
-
-
-        Media sound = new Media(new File(musicFile).toURI().toString());
-
-
-        mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.play();
-        mediaPlaying = true;
+//        String musicFile;
+//        String adventureName = this.model.getDirectoryName();
+//        String roomName = this.model.getPlayer().getCurrentRoom().getRoomName();
+//
+//
+//        if (!this.model.getPlayer().getCurrentRoom().getVisited()) musicFile = "./" + adventureName + "/sounds/" + roomName.toLowerCase() + "-long.mp3" ;
+//        else musicFile = "./" + adventureName + "/sounds/" + roomName.toLowerCase() + "-short.mp3" ;
+//        musicFile = musicFile.replace(" ","-");
+//
+//
+//        Media sound = new Media(new File(musicFile).toURI().toString());
+//
+//
+//        mediaPlayer = new MediaPlayer(sound);
+//        mediaPlayer.play();
+//        mediaPlaying = true;
 
 
     }
