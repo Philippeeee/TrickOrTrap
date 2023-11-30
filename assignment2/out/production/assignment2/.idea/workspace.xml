@@ -4,45 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2">
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/help.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/BIRD.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/BOOK.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objectImages/CHEST.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objects.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/rooms.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain1-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain1-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain2-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain2-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain3-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/curtain3-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/end-of-road-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/end-of-road-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/inside-building-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/inside-building-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/missing-treasures-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/missing-treasures-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/outside-building-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/outside-building-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/slit-in-rock-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/slit-in-rock-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/valley-beside-a-stream-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/valley-beside-a-stream-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/victory-long.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/sounds/victory-short.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Games/TrickOrTrap/synonyms.txt" afterDir="false" />
-    </list>
+    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,8 +31,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;general__gui&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/popot/CSC207/group_39/trick_or_trap/Games&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/popot/CSC207/filiatr6/assignment2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -81,11 +43,6 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\popot\CSC207\group_39\trick_or_trap\Games" />
-    </key>
-  </component>
   <component name="RunManager" selected="Application.AdventureGameApp">
     <configuration name="AdventureGameApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AdventureGameApp" />
@@ -149,23 +106,6 @@
       <workItem from="1698417539765" duration="176000" />
       <workItem from="1698425518610" duration="854000" />
       <workItem from="1698443558315" duration="1939000" />
-      <workItem from="1698452126718" duration="39000" />
-      <workItem from="1698537644400" duration="604000" />
-      <workItem from="1698613950835" duration="658000" />
-      <workItem from="1698851414240" duration="45000" />
-      <workItem from="1698860446384" duration="16000" />
-      <workItem from="1698861056023" duration="43000" />
-      <workItem from="1699305708809" duration="1695000" />
-      <workItem from="1699379361002" duration="2000" />
-      <workItem from="1699382071237" duration="1311000" />
-      <workItem from="1699906652819" duration="93000" />
-      <workItem from="1699910476782" duration="7123000" />
-      <workItem from="1699929106336" duration="2594000" />
-      <workItem from="1699988408289" duration="180000" />
-      <workItem from="1699989606987" duration="550000" />
-      <workItem from="1700437743739" duration="763000" />
-      <workItem from="1700439663520" duration="6762000" />
-      <workItem from="1700497303388" duration="631000" />
     </task>
     <task id="LOCAL-00001" summary="assignment2">
       <option name="closed" value="true" />
@@ -188,17 +128,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="assignment2" />
