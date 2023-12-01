@@ -85,10 +85,19 @@ public class Room implements Serializable {
     public String getCommands() {
         String result = "";
         List<Passage> pt = motionTable.getDirection();
+        String previous = "asdfghjk";
         for (Passage passage: pt) {
-            result += passage.getDirection() + ",";
+            String current = passage.getDirection().toLowerCase();
+            if (!(current.equals(previous))) {
+                result += current.substring(0,1).toUpperCase() + current.substring(1) + ", ";
+                if (current.equals("run")) {
+                    result = "Enter code or Exit  ";
+                } if (current.equals("forced")) {
+                    result = "  ";
+                }
+            } previous = current;
         }
-        return result.substring(0, result.length()-1);
+        return result.substring(0, result.length()-2);
     }
 
     /**

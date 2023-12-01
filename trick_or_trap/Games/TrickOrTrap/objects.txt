@@ -18,6 +18,14 @@ STAIRSKEY
 A key
 47
 
+SPCODE
+"0" and "U"
+26
+
+BOOKCODE
+"M" and "3"
+29
+
 FREEZERNOTE
 "N" and "7"
 14
