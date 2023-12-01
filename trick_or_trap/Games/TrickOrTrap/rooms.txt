@@ -1,10 +1,9 @@
 1
 First Floor - Main Room
-You find yourself in the front foyer of the mansion. Examining the room, it’s old. As you inhale, your lungs fill with stagnant air, thick with dust and decay. You notice a flight of carpeted stairs to your left covered partially with rust-colored stains. You see an antique carpet, a vanity mirror, and a doorway in front of you.
+You find yourself in the front foyer of a mansion. Examining the room, it’s old. As you inhale, your lungs fill with stagnant air, thick with dust and decay. You notice a flight of carpeted stairs covered partially with rust-colored stains. There’s also an antique carpet, a vanity mirror, and a doorway in front of you.
 -----
-LEFT        2
 FORWARD        8
-STAIRS        100/SAFEKEY
+STAIRS        100/STAIRSKEY
 STAIRS        2
 CARPET        3
 MIRROR        6
@@ -17,13 +16,21 @@ FORCED      1
 
 3
 First Floor - Main Room Carpet
-The pattern on the carpet reminds you of something you’d seen in your grandparent's house. There is a small bump underneath.
+The pattern on the carpet reminds you of something you’d seen in your grandparent's house. There is a small lump formed at the corner closest to you.
 -----
+INSPECT        63/STAIRSKEY
 INSPECT        4
+EXIT     1
 
 4
 First Floor - Main Room Carpet 2
 You pull back the carpet to reveal a safe! It seems you will need a three-letter combination to open it.
+-----
+FORCED        5
+
+63
+First Floor - Main Room Carpet 2
+You pull back the carpet to reveal the safe. It remains unlocked, "run" still spelt out.
 -----
 FORCED        5
 
@@ -39,6 +46,7 @@ First Floor - Main Room Mirror
 You see yourself.
 -----
 INSPECT        7
+EXIT      1
 
 7
 First Floor - Main Room Mirror 2
@@ -48,7 +56,7 @@ FORCED        1
 
 8
 First Floor - Corridor
-You are in a small corridor; to the left, you see the entrance to the kitchen; and to the right, you see the entrance to the library.
+You are in a small corridor; to the left, you see the entrance to a kitchen; and to the right, you see the entrance to a library.
 -----
 BACK        1
 LEFT        10
@@ -56,11 +64,13 @@ RIGHT        27
 
 10
 First Floor - Kitchen
-You are in what looks like a kitchen. You see a fridge, a freezer chest, and a sink with a trash can underneath it. The dining room is on the left side of the room.
+You are in a dated kitchen. You see a fridge, a freezer chest, and a sink with a trash can underneath it. There is a dining room on the left side of the room.
 -----
 LEFT        20
 BACK        8
+FRIDGE      50/FRIDGEMAGNETS
 FRIDGE        11
+FREEZER        51/FREEZERNOTE
 FREEZER        13
 SINK        17/SALTANDPEPPERKEY
 SINK        15
@@ -73,9 +83,15 @@ There’s moldy food in the fridge. As you open the door you’re hit with a lay
 INSPECT      12
 EXIT      10
 
+50
+First Floor - Kitchen Fridge
+There’s still moldy food in the fridge. As you open the door again you’re hit with a layer of putrid, humid air but this time you’re prepared and hold your breath. Nothing has changed since the last time, the magnets remain in the corner.
+-----
+FORCED     10
+
 12
 First Floor - Kitchen Fridge 2
-You see two faded fridge magnets! The number “2” and the letter “R”.
+You see two faded fridge magnets! The number “2” and the letter “R”. You take note of them.
 -----
 FORCED      10
 
@@ -89,13 +105,19 @@ EXIT      10
 
 14
 First Floor - Kitchen Freezer 2
-You broke through the ice using your ice pick. You find a set of characters written in what seems to be dark red paint on the bottom of the freezer! “N” and “7”  are written sloppily.
+You broke through the ice using your ice pick. You find a set of characters written in what seems to be dark red paint on the bottom of the freezer! “N” and “7”  are written sloppily. You take note of them.
+-----
+FORCED      10
+
+51
+First Floor - Kitchen Freezer 2
+“N” and “7”  remain written sloppily below the ice shards. Long scratches from the ice pick can be seen along the bottom of the freezer.
 -----
 FORCED      10
 
 15
 First Floor - Kitchen Sink
-The sink is empty and looks like it hasn’t been used in a long time. You notice something in the drain…
+The sink is empty and looks like it hasn’t been used in a long time. You notice something shining in the drain…
 -----
 INSPECT      16
 EXIT      10
@@ -143,7 +165,7 @@ EXIT      20
 
 22
 First Floor - Dining Room Window 2
-OUCH! You got cut by a nail attempting to pull off the wooden boards. Hope you have your tetanus shot.
+OUCH! You got cut by a nail attempting to pull off the wooden boards. Hope you got your tetanus shot.
 -----
 FORCED      20
 
@@ -156,13 +178,13 @@ EXIT      20
 
 24
 First Floor - Dining Room Chair 2
-OUCH! You got a splinter from touching the chair.
+OUCH! You got a splinter from inspecting the chair.
 -----
 FORCED      20
 
 25
 First Floor - Dining Room Table
-The table is set with an assortment of ornate dinnerware  seems to be a meal on the table … it's still warm. You notice a box on the table. It needs a key to be opened.
+The table is set with an assortment of ornate dinnerware and what seems to be equipment for carving a large roast … there’s also a bone saw. You notice a small box on the table. It seems to need a key to be opened.
 -----
 INSPECT      26/SALTANDPEPPERKEY
 INSPECT      25
@@ -190,61 +212,89 @@ GLOBE      34
 First Floor - Library Bookshelf
 There are a lot of books. Whoever lived here must have been a nerd. There is a book that seems a little odd. It's less dusty than the rest.
 -----
+INSPECT      56/BOOKCODE
 INSPECT      29
 EXIT      27
 
 29
 First Floor - Library Bookshelf 2
-You open the strange book to find a code written in it! It says “M” and “3”.
+You open the strange book to find a code written hastily in dark ink over the original print! It says “M” and “3”. You take note of them.
+-----
+FORCED      27
+
+56
+First Floor - Library Bookshelf 2
+You open the strange book to find a code written hastily in dark ink over the original print! It says “M” and “3”.
 -----
 FORCED      27
 
 30
 First Floor - Library Desk
-MINIGAME? You open the drawer. You found a key!
+There’s a sheet of paper on the desk that grabs your eye. It seems to describe a riddle: “You come upon two men guarding two doors. One always lies and the other always tells the truth. Behind one door is your deepest desire while behind the other is endless pain and suffering. You’re only allowed to ask the duo one question.” You can see someone has written in pen “Which door would the other man recommend?” and below that the page seems to have responded with “The right door” You feel immense pressure to pick an answer, which do you choose?
+-----
+LEFT     57
+RIGHT      58
+
+57
+First Floor - Library Desk
+A drawer opens. You found a key!
+-----
+FORCED      27
+
+58
+First Floor - Library Desk
+You hear an ominous voice resonate in your head… “wrong answer”
+-----
+FORCED      99
+
+99
+First Floor - Somewhere
+You feel pain ring through your body as your body begins to convulse violently. The taste of blood begins to invade your mouth and your vision turns dark… After what feels like eternity, the pain subsides and you find yourself curled up on the floor. Above you, a drawer slowly slides open from the desk. You hear a faint cackling echo from somewhere far away… You check the drawer. You found a key!
 -----
 FORCED      27
 
 31
 First Floor - Library Desk 2
-The drawer is empty!
+The desk is empty!
 -----
 FORCED      27
 
 32
 First Floor - Library Chair
-The chair looks expensive. I wonder where it’s from.
+The chair looks expensive. You wonder where it’s from.
 -----
 INSPECT      33
 EXIT      27
 
 33
 First Floor - Library Chair 2
-You sit in the chair. It’s pretty comfy. It would probably sell well.
+You inspect the stunning craftsmanship and ornate details that make up the chair before deciding to sit. You feel your body relax a little as you sink into the chair, it’s pretty comfy. It would probably sell well… but you can’t stay here.
 -----
 FORCED      27
 
 34
 First Floor - Library Globe
-The globe looks rusty. You’d like to spin it but it's too high.
+The globe’s axis looks rusty. It probably wouldn’t spin.
 -----
 INSPECT      35
 EXIT      27
 
 35
 First Floor - Library Globe 2
-It looks highly accurate. At least to whatever geography you learned from school. You’re not that great at geography.
+It looks quite accurate. At least from what you remember of the world geography you learned in school. Though, you’re not that great at geography…
 -----
 FORCED      27
 
 36
 First Floor - Living Room
-You are in the living room. You see a couch, a table, a carpet underneath, and an old TV. At the edges of the room, there is a lamp, a painting, and a fireplace.
+You are in the living room. You see a couch, a table with a carpet underneath, and an old TV. Along the edges of the room, there is a lamp, a painting, and a fireplace.
 -----
 LEFT      27
-FIREPLACE      38/FIREPLACEKEY
+FIREPLACE    52/FIREPLACECODE
+FIREPLACE    38/FIREPLACEKEY
 FIREPLACE      37
 LAMP      39
+PAINTING    53/PAINTINGCODE
 PAINTING      41
 TABLE      42
 CARPET      43
@@ -253,19 +303,26 @@ COUCH      44
 
 37
 First Floor - Living Room Fireplace
-There are burnt logs in the fireplace. The ash seems odd. You need a key to open the protective cover.
+There are burnt logs in the fireplace. Below them, you can see there appears to be slight depressions in the thin layer of ash coating the hearth. The depressions almost resemble numbers.  You’ll need a key to open the glass protective cover.
 -----
+INSPECT     37
 FORCED      36
 
 38
 First Floor - Living Room Fireplace 2
-You open the fireplace’s protective cover and move it aside. You wipe away the ash. There seems to be an engraving on the stone. "207".
+You open the fireplace’s protective cover and move it aside before wiping away the ash. There is an engraving in the cold stone. "207". You hastily write down the number in your notebook.
+-----
+FORCED      36
+
+52
+First Floor - Living Room Fireplace 2
+“207” remains engraved on the bottom of the hearth.
 -----
 FORCED      36
 
 39
 First Floor - Living Room Lamp
-The lamp looks antique. The light is flickering.
+The lamp looks antique. Dust saturated spider webs are illuminated by the flickering light.
 -----
 INSPECT      40
 EXIT      36
@@ -278,7 +335,13 @@ FORCED      36
 
 41
 First Floor - Living Room Painting
-A funky little painting, there is a code on it. “4” and an ”E”.
+A funky little painting, there is a stylized code depicted in it. “4” and an ”E”. You take note of the code.
+-----
+FORCED      36
+
+53
+First Floor - Living Room Painting
+A funky little painting, there is a stylized code depicted in it. “4” and an ”E”.
 -----
 FORCED      36
 
@@ -290,7 +353,7 @@ FORCED      36
 
 43
 First Floor - Living Room Carpet
-Another carpet. Nothing strange here.
+An old red carpet. Nothing strange here.
 -----
 FORCED      36
 
@@ -309,13 +372,13 @@ FORCED      36
 
 46
 First Floor - Living Room Couch 3
-There’s nothing in between the couch cushions.
+The couch looks uncomfortable. There’s nothing in between the couch cushions.
 -----
 FORCED      36
 
 47
 First Floor - Stairs Key
-You got a key!
+The safe opens. You got a key!
 -----
 FORCED     1
 
@@ -324,3 +387,87 @@ TEMPORARY WIN
 YOU WON!
 -----
 FORCED      0
+
+101
+1 cut
+Trick or Treat!
+-----
+FORCED     102
+
+102
+2 cut
+Happy Halloween kids!
+-----
+FORCED     103
+
+103
+3 cut
+Let's hit up a few more houses and then we can compare our candy!
+-----
+FORCED     104
+
+104
+4 cut
+That house had laffy taffies!
+-----
+FORCED     105
+
+105
+5 cut
+Hey guys! Wait up!
+-----
+FORCED     106
+
+106
+6 cut
+Hey Billy, do you know any candy facts?
+-----
+FORCED     107
+
+107
+7 cut
+Did you guys know that the first candy was invented in ancient Egypt? *Krrr* over
+-----
+FORCED     108
+
+108
+8 cut
+Bahahaha of course you'd know that! *Krrr* over... huh? I think my walkie-talky's broken!
+-----
+FORCED     109
+
+109
+9 cut
+That's what you get for only getting walkie-talkies for the two of you!
+-----
+FORCED     110
+
+110
+10 cut
+Hey, is that house open for trick or treating?
+-----
+FORCED     111
+
+111
+11 cut
+It doesn't have any lights on. Besides, it looks creepy...
+-----
+FORCED     112
+
+112
+12 cut
+Was this house always here?
+-----
+FORCED     113
+
+113
+13 cut
+Guys, it's fine! There's a kid there, let's go!
+-----
+FORCED     114
+
+114
+14 cut
+Huh...? Where did everyone go? As you stand up, your notepad and pen slip out of your pocket. You bend down to pick them up before inspecting your surroundings.
+-----
+FORCED     1
