@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdventureModel/AdventureGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdventureModel/AdventureGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdventureModel/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdventureModel/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/objects.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Games/TrickOrTrap/objects.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/rooms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Games/TrickOrTrap/rooms.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trick_or_trap.iml" beforeDir="false" afterPath="$PROJECT_DIR$/trick_or_trap.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/AdventureGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/AdventureGameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +45,7 @@
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "Develop",
-    "last_opened_file_path": "C:/Users/popot/CSC207/group_39/trick_or_trap",
+    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-21.0.1/lib/javafx.base.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,8 +64,8 @@
   <component name="RunManager" selected="Application.AdventureGameApp">
     <configuration name="AdventureGameApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AdventureGameApp" />
-      <module name="assignment2" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+      <module name="trick_or_trap" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -85,6 +90,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.AdventureGameApp" />
+      <item itemvalue="JUnit.BasicAdventureTest.getCommandsTest" />
+      <item itemvalue="JUnit.BasicAdventureTest.getObjectString" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.AdventureGameApp" />
