@@ -701,7 +701,7 @@ public class AdventureGameView {
 
     /**
      * This method handles the event related to the
-     * settings button.
+     * inventory button.
      */
     public void addInventoryEvent() {
         inventoryButton.setOnAction(e -> {
@@ -713,7 +713,7 @@ public class AdventureGameView {
 
     /**
      * This method handles the event related to the
-     * settings button.
+     * inventory button.
      */
     public void addInventoryBackEvent() {
         inventoryBackButton.setOnAction(e -> {
