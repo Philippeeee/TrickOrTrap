@@ -751,6 +751,107 @@ public class AdventureGameView {
 
 
     /**
+     * showSummary
+     * __________________________
+     * This method displays the summary and updates the buttons accordingly.
+     */
+    public void showSummary() {
+        // find three buttons' node
+        javafx.scene.Node n = null;
+        for (javafx.scene.Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
+                n = node;
+            }
+        }
+
+        // store + remove three buttons' node
+        Column = n;
+        gridPane.getChildren().remove(n);
+
+        // add "back" button
+        VBox box = new VBox();
+        box.setSpacing(10);
+        box.setPadding(new Insets(11));
+        box.getChildren().add(summaryBackButton);
+        gridPane.add(box, 2, 0, 1, 2);
+
+        summaryToggle = true;
+
+        // find room image
+        javafx.scene.Node j = null;
+        for (javafx.scene.Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(0)) {
+                j = node;
+            }
+        }
+
+        // store room image
+        imageNode = j;
+
+        // remove room image
+        gridPane.getChildren().remove(j);
+
+
+        // replace room image with summary
+
+        // create Label (for ScrollPane)
+        Label summary_text = new Label(model.getSummaryText());
+        summary_text.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
+        summary_text.setFont(new Font("Arial", 12));
+        summary_text.setAlignment(Pos.CENTER);
+        summary_text.setPrefWidth(721);
+        summary_text.setPrefHeight(this.model.getNumSumLines() * 50);
+//        summary_text.setTextOverrun(OverrunStyle.CLIP);
+        summary_text.setWrapText(true);
+
+        // create ScrollPane
+        ScrollPane summary_scroll = new ScrollPane();
+        summary_scroll.setPrefSize(735, 421);
+        // put summary text in ScrollPane
+        summary_scroll.setContent(summary_text);
+        // start user at bottom of ScrollPane
+        summary_scroll.setVvalue(summary_scroll.getVmax());
+        // display ScrollPane (where room image was)
+        gridPane.add(summary_scroll, 0, 0);
+    }
+
+    /**
+     * hideSummary
+     * __________________________
+     * This method closes the summary and updates the buttons accordingly.
+     */
+    public void hideSummary() {
+        javafx.scene.Node k = null;
+        for (javafx.scene.Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
+                k = node;
+                // ask matthew why tf break here no good
+            }
+        }
+
+        // change the back button to the original 3 buttons
+        gridPane.getChildren().remove(k);
+        gridPane.add(Column, 2, 0);
+
+        summaryToggle = false;
+
+        // find the summary
+        javafx.scene.Node l = null;
+        for (javafx.scene.Node node : gridPane.getChildren()) {
+            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(0)) {
+                l = node;
+            }
+        }
+
+        // remove the summary
+        gridPane.getChildren().remove(l);
+
+        // put the room image back
+        gridPane.add(imageNode, 0, 0);
+    }
+
+
+    /**
      * This method handles the event related to the
      * settings button.
      */
@@ -803,6 +904,30 @@ public class AdventureGameView {
     }
 
 
+    /**
+     * addSummaryEvent
+     * __________________________
+     * This method handles the event related to the summary button.
+     */
+    public void addSummaryEvent() {
+        summaryButton.setOnAction(e -> {
+            stopArticulation();
+            showSummary();
+        });
+    }
+
+    /**
+     * addSummaryBackEvent
+     * __________________________
+     * This method handles the event related to the button that brings the user "back"
+     * from the summary menu
+     */
+    public void addSummaryBackEvent() {
+        summaryBackButton.setOnAction(e -> {
+            stopArticulation();
+            hideSummary();
+        });
+    }
 
 
     /**
