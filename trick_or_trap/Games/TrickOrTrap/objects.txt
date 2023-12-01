@@ -1,15 +1,35 @@
 ICEPICK
-An icepick to stab through ice.
+An icepick. The tip is slightly rusted
 45
 
 FIREPLACEKEY
-A key.
-30
+A key
+57
+
+FIREPLACEKEY
+A key
+99
 
 SALTANDPEPPERKEY
-A key.
+A key
 16
 
 STAIRSKEY
-A key.
+A key
 47
+
+FREEZERNOTE
+"N" and "7"
+14
+
+FRIDGEMAGNETS
+The number “2” and the letter “R”
+12
+
+FIREPLACECODE
+"207"
+38
+
+PAINTINGCODE
+“4” and ”E”
+41
