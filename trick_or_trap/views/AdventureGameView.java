@@ -477,7 +477,7 @@ public class AdventureGameView {
 
 
         int roomNumber = this.model.getPlayer().getCurrentRoom().getRoomNumber();
-        String roomImage = this.model.getDirectoryName() + "/room-images/" + 1 + ".png";
+        String roomImage = this.model.getDirectoryName() + "/room-images/" + roomNumber + ".png";
 
 
         Image roomImageFile = new Image(roomImage);
