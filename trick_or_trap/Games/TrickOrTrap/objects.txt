@@ -1,0 +1,43 @@
+ICEPICK
+An icepick. The tip is slightly rusted
+45
+
+FIREPLACEKEY
+A key
+57
+
+FIREPLACEKEY
+A key
+99
+
+SALTANDPEPPERKEY
+A key
+16
+
+STAIRSKEY
+A key
+47
+
+SPCODE
+"0" and "U"
+26
+
+BOOKCODE
+"M" and "3"
+29
+
+FREEZERNOTE
+"N" and "7"
+14
+
+FRIDGEMAGNETS
+The number “2” and the letter “R”
+12
+
+FIREPLACECODE
+"207"
+38
+
+PAINTINGCODE
+“4” and ”E”
+41
