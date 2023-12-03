@@ -185,7 +185,8 @@ public class LoadSlotView {
             namingLabel.setStyle("-fx-text-fill: white;");
             namingLabel.setFont(new Font("Arial", 20));
 
-            TextField namingTextField = new TextField();
+            TextField namingTextField = new TextField("Untitled Save");
+            namingTextField.setPromptText("Name your save here.");
 
             confirmButton = new Button("Confirm");
             confirmButton.setId("Confirm");

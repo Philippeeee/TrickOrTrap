@@ -16,6 +16,7 @@ import javafx.scene.layout.*;
 import javafx.scene.input.KeyEvent; //you will need these!
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -356,11 +357,69 @@ public class AdventureGameView {
     private void addTitleReturnEvent() {
         titleBackButton.setOnAction(e -> {
             stopArticulation(); //if speaking, stop
+            int width = 300;
+            int roomNumber = model.player.getCurrentRoom().getRoomNumber();
+
             // todo popup to save???
+            stage.requestFocus();
+            Stage namingStage = new Stage();
+            namingStage.initModality(Modality.APPLICATION_MODAL);
+
+            namingStage.setTitle("Save?");
+
+            Label namingLabel = new Label("Would you like to save? \n Name your save slot:");
+            namingLabel.setId("NamingLabel");
+            namingLabel.setStyle("-fx-text-fill: white;");
+            namingLabel.setFont(new Font("Arial", 20));
+
+            TextField namingTextField = new TextField("Untitled Save");
+            namingTextField.setPromptText("Name your save here.");
+
+            Button yesButton = new Button("Yes");
+            yesButton.setId("Yes");
+            customizeButton(yesButton, width, 50);
+            makeButtonAccessible(yesButton, "Yes Button", "This button names the save slot base on the text input.", "This button names the save slot base on the text input. Click it return.");
+
+            yesButton.setOnAction(e1 -> {
+                namingStage.requestFocus();
+                SaveView.SaveGameWithName(model, namingTextField.getText());
+                namingStage.close();
+                stage.setScene(titleScene);
+                stage.setResizable(false);
+                stage.show();
+            });
+
+            Button noButton = new Button("No");
+            noButton.setId("No");
+            customizeButton(noButton, width, 50);
+            makeButtonAccessible(noButton, "No Button", "This button denies naming the save slot.", "This button denies naming the save slot. Click it return.");
+
+            noButton.setOnAction(e1 -> {
+                namingStage.requestFocus();
+                namingStage.close();
+                stage.setScene(titleScene);
+                stage.setResizable(false);
+                stage.show();
+            });
+
+            HBox buttonsHBox = new HBox();
+            buttonsHBox.getChildren().addAll(yesButton, noButton);
+            buttonsHBox.setSpacing(10);
+
+            VBox namingVBbox = new VBox();
+            namingVBbox.setSpacing(10);
+            namingVBbox.setPadding(new Insets(10,10,10,10));
+            namingVBbox.setMaxWidth(width);
+            namingVBbox.setStyle("-fx-background-color: #121212;");
+            namingVBbox.getChildren().addAll(namingLabel, namingTextField, buttonsHBox);
+
+            Scene namingScene = new Scene(namingVBbox, 300, 120);
+            namingScene.setFill(Color.BLACK);
+            namingStage.setScene(namingScene);
+            namingStage.setResizable(false);
+            namingStage.show();
+
 //            SaveView.quickSaveGame(model);
-            stage.setScene(titleScene);
-            stage.setResizable(false);
-            stage.show();
         });
     }
 
