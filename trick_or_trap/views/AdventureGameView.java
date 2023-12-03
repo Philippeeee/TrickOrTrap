@@ -3,6 +3,8 @@ package views;
 
 import AdventureModel.AdventureGame;
 import AdventureModel.*;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -22,7 +24,9 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import javafx.event.EventHandler; //you will need this too!
 import javafx.scene.AccessibleRole;
-
+import javafx.animation.Timeline;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 
 import java.io.File;
 import java.io.IOException;
@@ -399,6 +403,7 @@ public class AdventureGameView {
      *
      * @param textToDisplay the text to display below the image.
      */
+
     public void updateScene(String textToDisplay) {
         // find room image
         javafx.scene.Node j = null;
@@ -433,13 +438,9 @@ public class AdventureGameView {
         textEntry.setSpacing(10);
         textEntry.setAlignment(Pos.CENTER);
         gridPane.add( textEntry, 0, 2, 3, 1 );
-
-
         gridPane.add(roomPane, 0, 0, 2, 1);
         gridPane.add(bottomthang, 0, 1, 2, 1);
         stage.sizeToScene();
-
-
         //finally, articulate the description
         if (textToDisplay == null || textToDisplay.isBlank()) articulateRoomDescription();
     }
@@ -454,15 +455,35 @@ public class AdventureGameView {
      * @param textToDisplay the text to be formatted for display.
      */
     private void formatText(String textToDisplay) {
+        String roomText;
         if (textToDisplay == null || textToDisplay.isBlank()) {
             String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
             String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
-            if (objectString != null && !objectString.isEmpty()) roomDescLabel.setText(roomDesc + "\n\nObjects in this room:\n" + objectString);
-            else roomDescLabel.setText(roomDesc);
-        } else roomDescLabel.setText(textToDisplay);
+            if (objectString != null && !objectString.isEmpty()) roomText = roomDesc + "\n\nObjects in this room:\n" + objectString;
+            else roomText = roomDesc;
+        } else roomText = textToDisplay;
+
+        roomDescLabel.setText(textToDisplay);
         roomDescLabel.setStyle("-fx-text-fill: white;");
         roomDescLabel.setFont(new Font("Arial", 16));
-        roomDescLabel.setAlignment(Pos.CENTER);
+        roomDescLabel.setAlignment(Pos.CENTER_LEFT);
+
+        IntegerProperty i = new SimpleIntegerProperty(0);
+        Timeline line = new Timeline();
+
+        KeyFrame keyFrame = new KeyFrame(
+                Duration.seconds(.025),
+                event -> {
+                    if (i.get() >= roomText.length()) {
+                        line.stop();
+                    } else {
+                        roomDescLabel.setText((roomText.substring(0, i.get())));
+                        i.set(i.get() + 1);
+                    }
+                });
+        line.getKeyFrames().add(keyFrame);
+        line.setCycleCount(Animation.INDEFINITE);
+        line.play();
     }
 
 
