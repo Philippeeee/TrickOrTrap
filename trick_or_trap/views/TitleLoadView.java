@@ -71,7 +71,7 @@ public class TitleLoadView {
         noSaveSlotsLabel.setFont(new Font(40));
         noSaveSlotsLabel.setStyle("-fx-text-fill: grey");
 
-        if (filesList.isEmpty()) {
+        if (filesList.size() == 1) {
             saveSlotsHBox.getChildren().add(noSaveSlotsLabel);
         } else {
             for (String file: filesList) {
@@ -104,7 +104,7 @@ public class TitleLoadView {
 
     /**
      * Deletes the given file from
-     * @param fileName
+     * @param fileName name of the save file to delete
      */
     public void deleteFile(String fileName) {
         File file = new File("Games/Saved/" + fileName);
@@ -112,7 +112,7 @@ public class TitleLoadView {
 
             getFiles(filesList);
             saveSlotsHBox.getChildren().clear();
-            if (filesList.isEmpty()) {
+            if (filesList.size() == 1) {
                 saveSlotsHBox.getChildren().add(noSaveSlotsLabel);
             } else {
                 for (String f: filesList) {

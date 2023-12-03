@@ -194,7 +194,17 @@ public class AdventureGameView {
             gridPane.requestFocus();
             stage.setScene(mainGameScene);
             stage.setResizable(false);
-            stage.show();
+            AdventureGame game = null;
+            try {
+                game = LoadView.loadGame("Games/Saved/" + "NewGameSave.ser");
+                model = game;
+                updateScene("");
+                updateItems();
+                stage.show();
+            } catch (IOException | ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+
         });    }
 
 
@@ -360,7 +370,6 @@ public class AdventureGameView {
             int width = 300;
             int roomNumber = model.player.getCurrentRoom().getRoomNumber();
 
-            // todo popup to save???
             stage.requestFocus();
             Stage namingStage = new Stage();
             namingStage.initModality(Modality.APPLICATION_MODAL);
@@ -1105,8 +1114,44 @@ public class AdventureGameView {
     public void addSaveEvent() {
         saveButton.setOnAction(e -> {
             gridPane.requestFocus();
-            SaveView.quickSaveGame(model);
-//            SaveView saveView = new SaveView(this);
+//            SaveView.quickSaveGame(model);
+            int width = 300;
+            Stage namingStage = new Stage();
+            namingStage.initModality(Modality.APPLICATION_MODAL);
+
+            namingStage.setTitle("Name your save slot!");
+
+            Label namingLabel = new Label("Name your save slot:");
+            namingLabel.setId("NamingLabel");
+            namingLabel.setStyle("-fx-text-fill: white;");
+            namingLabel.setFont(new Font("Arial", 20));
+
+            TextField namingTextField = new TextField("Untitled Save");
+            namingTextField.setPromptText("Name your save here.");
+
+            Button confirmButton = new Button("Confirm");
+            confirmButton.setId("Confirm");
+            customizeButton(confirmButton, width, 50);
+            makeButtonAccessible(confirmButton, "Confirm Button", "This button renames the save slot base on the text input.", "This button renames the save slot base on the text input. Click it return.");
+
+            confirmButton.setOnAction(e1 -> {
+                namingStage.requestFocus();
+                SaveView.SaveGameWithName(model, namingTextField.getText());
+                namingStage.close();
+            });
+
+            VBox namingVBbox = new VBox();
+            namingVBbox.setSpacing(10);
+            namingVBbox.setPadding(new Insets(10,10,10,10));
+            namingVBbox.setMaxWidth(width);
+            namingVBbox.setStyle("-fx-background-color: #121212;");
+            namingVBbox.getChildren().addAll(namingLabel, namingTextField, confirmButton);
+
+            Scene namingScene = new Scene(namingVBbox, 300, 120);
+            namingScene.setFill(Color.BLACK);
+            namingStage.setScene(namingScene);
+            namingStage.setResizable(false);
+            namingStage.show();
         });
     }
 

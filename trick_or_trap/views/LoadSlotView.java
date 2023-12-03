@@ -51,77 +51,78 @@ public class LoadSlotView {
         this.fileName = fileName;
         this.titleLoadView = titleLoadView;
 
-
-        ArrayList<String> saveFile = new ArrayList<> (Arrays.asList(fileName.split("--")));
-        this.roomNumber = Integer.parseInt(saveFile.get(0));
-
-        this.time = new ArrayList<> (Arrays.asList(saveFile.get(1).split("\\.")));
-        String year = time.get(0);
-        String month = time.get(1);
-        String day = time.get(2);
-        String saveTime = year + "-" + month + "-" + day;
-
-        String saveName = saveFile.get(2);
-
-        // Labels
-        latestSaveLabel = new Label("Latest Save: " + saveTime);
-        latestSaveLabel.setId("SaveLabel");
-        latestSaveLabel.setStyle("-fx-text-fill: white;");
-        latestSaveLabel.setFont(new Font("Arial", 16));
-        latestSaveLabel.setWrapText(true);
-
-        currentRoomLabel = new Label("Current Room: " + adventureGame.getRooms().get(roomNumber).getRoomName());
-        currentRoomLabel.setId("RoomLabel");
-        currentRoomLabel.setStyle("-fx-text-fill: white;");
-        currentRoomLabel.setFont(new Font("Arial", 16));
-        currentRoomLabel.setWrapText(true);
+        if (!fileName.equals("NewGameSave.ser")) {
 
 
-        // Buttons
-        saveNameButton = new Button(saveName.substring(0, saveName.length()-4));
-        saveNameButton.setId("SaveName");
-        customizeButton(saveNameButton, width, 50);
-        makeButtonAccessible(saveNameButton, "Save Name Button", "This button renames the save slot.", "This button renames the save slot. Click it to pop up a text input. Press Enter to rename the slot.");
-        addSaveNameEvent();
+            ArrayList<String> saveFile = new ArrayList<>(Arrays.asList(fileName.split("--")));
+            this.roomNumber = Integer.parseInt(saveFile.get(0));
 
-        selectSaveButton = new Button("Select");
-        selectSaveButton.setId("Select");
-        customizeButton(selectSaveButton, width/2, 50);
-        makeButtonAccessible(selectSaveButton, "Select Save Button", "This button chooses the save slot.", "This button chooses the save slot. Click it to play on that save slot.");
-        addSelectSaveEvent();
+            this.time = new ArrayList<>(Arrays.asList(saveFile.get(1).split("\\.")));
+            String year = time.get(0);
+            String month = time.get(1);
+            String day = time.get(2);
+            String saveTime = year + "-" + month + "-" + day;
 
-        deleteSaveButton = new Button("Delete");
-        deleteSaveButton.setId("Delete");
-        customizeButton(deleteSaveButton, width/2, 50);
-        makeButtonAccessible(deleteSaveButton, "Delete Button", "This button deletes the save slot.", "This button deletes the save slot. Click it delete that save slot.");
-        addDeleteSaveEvent();
+            String saveName = saveFile.get(2);
 
-        // Image
-        String roomImage = this.model.getDirectoryName() + "/room-images/" + roomNumber + ".jpg";
-        currentRoomImage = new Image(roomImage);
-        roomImageView = new ImageView(currentRoomImage);
-        roomImageView.setPreserveRatio(true);
+            // Labels
+            latestSaveLabel = new Label("Latest Save: " + saveTime);
+            latestSaveLabel.setId("SaveLabel");
+            latestSaveLabel.setStyle("-fx-text-fill: white;");
+            latestSaveLabel.setFont(new Font("Arial", 16));
+            latestSaveLabel.setWrapText(true);
 
-        roomImageView.setFitWidth(width);
+            currentRoomLabel = new Label("Current Room: " + adventureGame.getRooms().get(roomNumber).getRoomName());
+            currentRoomLabel.setId("RoomLabel");
+            currentRoomLabel.setStyle("-fx-text-fill: white;");
+            currentRoomLabel.setFont(new Font("Arial", 16));
+            currentRoomLabel.setWrapText(true);
 
 
+            // Buttons
+            saveNameButton = new Button(saveName.substring(0, saveName.length() - 4));
+            saveNameButton.setId("SaveName");
+            customizeButton(saveNameButton, width, 50);
+            makeButtonAccessible(saveNameButton, "Save Name Button", "This button renames the save slot.", "This button renames the save slot. Click it to pop up a text input. Press Enter to rename the slot.");
+            addSaveNameEvent();
 
-        // Containers
-        HBox hbox = new HBox();
-        hbox.setStyle("-fx-background-color: #757575;");
-        hbox.getChildren().addAll(selectSaveButton, deleteSaveButton);
-        hbox.setSpacing(10);
+            selectSaveButton = new Button("Select");
+            selectSaveButton.setId("Select");
+            customizeButton(selectSaveButton, width / 2, 50);
+            makeButtonAccessible(selectSaveButton, "Select Save Button", "This button chooses the save slot.", "This button chooses the save slot. Click it to play on that save slot.");
+            addSelectSaveEvent();
+
+            deleteSaveButton = new Button("Delete");
+            deleteSaveButton.setId("Delete");
+            customizeButton(deleteSaveButton, width / 2, 50);
+            makeButtonAccessible(deleteSaveButton, "Delete Button", "This button deletes the save slot.", "This button deletes the save slot. Click it delete that save slot.");
+            addDeleteSaveEvent();
+
+            // Image
+            String roomImage = this.model.getDirectoryName() + "/room-images/" + roomNumber + ".jpg";
+            currentRoomImage = new Image(roomImage);
+            roomImageView = new ImageView(currentRoomImage);
+            roomImageView.setPreserveRatio(true);
+
+            roomImageView.setFitWidth(width);
 
 
-        vbox.setMaxWidth(width);
-        vbox.setSpacing(10);
-        vbox.setMaxHeight(450);
-        vbox.setAlignment(Pos.CENTER);
-        vbox.setPadding(new Insets(10,10,10,10));
-        vbox.setStyle("-fx-background-color: #757575;");
-        vbox.getChildren().addAll(saveNameButton, latestSaveLabel, currentRoomLabel, roomImageView, hbox);
+            // Containers
+            HBox hbox = new HBox();
+            hbox.setStyle("-fx-background-color: #757575;");
+            hbox.getChildren().addAll(selectSaveButton, deleteSaveButton);
+            hbox.setSpacing(10);
 
 
+            vbox.setMaxWidth(width);
+            vbox.setSpacing(10);
+            vbox.setMaxHeight(450);
+            vbox.setAlignment(Pos.CENTER);
+            vbox.setPadding(new Insets(10, 10, 10, 10));
+            vbox.setStyle("-fx-background-color: #757575;");
+            vbox.getChildren().addAll(saveNameButton, latestSaveLabel, currentRoomLabel, roomImageView, hbox);
+
+        }
     }
 
     /**
