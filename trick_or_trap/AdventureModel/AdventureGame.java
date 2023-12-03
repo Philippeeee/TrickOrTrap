@@ -44,6 +44,8 @@ public class AdventureGame implements Serializable {
             FileOutputStream outfile = new FileOutputStream(file);
             ObjectOutputStream oos = new ObjectOutputStream(outfile);
             oos.writeObject(this);
+            oos.close();
+            outfile.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
