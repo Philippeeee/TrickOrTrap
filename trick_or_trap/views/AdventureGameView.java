@@ -182,7 +182,7 @@ public class AdventureGameView {
         addSummaryBackEvent();
 
 
-        textSpeedButton = new Button("Text Speed Toggle");
+        textSpeedButton = new Button("Text\nSpeed\nToggle");
         textSpeedButton.setId("TextSpeed");
         customizeButton(textSpeedButton, 100, 100);
         makeButtonAccessible(textSpeedButton, "Text Speed Toggle Button", "This button allows you to toggle text speed.", "This button opens the menu in which you can toggle the speed that the text moves. Click to open the menu.");
