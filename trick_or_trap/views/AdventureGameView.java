@@ -160,7 +160,10 @@ public class AdventureGameView {
      * title settings button.
      */
     private void addTitleSettingsEvent() {
-        // TODO do this please
+        titleScreenSettingsButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            SettingsView settingsView = new SettingsView(this);
+        });
     }
 
     /**
