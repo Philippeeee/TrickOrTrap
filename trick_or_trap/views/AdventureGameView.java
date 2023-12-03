@@ -554,15 +554,17 @@ public class AdventureGameView {
         String output = this.model.interpretAction(text); //process the command!
 
         if (output == null || (!output.equals("GAME OVER") && !output.equals("FORCED") && !output.equals("HELP"))) {
-            updateScene(output);
-            updateItems();
-        } else if (output.equals("INVENTORY!")) {
-            if (settingsToggle) {
-                showSettings();
+            if (output == null){
+                updateScene(output);
+                updateItems();
+            } else if (output.equals("INVENTORY!")){
+                if (settingsToggle) {
+                    showSettings();
+                }
+                showInventory();
+            } else if (output.equals("SAVE!")) {
+                SaveView.quickSaveGame(model);
             }
-            showInventory();
-        } else if (output.equals("SAVE!")) {
-            SaveView.quickSaveGame(model);
         } else if (output.equals("GAME OVER")) {
             updateScene("");
             updateItems();
