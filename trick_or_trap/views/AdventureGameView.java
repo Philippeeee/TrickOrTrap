@@ -33,7 +33,9 @@ import javafx.beans.property.SimpleIntegerProperty;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 
 /**
@@ -72,6 +74,10 @@ public class AdventureGameView {
     Label gameTitleLabel = new Label("Trick Or Trap"); // title label
     Scene titleScene; // the scene for the title screen
     Scene mainGameScene;
+
+    private AtomicBoolean check = new AtomicBoolean(true);
+    private IntegerProperty num = new SimpleIntegerProperty(0);
+    private final Timeline line = new Timeline();
 
 
     /**
@@ -681,6 +687,9 @@ public class AdventureGameView {
         gridPane.getChildren().remove(j);
 
         getRoomImage(); //get the image of the current room
+        check.set(false);
+        num.set(num.get()+1);
+
         getPfpImage(); // get the image of the current pfp if applicable
         formatText(textToDisplay); //format the text to display
         roomDescLabel.setPrefWidth(555);
@@ -704,8 +713,6 @@ public class AdventureGameView {
         textEntry.setSpacing(10);
         textEntry.setAlignment(Pos.CENTER);
         gridPane.add( textEntry, 0, 2, 3, 1 );
-
-
         gridPane.add(roomPane, 0, 0, 2, 1);
         gridPane.add(bottomthang, 0, 1, 2, 1);
         stage.sizeToScene();
@@ -737,21 +744,54 @@ public class AdventureGameView {
         roomDescLabel.setAlignment(Pos.CENTER_LEFT);
 
         IntegerProperty i = new SimpleIntegerProperty(0);
-        Timeline line = new Timeline();
+//        Timeline line = new Timeline();
+        check.set(false);
+        IntegerProperty  comparenum = num;
+
 
         KeyFrame keyFrame = new KeyFrame(
                 Duration.seconds(this.frame_duration),
                 event -> {
-                    if (i.get() >= roomText.length()) {
+                    if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
                         line.stop();
                     } else {
-                        roomDescLabel.setText((roomText.substring(0, i.get())));
-                        i.set(i.get() + 1);
+                        try{
+                            roomDescLabel.setText((roomText.substring(0, i.get())));
+                            i.set(i.get() + 1);
+                        } catch (Exception e){
+                            roomDescLabel.setText(roomText);
+                            i.set(i.get() + 1);
+                        }
                     }
                 });
         line.getKeyFrames().add(keyFrame);
         line.setCycleCount(Animation.INDEFINITE);
         line.play();
+
+        EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode().equals(KeyCode.SPACE)){
+                    int roomt = 0;
+                    try{
+                        roomt = roomDescLabel.getText().length();
+                    } catch (Exception e){
+                        System.out.println("The text is null");
+                    }
+
+                    if(roomt == roomText.length()){
+                        //submitEvent(inputTextField.getText().strip());
+                        submitEvent("FORCED");
+                        inputTextField.setText("");
+                    }else {
+                        line.stop();
+                        roomDescLabel.setText(roomText);
+                        inputTextField.setText("");
+                    }
+                }
+            }
+        };
+        this.inputTextField.addEventHandler(KeyEvent.KEY_RELEASED, eventHandler);
     }
 
 
@@ -774,6 +814,17 @@ public class AdventureGameView {
         roomImageView.setPreserveRatio(false);
         roomImageView.setFitWidth(800);
         roomImageView.setFitHeight(400);
+        /////////////////////////////////////
+        ////////////////////////////////////
+        ////////////////////////////////////
+        pfp = new ImageView(roomImageFile);
+        pfp.setPreserveRatio(false);
+        pfp.setFitWidth(200);
+        pfp.setFitHeight(200);
+        /////////////////////////////////////
+        ////////////////////////////////////
+        /////////////////////////////////////
+
 
         //set accessible text
         roomImageView.setAccessibleRole(AccessibleRole.IMAGE_VIEW);
@@ -860,7 +911,9 @@ public class AdventureGameView {
         //this.model.getDirectoryName() + "/objectImages/" + objectName + ".jpg";
 
 
-
+        ScrollPane scO = new ScrollPane(objectsInInventory);
+        scO.setFitToWidth(true);
+        scO.setStyle("-fx-background: #000000; -fx-background-color:transparent;");
         VBox box = new VBox();
         box.setSpacing(0);
         box.setPadding(new Insets(0));
