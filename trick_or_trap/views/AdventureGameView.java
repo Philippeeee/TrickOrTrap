@@ -49,7 +49,7 @@ public class AdventureGameView {
 
     AdventureGame model; //model of the game
     Stage stage; //stage on which all is rendered
-    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton, summaryButton, summaryBackButton; //buttons
+    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton, summaryButton, summaryBackButton, textSpeedButton; //buttons
     Boolean helpToggle = false; //is help on display?
     Boolean settingsToggle = false; //is settings on display?
     Boolean inventoryToggle = false; //is inventory on display?
@@ -66,6 +66,7 @@ public class AdventureGameView {
     private boolean mediaPlaying; //to know if the audio is playing
     private javafx.scene.Node imageNode; // store the image and text after displaying instructions
     private javafx.scene.Node Column; // store the icons column after displaying settings
+    public int pause_duration = 5; // num seconds that the user wants in between new text (e.g. during forced movement)
     Button newGameButton, loadGameButton, titleScreenSettingsButton, gameSummaryButton; // title screen buttons
     Button titleBackButton; // return to title screen button from game
     Label gameTitleLabel = new Label("Trick Or Trap"); // title label
@@ -332,6 +333,13 @@ public class AdventureGameView {
         addTitleReturnEvent();
 
 
+        textSpeedButton = new Button("Text\nSpeed\nToggle");
+        textSpeedButton.setId("TextSpeed");
+        customizeButton(textSpeedButton, 100, 100);
+        makeButtonAccessible(textSpeedButton, "Text Speed Toggle Button", "This button allows you to toggle text speed.", "This button opens the menu in which you can toggle the speed that the text moves. Click to open the menu.");
+        addTextSpeedEvent();
+
+
         inputTextField = new TextField();
         inputTextField.setFont(new Font("Arial", 16));
         inputTextField.setFocusTraversable(true);
@@ -425,7 +433,7 @@ public class AdventureGameView {
 
             VBox namingVBbox = new VBox();
             namingVBbox.setSpacing(10);
-            namingVBbox.setPadding(new Insets(10,10,10,10));
+            namingVBbox.setPadding(new Insets(10, 10, 10, 10));
             namingVBbox.setMaxWidth(width);
             namingVBbox.setStyle("-fx-background-color: #121212;");
             namingVBbox.getChildren().addAll(namingLabel, namingTextField, buttonsHBox);
@@ -439,7 +447,6 @@ public class AdventureGameView {
 //            SaveView.quickSaveGame(model);
         });
     }
-
 
 
 
@@ -527,7 +534,8 @@ public class AdventureGameView {
 
     private void forcedHelper() {
         List<Passage> passages = model.player.getCurrentRoom().getMotionTable().getDirection();
-        PauseTransition pause = new PauseTransition(Duration.seconds(5));
+
+        PauseTransition pause = new PauseTransition(Duration.seconds(this.pause_duration));
         pause.setOnFinished(event -> {
 //            model.movePlayer("FORCED");
             submitEvent("FORCED");
@@ -998,7 +1006,7 @@ public class AdventureGameView {
             VBox box = new VBox();
             box.setSpacing(10);
             box.setPadding(new Insets(11));
-            box.getChildren().addAll(settingsBackButton, saveButton, helpButton, titleBackButton);
+            box.getChildren().addAll(settingsBackButton, saveButton, helpButton, titleBackButton, textSpeedButton);
             gridPane.add(box, 2, 0, 1, 2);
             settingsToggle = true;
         } else {
@@ -1084,7 +1092,6 @@ public class AdventureGameView {
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
                 k = node;
-                // ask matthew why tf break here no good
             }
         }
 
@@ -1260,6 +1267,18 @@ public class AdventureGameView {
             mediaPlayer.stop(); //shush!
             mediaPlaying = false;
         }
+    }
+
+    /**
+     * addTextSpeedEvent
+     *
+     * This button opens the text speed toggle menu from settings.
+     */
+    public void addTextSpeedEvent() {
+        textSpeedButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            TextSpeedView textSpeedView = new TextSpeedView(this);
+        });
     }
 }
 
