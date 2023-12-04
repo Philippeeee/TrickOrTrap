@@ -153,7 +153,7 @@ public class LoadView {
      * @param GameFile file to load
      * @return loaded Tetris Model
      */
-    public AdventureGame loadGame(String GameFile) throws IOException, ClassNotFoundException {
+    public static AdventureGame loadGame(String GameFile) throws IOException, ClassNotFoundException {
         // Reading the object from a file
         FileInputStream file = null;
         ObjectInputStream in = null;
