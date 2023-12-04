@@ -13,7 +13,7 @@ public class AdventureGame implements Serializable {
     private HashMap<String,String> synonyms = new HashMap<>(); //A HashMap to store synonyms of commands.
     private final String[] actionVerbs = {"QUIT","INVENTORY","TAKE","DROP"}; //List of action verbs (other than motions) that exist in all games. Motion vary depending on the room and game.
     public Player player; //The Player of the game.
-    private String summaryText = ""; // A variable to store the Summary text of the game. This text is displayed when the user clicks the "Summary" button.
+    private String summaryText; // A variable to store the Summary text of the game. This text is displayed when the user clicks the "Summary" button.
     private int numSumTextLines = 0; // A counter to store the number of lines of text in the Summary, in order to scale the ScrollPane appropriately
 
     /**
@@ -284,7 +284,7 @@ public class AdventureGame implements Serializable {
      * getSummaryText
      * __________________________
      * Getter method for summaryText
-     * @return summaryText
+     * @return summaryText a string with everything that's happened so far
      */
     public String getSummaryText() {return this.summaryText;}
 

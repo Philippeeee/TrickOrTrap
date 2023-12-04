@@ -67,6 +67,8 @@ public class AdventureGameView {
     private javafx.scene.Node imageNode; // store the image and text after displaying instructions
     private javafx.scene.Node Column; // store the icons column after displaying settings
     public int pause_duration = 5; // num seconds that the user wants in between new text (e.g. during forced movement)
+    public double frame_duration = 0.08;
+    public String speed = "MEDIUM";
     Button newGameButton, loadGameButton, titleScreenSettingsButton, gameSummaryButton; // title screen buttons
     Button titleBackButton; // return to title screen button from game
     Label gameTitleLabel = new Label("Trick Or Trap"); // title label
@@ -723,7 +725,7 @@ public class AdventureGameView {
         Timeline line = new Timeline();
 
         KeyFrame keyFrame = new KeyFrame(
-                Duration.seconds(.025),
+                Duration.seconds(this.frame_duration),
                 event -> {
                     if (i.get() >= roomText.length()) {
                         line.stop();
@@ -1005,7 +1007,7 @@ public class AdventureGameView {
             box.setSpacing(10);
             box.setPadding(new Insets(11));
             textSpeedButton.setPrefSize(100, 100);
-            box.getChildren().addAll(settingsBackButton, saveButton, helpButton, titleBackButton, textSpeedButton);
+            box.getChildren().addAll(settingsBackButton, saveButton, helpButton, textSpeedButton, titleBackButton);
             gridPane.add(box, 2, 0, 1, 2);
             settingsToggle = true;
         } else {
@@ -1061,7 +1063,10 @@ public class AdventureGameView {
         // replace room image with summary
 
         // create Label (for ScrollPane)
-        Label summary_text = new Label(model.getSummaryText());
+        if (this.model.getSummaryText().isEmpty()) {
+            this.model.addToSummaryText("Beginning of game.");
+        }
+        Label summary_text = new Label(this.model.getSummaryText());
         summary_text.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
         summary_text.setFont(new Font("Arial", 12));
         summary_text.setAlignment(Pos.CENTER);

@@ -21,7 +21,7 @@ public class TextSpeedView {
     private Button closeWindowButton; // button to close the menu
     private Button slowSpeedButton, medSpeedButton, hiSpeedButton; // pre-set button options for text speed
     private final String speedLabel = "You are now on text speed: "; // to help communicate user input
-    private Label speedDescrip = new Label(speedLabel + "MEDIUM"); // to help communicate user input
+    private Label speedDescrip = new Label(); // to help communicate user input
     private final int slow = 10; // pre-set text speed value
     private final int medium = 5; // pre-set text speed value
     private final int fast = 2; // pre-set text speed value
@@ -39,6 +39,7 @@ public class TextSpeedView {
         dialog.initOwner(adventureGameView.stage);
 
         speedDescrip.setStyle("-fx-text-fill: white;");
+        speedDescrip.setText(speedLabel + this.adventureGameView.speed);
 
         // create and configure the Slow speed button
         slowSpeedButton = new Button(("Slow"));
@@ -49,8 +50,12 @@ public class TextSpeedView {
         slowSpeedButton.setOnAction(e -> {
             // when the user has selected one of the buttons, update the UI and the internal value
             this.adventureGameView.pause_duration = slow;
-            this.speedDescrip.setText(this.speedLabel + "SLOW");
+            this.adventureGameView.frame_duration = 0.1;
+            this.adventureGameView.speed = "SLOW";
+            this.speedDescrip.setText(this.speedLabel + this.adventureGameView.speed);
         });
+        AdventureGameView.makeButtonAccessible(slowSpeedButton, "Slow Speed", "This is a button to choose a slow wait time in between text slides, and a slow rate at which text rolls out.", "Click this button to make the rate at which entirely new slides of text appear on screen at a slow speed, and for the text to unfurl at a slow pace.");
+
 
         // create and configure the Medium speed button
         medSpeedButton = new Button(("Medium"));
@@ -61,8 +66,12 @@ public class TextSpeedView {
         medSpeedButton.setOnAction(e -> {
             // when the user has selected one of the buttons, update the UI and the internal value
             this.adventureGameView.pause_duration = medium;
-            this.speedDescrip.setText(this.speedLabel + "MEDIUM");
+            this.adventureGameView.frame_duration = .07;
+            this.adventureGameView.speed = "MEDIUM";
+            this.speedDescrip.setText(this.speedLabel + this.adventureGameView.speed);
         });
+        AdventureGameView.makeButtonAccessible(medSpeedButton, "Medium Speed", "This is a button to choose a medium wait time in between text slides, and a medium rate at which text rolls out.", "Click this button to make the rate at which entirely new slides of text to unfurl on screen at a medium speed.");
+
 
         // create and configure the Fast speed button
         hiSpeedButton = new Button(("Fast"));
@@ -73,8 +82,11 @@ public class TextSpeedView {
         hiSpeedButton.setOnAction(e -> {
             // when the user has selected one of the buttons, update the UI and the internal value
             this.adventureGameView.pause_duration = fast;
-            this.speedDescrip.setText(this.speedLabel + "FAST");
+            this.adventureGameView.frame_duration = .025;
+            this.adventureGameView.speed = "FAST";
+            this.speedDescrip.setText(this.speedLabel + this.adventureGameView.speed);
         });
+        AdventureGameView.makeButtonAccessible(hiSpeedButton, "Fast Speed", "This is a button to choose a fast wait time in between text slides, and a fast rate at which text rolls out.", "Click this button to make the rate at which entirely new slides of text appear on screen at a fast speed, and for the text to unfurl at a fast pace.");
 
         // create and configure the Close Window button
         closeWindowButton = new Button("Close Window");
