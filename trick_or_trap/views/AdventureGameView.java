@@ -49,7 +49,7 @@ public class AdventureGameView {
 
     AdventureGame model; //model of the game
     Stage stage; //stage on which all is rendered
-    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton, summaryButton, summaryBackButton, textSpeedButton; //buttons
+    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton, summaryButton, summaryBackButton, textSpeedButton, replayButton; //buttons
     Boolean helpToggle = false; //is help on display?
     Boolean settingsToggle = false; //is settings on display?
     Boolean inventoryToggle = false; //is inventory on display?
@@ -284,6 +284,13 @@ public class AdventureGameView {
         customizeButton2(helpButton, 100, 100);
         makeButtonAccessible(helpButton, "Help Button", "This button gives game instructions.", "This button gives instructions on the game controls. Click it to learn how to play.");
         addInstructionEvent();
+
+
+        replayButton = new Button(" Audio \nReplay");
+        replayButton.setId("Audio Replay");
+        customizeButton(replayButton, 100, 100);
+        makeButtonAccessible(replayButton, "Audio Replay Button", "This button gives replays room audio", "This button gives replays room description dictation audio.");
+        addReplayEvent();
 
 
         settingsButton = new Button("Settings");
@@ -870,6 +877,7 @@ public class AdventureGameView {
         box2.getChildren().add(settingsButton);
         box2.getChildren().add(inventoryButton);
         box2.getChildren().add(summaryButton);
+        box2.getChildren().add(replayButton);
         if (settingsToggle) {
             settingsToggle = false;
             addSettingsBackEvent();
@@ -1132,6 +1140,17 @@ public class AdventureGameView {
         });
     }
 
+    /**
+     * This method handles the event related to the
+     * replay button.
+     */
+    public void addReplayEvent() {
+        replayButton.setOnAction(e -> {
+            stopArticulation(); //if speaking, stop
+            articulateRoomDescription();
+        });
+    }
+
 
     /**
      * This method handles the event related to the
@@ -1241,24 +1260,19 @@ public class AdventureGameView {
      * This method articulates Room Descriptions
      */
     public void articulateRoomDescription() {
-//        String musicFile;
-//        String adventureName = this.model.getDirectoryName();
-//        String roomName = this.model.getPlayer().getCurrentRoom().getRoomName();
-//
-//
-//        if (!this.model.getPlayer().getCurrentRoom().getVisited()) musicFile = "./" + adventureName + "/sounds/" + roomName.toLowerCase() + "-long.mp3" ;
-//        else musicFile = "./" + adventureName + "/sounds/" + roomName.toLowerCase() + "-short.mp3" ;
-//        musicFile = musicFile.replace(" ","-");
-//
-//
-//        Media sound = new Media(new File(musicFile).toURI().toString());
-//
-//
-//        mediaPlayer = new MediaPlayer(sound);
-//        mediaPlayer.play();
-//        mediaPlaying = true;
+        stopArticulation();
+        String musicFile;
+        String adventureName = this.model.getDirectoryName();
+        Integer roomNumber_ = this.model.getPlayer().getCurrentRoom().getRoomNumber();
+        String roomNumber = roomNumber_.toString();
 
+        musicFile = "./" + adventureName + "/sounds/" + roomNumber + ".mp3" ;
 
+        Media sound = new Media(new File(musicFile).toURI().toString());
+
+        mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
+        mediaPlaying = true;
     }
 
 
