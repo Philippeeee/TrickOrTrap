@@ -1014,6 +1014,7 @@ public class AdventureGameView {
             VBox box = new VBox();
             box.setSpacing(10);
             box.setPadding(new Insets(11));
+            textSpeedButton.setPrefSize(100, 100);
             box.getChildren().addAll(settingsBackButton, saveButton, helpButton, titleBackButton, textSpeedButton);
             gridPane.add(box, 2, 0, 1, 2);
             settingsToggle = true;
