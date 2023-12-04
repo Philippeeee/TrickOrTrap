@@ -43,7 +43,7 @@ public class TextSpeedView {
         // create and configure the Slow speed button
         slowSpeedButton = new Button(("Slow"));
         slowSpeedButton.setId("slowSpeedButton");
-        slowSpeedButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        slowSpeedButton.setStyle("-fx-background-color: #cc872d; -fx-text-fill: white;");
         slowSpeedButton.setPrefSize(200, 50);
         slowSpeedButton.setFont(new Font(16));
         slowSpeedButton.setOnAction(e -> {
@@ -55,7 +55,7 @@ public class TextSpeedView {
         // create and configure the Medium speed button
         medSpeedButton = new Button(("Medium"));
         medSpeedButton.setId("medSpeedButton");
-        medSpeedButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        medSpeedButton.setStyle("-fx-background-color: #cc872d; -fx-text-fill: white;");
         medSpeedButton.setPrefSize(200, 50);
         medSpeedButton.setFont(new Font(16));
         medSpeedButton.setOnAction(e -> {
@@ -67,7 +67,7 @@ public class TextSpeedView {
         // create and configure the Fast speed button
         hiSpeedButton = new Button(("Fast"));
         hiSpeedButton.setId("hiSpeedButton");
-        hiSpeedButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        hiSpeedButton.setStyle("-fx-background-color: #cc872d; -fx-text-fill: white;");
         hiSpeedButton.setPrefSize(200, 50);
         hiSpeedButton.setFont(new Font(16));
         hiSpeedButton.setOnAction(e -> {
@@ -79,7 +79,7 @@ public class TextSpeedView {
         // create and configure the Close Window button
         closeWindowButton = new Button("Close Window");
         closeWindowButton.setId("closeWindowButton"); // DO NOT MODIFY ID
-        closeWindowButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+        closeWindowButton.setStyle("-fx-background-color: #cc872d; -fx-text-fill: white;");
         closeWindowButton.setPrefSize(200, 50);
         closeWindowButton.setFont(new Font(16));
         closeWindowButton.setOnAction(e -> dialog.close());
