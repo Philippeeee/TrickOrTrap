@@ -265,77 +265,77 @@ public class AdventureGameView {
         // Buttons
         saveButton = new Button("Save");
         saveButton.setId("Save");
-        customizeButton(saveButton, 100, 100);
+        customizeButton2(saveButton, 100, 100);
         makeButtonAccessible(saveButton, "Save Button", "This button saves the game.", "This button saves the game. Click it in order to save your current progress, so you can play more later.");
         addSaveEvent();
 
 
         loadButton = new Button("Load");
         loadButton.setId("Load");
-        customizeButton(loadButton, 100, 100);
+        customizeButton2(loadButton, 100, 100);
         makeButtonAccessible(loadButton, "Load Button", "This button loads a game from a file.", "This button loads the game from a file. Click it in order to load a game that you saved at a prior date.");
         addLoadEvent();
 
 
         helpButton = new Button("Instructions");
         helpButton.setId("Instructions");
-        customizeButton(helpButton, 100, 100);
+        customizeButton2(helpButton, 100, 100);
         makeButtonAccessible(helpButton, "Help Button", "This button gives game instructions.", "This button gives instructions on the game controls. Click it to learn how to play.");
         addInstructionEvent();
 
 
         settingsButton = new Button("Settings");
         settingsButton.setId("Settings");
-        customizeButton(settingsButton, 100, 100);
+        customizeButton2(settingsButton, 100, 100);
         makeButtonAccessible(settingsButton, "Settings Button", "This button gives access to other buttons related to settings", "This button gives access to other buttons related to settings. Click it to get access.");
         addSettingsEvent();
 
 
         settingsBackButton = new Button("Back");
         settingsBackButton.setId("Back");
-        customizeButton(settingsBackButton, 100, 100);
+        customizeButton2(settingsBackButton, 100, 100);
         makeButtonAccessible(settingsBackButton, "Settings Back Button", "This button will return to the view before pressing 'Settings'", "This button will return to the view before pressing 'Settings'. Click it to return.");
         addSettingsBackEvent();
 
 
         inventoryButton = new Button("Inventory");
         inventoryButton.setId("Inventory");
-        customizeButton(inventoryButton, 100, 100);
+        customizeButton2(inventoryButton, 100, 100);
         makeButtonAccessible(inventoryButton, "Inventory Button", "This button gives access to player's inventory", "This button gives access to images of the items in the player's inventory. Click it to get access.");
         addInventoryEvent();
 
 
         inventoryBackButton = new Button("Back");
         inventoryBackButton.setId("Back");
-        customizeButton(inventoryBackButton, 100, 100);
+        customizeButton2(inventoryBackButton, 100, 100);
         makeButtonAccessible(inventoryBackButton, "Inventory Back Button", "This button will return to the view before pressing 'Inventory'", "This button will return to the view before pressing 'Inventory'. Click it to return.");
         addInventoryBackEvent();
 
 
         summaryButton = new Button("Summary");
         summaryButton.setId("Summary");
-        customizeButton(summaryButton, 100, 100);
+        customizeButton2(summaryButton, 100, 100);
         makeButtonAccessible(summaryButton, "Summary Button", "This button opens the summary tab", "This button opens the summary tab, which will show what's happened in the game so far. Click to open the menu.");
         addSummaryEvent();
 
 
         summaryBackButton = new Button("Back");
         summaryBackButton.setId("SummaryBack");
-        customizeButton(summaryBackButton, 100, 100);
+        customizeButton2(summaryBackButton, 100, 100);
         makeButtonAccessible(summaryBackButton, "Summary Back Button", "This button closes the summary tab", "This button closes the summary tab and reverts the button UI to the default. Click to close the menu.");
         addSummaryBackEvent();
 
         titleBackButton = new Button("Return to Title Screen");
         titleBackButton.setId("Return to Title Screen");
         titleBackButton.setWrapText(true);
-        customizeButton(titleBackButton, 100, 100);
+        customizeButton2(titleBackButton, 100, 100);
         makeButtonAccessible(titleBackButton, "Return to Title Screen Button", "This button will return to the title screen.", "This button will return to the title screen. Click it to return.");
         addTitleReturnEvent();
 
 
         textSpeedButton = new Button("Text\nSpeed\nToggle");
         textSpeedButton.setId("TextSpeed");
-        customizeButton(textSpeedButton, 100, 100);
+        customizeButton2(textSpeedButton, 100, 100);
         makeButtonAccessible(textSpeedButton, "Text Speed Toggle Button", "This button allows you to toggle text speed.", "This button opens the menu in which you can toggle the speed that the text moves. Click to open the menu.");
         addTextSpeedEvent();
 
@@ -402,7 +402,7 @@ public class AdventureGameView {
 
             Button yesButton = new Button("Yes");
             yesButton.setId("Yes");
-            customizeButton(yesButton, width, 50);
+            customizeButton2(yesButton, width, 50);
             makeButtonAccessible(yesButton, "Yes Button", "This button names the save slot base on the text input.", "This button names the save slot base on the text input. Click it return.");
 
             yesButton.setOnAction(e1 -> {
@@ -416,7 +416,7 @@ public class AdventureGameView {
 
             Button noButton = new Button("No");
             noButton.setId("No");
-            customizeButton(noButton, width, 50);
+            customizeButton2(noButton, width, 50);
             makeButtonAccessible(noButton, "No Button", "This button denies naming the save slot.", "This button denies naming the save slot. Click it return.");
 
             noButton.setOnAction(e1 -> {
@@ -535,7 +535,15 @@ public class AdventureGameView {
     private void forcedHelper() {
         List<Passage> passages = model.player.getCurrentRoom().getMotionTable().getDirection();
 
+        int temp = this.pause_duration;
+        if (model.player.getCurrentRoom().getRoomNumber() == 30) {
+            this.pause_duration = 15;
+        }
+
         PauseTransition pause = new PauseTransition(Duration.seconds(this.pause_duration));
+        this.pause_duration = temp;
+
+
         pause.setOnFinished(event -> {
 //            model.movePlayer("FORCED");
             submitEvent("FORCED");
@@ -996,6 +1004,7 @@ public class AdventureGameView {
             VBox box = new VBox();
             box.setSpacing(10);
             box.setPadding(new Insets(11));
+            textSpeedButton.setPrefSize(100, 100);
             box.getChildren().addAll(settingsBackButton, saveButton, helpButton, titleBackButton, textSpeedButton);
             gridPane.add(box, 2, 0, 1, 2);
             settingsToggle = true;
@@ -1155,7 +1164,7 @@ public class AdventureGameView {
 
             Button confirmButton = new Button("Confirm");
             confirmButton.setId("Confirm");
-            customizeButton(confirmButton, width, 50);
+            customizeButton2(confirmButton, width, 50);
             makeButtonAccessible(confirmButton, "Confirm Button", "This button renames the save slot base on the text input.", "This button renames the save slot base on the text input. Click it return.");
 
             confirmButton.setOnAction(e1 -> {

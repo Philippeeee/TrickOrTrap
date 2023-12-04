@@ -63,7 +63,8 @@ public class SettingsView {
         vBoxMain.setStyle("-fx-background-color: #121212;");
         vBoxMain.setPadding(new Insets(20, 20,20,20));
         vBoxMain.setSpacing(40);
-        vBoxMain.getChildren().addAll(vBox1,exitGameButton, returnToTitleScreenButton);
+        adventureGameView.textSpeedButton.setPrefSize(200, 100);
+        vBoxMain.getChildren().addAll(vBox1, returnToTitleScreenButton, adventureGameView.textSpeedButton, exitGameButton);
 
         Scene scene = new Scene(vBoxMain, 1000, 800);
         scene.setFill(Color.BLACK);
