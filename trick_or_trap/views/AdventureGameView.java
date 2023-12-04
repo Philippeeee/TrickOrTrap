@@ -11,7 +11,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.*;
@@ -28,11 +27,9 @@ import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 
 /**
@@ -63,6 +60,10 @@ public class AdventureGameView {
     private boolean mediaPlaying; //to know if the audio is playing
     private javafx.scene.Node imageNode; // store the image and text after displaying instructions
     private javafx.scene.Node Column; // store the icons column after displaying settings
+
+    private AtomicBoolean check = new AtomicBoolean(true);
+    private IntegerProperty num = new SimpleIntegerProperty(0);
+    private final Timeline line = new Timeline();
 
 
     /**
@@ -416,6 +417,9 @@ public class AdventureGameView {
         gridPane.getChildren().remove(j);
 
         getRoomImage(); //get the image of the current room
+        check.set(false);
+        num.set(num.get()+1);
+
         formatText(textToDisplay); //format the text to display
         roomDescLabel.setPrefWidth(555);
         roomDescLabel.setPrefHeight(400);
@@ -469,22 +473,56 @@ public class AdventureGameView {
         roomDescLabel.setAlignment(Pos.CENTER_LEFT);
 
         IntegerProperty i = new SimpleIntegerProperty(0);
-        Timeline line = new Timeline();
+//        Timeline line = new Timeline();
+        check.set(false);
+        IntegerProperty  comparenum = num;
+
 
         KeyFrame keyFrame = new KeyFrame(
                 Duration.seconds(.025),
                 event -> {
-                    if (i.get() >= roomText.length()) {
+                    if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
                         line.stop();
                     } else {
-                        roomDescLabel.setText((roomText.substring(0, i.get())));
-                        i.set(i.get() + 1);
+                        try{
+                            roomDescLabel.setText((roomText.substring(0, i.get())));
+                            i.set(i.get() + 1);
+                        } catch (Exception e){
+                            roomDescLabel.setText(roomText);
+                            i.set(i.get() + 1);
+                        }
                     }
                 });
         line.getKeyFrames().add(keyFrame);
         line.setCycleCount(Animation.INDEFINITE);
         line.play();
+
+        EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode().equals(KeyCode.SPACE)){
+                    int roomt = 0;
+                    try{
+                        roomt = roomDescLabel.getText().length();
+                    } catch (Exception e){
+                        System.out.println("The text is null");
+                    }
+
+                    if(roomt == roomText.length()){
+                        //submitEvent(inputTextField.getText().strip());
+                        submitEvent("FORCED");
+                        inputTextField.setText("");
+                    }else {
+                        line.stop();
+                        roomDescLabel.setText(roomText);
+                        inputTextField.setText("");
+                    }
+                }
+            }
+        };
+        this.inputTextField.addEventHandler(KeyEvent.KEY_RELEASED, eventHandler);
     }
+
 
 
     /**
@@ -523,6 +561,7 @@ public class AdventureGameView {
         roomImageView.setAccessibleText(this.model.getPlayer().getCurrentRoom().getRoomDescription());
         roomImageView.setFocusTraversable(true);
     }
+
 
 
     private ArrayList<Button> getButtons(ArrayList<AdventureObject> objs, boolean yes) {
