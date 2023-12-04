@@ -656,6 +656,7 @@ public class AdventureGameView {
         gridPane.getChildren().remove(j);
 
         getRoomImage(); //get the image of the current room
+        getPfpImage(); // get the image of the current pfp if applicable
         formatText(textToDisplay); //format the text to display
         roomDescLabel.setPrefWidth(555);
         roomDescLabel.setPrefHeight(400);
@@ -748,17 +749,6 @@ public class AdventureGameView {
         roomImageView.setPreserveRatio(false);
         roomImageView.setFitWidth(800);
         roomImageView.setFitHeight(400);
-        /////////////////////////////////////
-        ////////////////////////////////////
-        ////////////////////////////////////
-        pfp = new ImageView(roomImageFile);
-        pfp.setPreserveRatio(false);
-        pfp.setFitWidth(200);
-        pfp.setFitHeight(200);
-        /////////////////////////////////////
-        ////////////////////////////////////
-        /////////////////////////////////////
-
 
         //set accessible text
         roomImageView.setAccessibleRole(AccessibleRole.IMAGE_VIEW);
@@ -1267,6 +1257,33 @@ public class AdventureGameView {
             mediaPlayer.stop(); //shush!
             mediaPlaying = false;
         }
+    }
+
+    /**
+     * getPfpImage
+     * __________________________
+     *
+     * Get the image for the current headshot and place
+     * it in the pfp
+     */
+    private void getPfpImage() {
+        int roomNumber = this.model.getPlayer().getCurrentRoom().getRoomNumber();
+        if (100 < roomNumber && roomNumber < 200) {
+            String roomImage = this.model.getDirectoryName() + "/headshots/" + roomNumber + ".jpg";
+            Image roomImageFile = new Image(roomImage);
+            pfp = new ImageView(roomImageFile);
+            pfp.setPreserveRatio(false);
+            pfp.setFitWidth(200);
+            pfp.setFitHeight(200);
+        } else {
+            String roomImage = this.model.getDirectoryName() + "/headshots/" + "1000" + ".jpg";
+            Image roomImageFile = new Image(roomImage);
+            pfp = new ImageView(roomImageFile);
+            pfp.setPreserveRatio(false);
+            pfp.setFitWidth(200);
+            pfp.setFitHeight(200);
+        }
+
     }
 
     /**

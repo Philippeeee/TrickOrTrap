@@ -32,7 +32,7 @@ FORCED        5
 First Floor - Main Room Carpet 2
 You pull back the carpet to reveal the safe. It remains unlocked, "run" still spelt out.
 -----
-FORCED        5
+FORCED        1
 
 5
 First Floor - SAFE
@@ -335,13 +335,13 @@ FORCED      36
 
 41
 First Floor - Living Room Painting
-A funky little painting, there is a stylized code depicted in it. “4” and an ”E”. You take note of the code.
+A funky little painting, it looks a little suspicious. The vent turns on and a paper falls out. There is a stylized code depicted in it. “4” and an ”E”. You take note of the code.
 -----
 FORCED      36
 
 53
 First Floor - Living Room Painting
-A funky little painting, there is a stylized code depicted in it. “4” and an ”E”.
+A funky little painting, it looks a little suspicious. There is a stylized code depicted in it. “4” and an ”E” next to it.
 -----
 FORCED      36
 
