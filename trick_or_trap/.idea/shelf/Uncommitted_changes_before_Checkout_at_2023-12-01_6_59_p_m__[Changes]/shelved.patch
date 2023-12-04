@@ -1,0 +1,491 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8d83bee6-1757-495c-ac0f-7984009733a6\" name=\"Changes\" comment=\"[1.7] - added quick save\">\r\n      <change beforePath=\"$PROJECT_DIR$/views/SaveView.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/views/SaveView.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2X5EyeFDx30TI0YiuSMlFJ1Zy87\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Downloaded.Files.Path.Enabled\": \"false\",\r\n    \"Repository.Attach.Annotations\": \"false\",\r\n    \"Repository.Attach.JavaDocs\": \"false\",\r\n    \"Repository.Attach.Sources\": \"false\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"codeWithMe.voiceChat.enabledByDefault\": \"false\",\r\n    \"git-widget-placeholder\": \"respond__to__keyboard\",\r\n    \"last_opened_file_path\": \"C:/Users/popot/CSC207/filiatr6/assignment2\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"Libraries\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\" selected=\"Application.AdventureGameApp\">\r\n    <configuration name=\"AdventureGameApp\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"AdventureGameApp\" />\r\n      <module name=\"assignment2\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;C:\\Program Files\\Java\\javafx-sdk-21\\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BasicAdventureTest.getCommandsTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"assignment2\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"BasicAdventureTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"getCommandsTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BasicAdventureTest.getObjectString\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"assignment2\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"BasicAdventureTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"getObjectString\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <module name=\"trick_or_trap\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <module name=\"trick_or_trap\" />\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.AdventureGameApp\" />\r\n        <item itemvalue=\"JUnit.BasicAdventureTest.getCommandsTest\" />\r\n        <item itemvalue=\"JUnit.BasicAdventureTest.getObjectString\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8d83bee6-1757-495c-ac0f-7984009733a6\" name=\"Changes\" comment=\"\" />\r\n      <created>1697910795952</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1697910795952</updated>\r\n      <workItem from=\"1697910796967\" duration=\"5365000\" />\r\n      <workItem from=\"1697917927009\" duration=\"3613000\" />\r\n      <workItem from=\"1697922217761\" duration=\"14000\" />\r\n      <workItem from=\"1697933248547\" duration=\"6002000\" />\r\n      <workItem from=\"1698075677126\" duration=\"4835000\" />\r\n      <workItem from=\"1698082924520\" duration=\"761000\" />\r\n      <workItem from=\"1698090352109\" duration=\"11439000\" />\r\n      <workItem from=\"1698116001008\" duration=\"8252000\" />\r\n      <workItem from=\"1698176892023\" duration=\"20000\" />\r\n      <workItem from=\"1698181407690\" duration=\"17782000\" />\r\n      <workItem from=\"1698247031583\" duration=\"960000\" />\r\n      <workItem from=\"1698267241586\" duration=\"495000\" />\r\n      <workItem from=\"1698350908680\" duration=\"161000\" />\r\n      <workItem from=\"1698356581190\" duration=\"88000\" />\r\n      <workItem from=\"1698356678858\" duration=\"202000\" />\r\n      <workItem from=\"1698417539765\" duration=\"176000\" />\r\n      <workItem from=\"1698425518610\" duration=\"854000\" />\r\n      <workItem from=\"1698443558315\" duration=\"1939000\" />\r\n      <workItem from=\"1698452126718\" duration=\"39000\" />\r\n      <workItem from=\"1698537644400\" duration=\"604000\" />\r\n      <workItem from=\"1698613950835\" duration=\"658000\" />\r\n      <workItem from=\"1698851414240\" duration=\"45000\" />\r\n      <workItem from=\"1698860446384\" duration=\"16000\" />\r\n      <workItem from=\"1698861056023\" duration=\"43000\" />\r\n      <workItem from=\"1699305708809\" duration=\"1695000\" />\r\n      <workItem from=\"1699379361002\" duration=\"2000\" />\r\n      <workItem from=\"1699382071237\" duration=\"1311000\" />\r\n      <workItem from=\"1699906652819\" duration=\"93000\" />\r\n      <workItem from=\"1699910476782\" duration=\"7123000\" />\r\n      <workItem from=\"1699929106336\" duration=\"2594000\" />\r\n      <workItem from=\"1699988408289\" duration=\"180000\" />\r\n      <workItem from=\"1699989606987\" duration=\"550000\" />\r\n      <workItem from=\"1700437743739\" duration=\"763000\" />\r\n      <workItem from=\"1700516604107\" duration=\"10705000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"assignment2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698247196511</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698247196511</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"assignment2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698445460649</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698445460649</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"[1.7] - added quick save\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1700527214925</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1700527214925</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"assignment2\" />\r\n    <MESSAGE value=\"[1.7] - added quick save\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"[1.7] - added quick save\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NullPointerException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/AdventureModel/AdventureGame.java</url>\r\n          <line>145</line>\r\n          <option name=\"timeStamp\" value=\"6\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/assignment2$AdventureGameApp.ic\" NAME=\"AdventureGameApp Coverage Results\" MODIFIED=\"1697912599190\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,8 +4,22 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="[1.7] - added quick save">
+-      <change beforePath="$PROJECT_DIR$/views/SaveView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/SaveView.java" afterDir="false" />
++    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="[1.10] room images">
++      <change beforePath="$PROJECT_DIR$/../assignment2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment2/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AdventureGameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdventureGameApp.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AdventureModel/AdventureGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdventureModel/AdventureGame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AdventureModel/AdventureLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdventureModel/AdventureLoader.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/2.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/3.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/4.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/5.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/6.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/7.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Games/TrickOrTrap/room-images/8.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/views/AdventureGameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/AdventureGameView.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/views/LoadView.java" beforeDir="false" afterPath="$PROJECT_DIR$/views/LoadView.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -13,12 +27,20 @@
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$/.." value="cutsceneDialogue" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+   </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 1
+ }</component>
+   <component name="ProjectId" id="2X5EyeFDx30TI0YiuSMlFJ1Zy87" />
++  <component name="ProjectLevelVcsManager">
++    <ConfirmationsSetting value="1" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -33,23 +55,32 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "WebServerToolWindowFactoryState": "false",
+     "codeWithMe.voiceChat.enabledByDefault": "false",
+-    "git-widget-placeholder": "respond__to__keyboard",
+-    "last_opened_file_path": "C:/Users/popot/CSC207/filiatr6/assignment2",
++    "git-widget-placeholder": "roomImages",
++    "last_opened_file_path": "C:/Users/clara/CSC207/group_39/trick_or_trap/Games/TrickOrTrap/room-images",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+-    "project.structure.last.edited": "Libraries",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "Global Libraries",
+     "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.2",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
++  <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\clara\CSC207\group_39\trick_or_trap\Games\TrickOrTrap\room-images" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\clara\CSC207\group_39\trick_or_trap\Games\TrickOrTrap\objectImages" />
++    </key>
++  </component>
+   <component name="RunManager" selected="Application.AdventureGameApp">
+-    <configuration name="AdventureGameApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++    <configuration name="AdventureGameApp" type="Application" factoryName="Application" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="AdventureGameApp" />
+-      <module name="assignment2" />
+-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-21\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
++      <module name="trick_or_trap" />
++      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\clara\OneDrive\Desktop\javafx-sdk-21\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -74,22 +105,13 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration default="true" type="JetRunConfigurationType">
+-      <module name="trick_or_trap" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+-      <module name="trick_or_trap" />
+-      <option name="filePath" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.AdventureGameApp" />
++    <list>
++      <item itemvalue="Application.AdventureGameApp" />
++      <item itemvalue="JUnit.BasicAdventureTest.getCommandsTest" />
++      <item itemvalue="JUnit.BasicAdventureTest.getObjectString" />
++    </list>
++    <recent_temporary>
++      <list>
+         <item itemvalue="JUnit.BasicAdventureTest.getCommandsTest" />
+         <item itemvalue="JUnit.BasicAdventureTest.getObjectString" />
+       </list>
+@@ -137,6 +159,10 @@
+       <workItem from="1699989606987" duration="550000" />
+       <workItem from="1700437743739" duration="763000" />
+       <workItem from="1700516604107" duration="10705000" />
++      <workItem from="1700601940772" duration="292000" />
++      <workItem from="1700602253351" duration="8025000" />
++      <workItem from="1701117108622" duration="9615000" />
++      <workItem from="1701275795172" duration="17165000" />
+     </task>
+     <task id="LOCAL-00001" summary="assignment2">
+       <option name="closed" value="true" />
+@@ -162,7 +188,47 @@
+       <option name="project" value="LOCAL" />
+       <updated>1700527214925</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="[1.4] - added objects and cutscene text">
++      <option name="closed" value="true" />
++      <created>1701196188240</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1701196188240</updated>
++    </task>
++    <task id="LOCAL-00005" summary="[1.4] - added objects">
++      <option name="closed" value="true" />
++      <created>1701316791737</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1701316791737</updated>
++    </task>
++    <task id="LOCAL-00006" summary="[1.4] - added objects">
++      <option name="closed" value="true" />
++      <created>1701317623521</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1701317623522</updated>
++    </task>
++    <task id="LOCAL-00007" summary="[1.9] cutscene dialogue">
++      <option name="closed" value="true" />
++      <created>1701318386221</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1701318386221</updated>
++    </task>
++    <task id="LOCAL-00008" summary="[1.10] room images">
++      <option name="closed" value="true" />
++      <created>1701472763061</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1701472763061</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -182,7 +248,11 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="assignment2" />
+     <MESSAGE value="[1.7] - added quick save" />
+-    <option name="LAST_COMMIT_MESSAGE" value="[1.7] - added quick save" />
++    <MESSAGE value="[1.4] - added objects and cutscene text" />
++    <MESSAGE value="[1.4] - added objects" />
++    <MESSAGE value="[1.9] cutscene dialogue" />
++    <MESSAGE value="[1.10] room images" />
++    <option name="LAST_COMMIT_MESSAGE" value="[1.10] room images" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: views/AdventureGameView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package views;\r\n\r\n\r\nimport AdventureModel.AdventureGame;\r\nimport AdventureModel.*;\r\nimport javafx.animation.PauseTransition;\r\nimport javafx.application.Platform;\r\nimport javafx.geometry.Insets;\r\nimport javafx.geometry.Pos;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.media.Media;\r\nimport javafx.scene.media.MediaPlayer;\r\nimport javafx.scene.paint.Color;\r\nimport javafx.scene.layout.*;\r\nimport javafx.scene.input.KeyEvent; //you will need these!\r\nimport javafx.scene.input.KeyCode;\r\nimport javafx.scene.text.Font;\r\nimport javafx.stage.Stage;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.util.Duration;\r\nimport javafx.event.EventHandler; //you will need this too!\r\nimport javafx.scene.AccessibleRole;\r\nimport views.SaveView.*;\r\n\r\n\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\n\r\n\r\n/**\r\n * Class AdventureGameView.\r\n *\r\n * This is the Class that will visualize your model.\r\n *\r\n */\r\npublic class AdventureGameView {\r\n\r\n\r\n    AdventureGame model; //model of the game\r\n    Stage stage; //stage on which all is rendered\r\n    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton; //buttons\r\n    Boolean helpToggle = false; //is help on display?\r\n    Boolean settingsToggle = false; //is settings on display?\r\n    Boolean inventoryToggle = false; //is inventory on display?\r\n    ImageView pfp; //to hold character headshot if applicable\r\n    GridPane gridPane = new GridPane(); //to hold images and buttons\r\n    Label roomDescLabel = new Label(); //to hold room description and/or instructions\r\n    //    VBox objectsInRoom = new VBox(); //to hold room items\r\n    VBox objectsInInventory = new VBox(); //to hold inventory items\r\n    ImageView roomImageView; //to hold room image\r\n    TextField inputTextField; //for user input\r\n    ScrollPane inventory; //to hold player inventory\r\n    private MediaPlayer mediaPlayer; //to play audio\r\n    private boolean mediaPlaying; //to know if the audio is playing\r\n    private javafx.scene.Node imageNode; // store the image and text after displaying instructions\r\n    private javafx.scene.Node Column; // store the icons column after displaying settings\r\n\r\n\r\n    /**\r\n     * Adventure Game View Constructor\r\n     * __________________________\r\n     * Initializes attributes\r\n     */\r\n    public AdventureGameView(AdventureGame model, Stage stage) {\r\n        this.model = model;\r\n        this.stage = stage;\r\n        intiUI();\r\n    }\r\n\r\n\r\n    /**\r\n     * Initialize the UI\r\n     */\r\n    public void intiUI() {\r\n\r\n\r\n        // setting up the stage\r\n        this.stage.setTitle(\"group_39's Adventure Game\");\r\n\r\n\r\n//        Inventory + Room items\r\n        objectsInInventory.setSpacing(20);\r\n        objectsInInventory.setAlignment(Pos.TOP_CENTER);\r\n//        objectsInRoom.setSpacing(10);\r\n//        objectsInRoom.setAlignment(Pos.TOP_CENTER);\r\n\r\n\r\n        // GridPane, anyone?\r\n        gridPane.setPadding(new Insets(20));\r\n        gridPane.setBackground(new Background(new BackgroundFill(\r\n                Color.valueOf(\"#000000\"),\r\n                new CornerRadii(0),\r\n                new Insets(0)\r\n        )));\r\n\r\n\r\n        //Three columns, three rows for the GridPane\r\n        ColumnConstraints column1 = new ColumnConstraints(250);\r\n        ColumnConstraints column2 = new ColumnConstraints();\r\n        ColumnConstraints column3 = new ColumnConstraints(100);\r\n        column2.setHgrow( Priority.SOMETIMES );\r\n\r\n\r\n        // Row constraints\r\n        RowConstraints row1 = new RowConstraints();\r\n        RowConstraints row2 = new RowConstraints(200);\r\n        RowConstraints row3 = new RowConstraints(150 );\r\n        row1.setVgrow( Priority.SOMETIMES );\r\n        row3.setVgrow( Priority.SOMETIMES );\r\n\r\n\r\n        gridPane.getColumnConstraints().addAll( column2, column3 );\r\n        gridPane.getRowConstraints().addAll( row1 , row2 , row1 );\r\n\r\n\r\n        // Buttons\r\n        saveButton = new Button(\"Save\");\r\n        saveButton.setId(\"Save\");\r\n        customizeButton(saveButton, 100, 100);\r\n        makeButtonAccessible(saveButton, \"Save Button\", \"This button saves the game.\", \"This button saves the game. Click it in order to save your current progress, so you can play more later.\");\r\n        addSaveEvent();\r\n\r\n\r\n        loadButton = new Button(\"Load\");\r\n        loadButton.setId(\"Load\");\r\n        customizeButton(loadButton, 100, 100);\r\n        makeButtonAccessible(loadButton, \"Load Button\", \"This button loads a game from a file.\", \"This button loads the game from a file. Click it in order to load a game that you saved at a prior date.\");\r\n        addLoadEvent();\r\n\r\n\r\n        helpButton = new Button(\"Instructions\");\r\n        helpButton.setId(\"Instructions\");\r\n        customizeButton(helpButton, 100, 100);\r\n        makeButtonAccessible(helpButton, \"Help Button\", \"This button gives game instructions.\", \"This button gives instructions on the game controls. Click it to learn how to play.\");\r\n        addInstructionEvent();\r\n\r\n\r\n        settingsButton = new Button(\"Settings\");\r\n        settingsButton.setId(\"Settings\");\r\n        customizeButton(settingsButton, 100, 100);\r\n        makeButtonAccessible(settingsButton, \"Settings Button\", \"This button gives access to other buttons related to settings\", \"This button gives access to other buttons related to settings. Click it to get access.\");\r\n        addSettingsEvent();\r\n\r\n\r\n        settingsBackButton = new Button(\"Back\");\r\n        settingsBackButton.setId(\"Back\");\r\n        customizeButton(settingsBackButton, 100, 100);\r\n        makeButtonAccessible(settingsBackButton, \"Settings Back Button\", \"This button will return to the view before pressing 'Settings'\", \"This button will return to the view before pressing 'Settings'. Click it to return.\");\r\n        addSettingsBackEvent();\r\n\r\n\r\n        inventoryButton = new Button(\"Inventory\");\r\n        inventoryButton.setId(\"Inventory\");\r\n        customizeButton(inventoryButton, 100, 100);\r\n        makeButtonAccessible(inventoryButton, \"Inventory Button\", \"This button gives access to player's inventory\", \"This button gives access to images of the items in the player's inventory. Click it to get access.\");\r\n        addInventoryEvent();\r\n\r\n\r\n        inventoryBackButton = new Button(\"Back\");\r\n        inventoryBackButton.setId(\"Back\");\r\n        customizeButton(inventoryBackButton, 100, 100);\r\n        makeButtonAccessible(inventoryBackButton, \"Inventory Back Button\", \"This button will return to the view before pressing 'Inventory'\", \"This button will return to the view before pressing 'Inventory'. Click it to return.\");\r\n        addInventoryBackEvent();\r\n\r\n\r\n        inputTextField = new TextField();\r\n        inputTextField.setFont(new Font(\"Arial\", 16));\r\n        inputTextField.setFocusTraversable(true);\r\n\r\n\r\n        inputTextField.setAccessibleRole(AccessibleRole.TEXT_AREA);\r\n        inputTextField.setAccessibleRoleDescription(\"Text Entry Box\");\r\n        inputTextField.setAccessibleText(\"Enter commands in this box.\");\r\n        inputTextField.setAccessibleHelp(\"This is the area in which you can enter commands you would like to play.  Enter a command and hit return to continue.\");\r\n        addTextHandlingEvent(); //attach an event to this input field\r\n\r\n\r\n        Label commandLabel = new Label(\"What would you like to do?\");\r\n        commandLabel.setStyle(\"-fx-text-fill: white;\");\r\n        commandLabel.setFont(new Font(\"Arial\", 16));\r\n\r\n\r\n        updateScene(\"\"); //method displays an image and whatever text is supplied\r\n        updateItems(); //update items shows inventory and objects in rooms\r\n\r\n\r\n        // adding the text area and submit button to a VBox\r\n        VBox textEntry = new VBox();\r\n        textEntry.setStyle(\"-fx-background-color: #000000;\");\r\n        textEntry.setPadding(new Insets(20, 20, 20, 20));\r\n        textEntry.getChildren().addAll(commandLabel, inputTextField);\r\n        textEntry.setSpacing(10);\r\n        textEntry.setAlignment(Pos.CENTER);\r\n        gridPane.add( textEntry, 0, 2, 3, 1 );\r\n\r\n\r\n        // Render everything\r\n        var scene = new Scene( gridPane ,  1000, 800);\r\n        scene.setFill(Color.BLACK);\r\n        this.stage.setScene(scene);\r\n        this.stage.setResizable(false);\r\n        this.stage.show();\r\n    }\r\n\r\n\r\n    /**\r\n     * makeButtonAccessible\r\n     * __________________________\r\n     * For information about ARIA standards, see\r\n     * https://www.w3.org/WAI/standards-guidelines/aria/\r\n     *\r\n     * @param inputButton the button to add screenreader hooks to\r\n     * @param name ARIA name\r\n     * @param shortString ARIA accessible text\r\n     * @param longString ARIA accessible help text\r\n     */\r\n    public static void makeButtonAccessible(Button inputButton, String name, String shortString, String longString) {\r\n        inputButton.setAccessibleRole(AccessibleRole.BUTTON);\r\n        inputButton.setAccessibleRoleDescription(name);\r\n        inputButton.setAccessibleText(shortString);\r\n        inputButton.setAccessibleHelp(longString);\r\n        inputButton.setFocusTraversable(true);\r\n    }\r\n\r\n\r\n    /**\r\n     * customizeButton\r\n     * __________________________\r\n     *\r\n     * @param inputButton the button to make stylish :)\r\n     * @param w width\r\n     * @param h height\r\n     */\r\n    private void customizeButton(Button inputButton, int w, int h) {\r\n        inputButton.setPrefSize(w, h);\r\n        inputButton.setFont(new Font(\"Arial\", 16));\r\n        inputButton.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n    }\r\n\r\n\r\n    /**\r\n     * addTextHandlingEvent\r\n     * __________________________\r\n     * Add an event handler to the myTextField attribute\r\n     *\r\n     * Your event handler should respond when users\r\n     * hits the ENTER or TAB KEY. If the user hits\r\n     * the ENTER Key, strip white space from the\r\n     * input to myTextField and pass the stripped\r\n     * string to submitEvent for processing.\r\n     *\r\n     * If the user hits the TAB key, move the focus\r\n     * of the scene onto any other node in the scene\r\n     * graph by invoking requestFocus method.\r\n     */\r\n    private void addTextHandlingEvent() {\r\n        EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {\r\n            @Override\r\n            public void handle(KeyEvent keyEvent) {\r\n                if (keyEvent.getCode().equals(KeyCode.ENTER)) {\r\n                    submitEvent(inputTextField.getText().strip());\r\n                    inputTextField.setText(\"\");\r\n                } else if (keyEvent.getCode().equals(KeyCode.TAB)) {\r\n                    gridPane.requestFocus();\r\n                }\r\n            }\r\n        };\r\n        this.inputTextField.addEventHandler(KeyEvent.KEY_RELEASED, eventHandler);\r\n\r\n\r\n    }\r\n\r\n\r\n    private void forcedHelper() {\r\n        List<Passage> passages = model.player.getCurrentRoom().getMotionTable().getDirection();\r\n        PauseTransition pause = new PauseTransition(Duration.seconds(5));\r\n        pause.setOnFinished(event -> {\r\n//            model.movePlayer(\"FORCED\");\r\n            submitEvent(\"FORCED\");\r\n//            updateScene(\"\");\r\n//            updateItems();\r\n        });\r\n        for (Passage p: passages) {\r\n            if (p.getDirection().equals(\"FORCED\") && p.getDestinationRoom() != 0) {\r\n                pause.play();\r\n            }\r\n        }\r\n    }\r\n    /**\r\n     * submitEvent\r\n     * __________________________\r\n     *\r\n     * @param text the command that needs to be processed\r\n     */\r\n    private void submitEvent(String text) {\r\n\r\n\r\n        text = text.strip(); //get rid of white space\r\n        stopArticulation(); //if speaking, stop\r\n\r\n\r\n        if (text.equalsIgnoreCase(\"OBSERVE\") || text.equalsIgnoreCase(\"L\")) {\r\n            String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription();\r\n            String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();\r\n            if (!objectString.isEmpty()) roomDescLabel.setText(roomDesc + \"\\n\\nObjects in this room:\\n\" + objectString);\r\n            articulateRoomDescription(); //all we want, if we are looking, is to repeat description.\r\n            return;\r\n        } else if (text.equalsIgnoreCase(\"HELP\") || text.equalsIgnoreCase(\"H\")) {\r\n            showInstructions();\r\n            return;\r\n        } else if (text.equalsIgnoreCase(\"COMMANDS\") || text.equalsIgnoreCase(\"C\")) {\r\n            showCommands(); //this is new!  We did not have this command in A1\r\n            return;\r\n        }\r\n\r\n\r\n        //try to move!\r\n        String output = this.model.interpretAction(text); //process the command!\r\n\r\n\r\n        if (output == null || (!output.equals(\"GAME OVER\") && !output.equals(\"FORCED\") && !output.equals(\"HELP\"))) {\r\n            if (output.equals(\"INVENTORY!\")){\r\n                if (settingsToggle) {\r\n                    showSettings();\r\n                }\r\n                showInventory();\r\n            } else if (output.equals(\"SAVE!\")) {\r\n                SaveView.quickSaveGame(model);\r\n            } else {\r\n                updateScene(output);\r\n                updateItems();\r\n            }\r\n        } else if (output.equals(\"GAME OVER\")) {\r\n            updateScene(\"\");\r\n            updateItems();\r\n            PauseTransition pause = new PauseTransition(Duration.seconds(10));\r\n            pause.setOnFinished(event -> {\r\n                Platform.exit();\r\n            });\r\n            pause.play();\r\n        } else if (output.equals(\"FORCED\")) {\r\n            //write code here to handle \"FORCED\" events!\r\n            //Your code will need to display the image in the\r\n            //current room and pause, then transition to\r\n            //the forced room.\r\n            updateScene(\"\");\r\n            updateItems();\r\n            forcedHelper();\r\n        }\r\n    }\r\n\r\n\r\n\r\n\r\n    /**\r\n     * showCommands\r\n     * __________________________\r\n     *\r\n     * update the text in the GUI (within roomDescLabel)\r\n     * to show all the moves that are possible from the\r\n     * current room.\r\n     */\r\n    private void showCommands() {\r\n        Room room = model.player.getCurrentRoom();\r\n        String text = \"You can move in these directions: \\n\";\r\n        text += room.getCommands();\r\n        roomDescLabel.setText(text);\r\n    }\r\n\r\n\r\n\r\n\r\n    /**\r\n     * updateScene\r\n     * __________________________\r\n     *\r\n     * Show the current room, and print some text below it.\r\n     * If the input parameter is not null, it will be displayed\r\n     * below the image.\r\n     * Otherwise, the current room description will be dispplayed\r\n     * below the image.\r\n     *\r\n     * @param textToDisplay the text to display below the image.\r\n     */\r\n    public void updateScene(String textToDisplay) {\r\n        getRoomImage(); //get the image of the current room\r\n        formatText(textToDisplay); //format the text to display\r\n        roomDescLabel.setPrefWidth(555);\r\n        roomDescLabel.setPrefHeight(400);\r\n        roomDescLabel.setTextOverrun(OverrunStyle.CLIP);\r\n        roomDescLabel.setWrapText(true);\r\n        VBox roomPane = new VBox(roomImageView);\r\n        roomPane.setPadding(new Insets(10));\r\n        roomPane.setAlignment(Pos.TOP_LEFT);\r\n        roomPane.setStyle(\"-fx-background-color: #000000;\");\r\n        HBox bottomthang = new HBox(10);\r\n        bottomthang.getChildren().addAll(pfp, roomDescLabel);\r\n        bottomthang.setPadding(new Insets(10));\r\n        bottomthang.setAlignment(Pos.TOP_LEFT);\r\n        bottomthang.setStyle(\"-fx-background-color: #000000;\");\r\n\r\n\r\n        gridPane.add(roomPane, 0, 0, 2, 1);\r\n        gridPane.add(bottomthang, 0, 1, 2, 1);\r\n        stage.sizeToScene();\r\n\r\n\r\n        //finally, articulate the description\r\n        if (textToDisplay == null || textToDisplay.isBlank()) articulateRoomDescription();\r\n    }\r\n\r\n\r\n    /**\r\n     * formatText\r\n     * __________________________\r\n     *\r\n     * Format text for display.\r\n     *\r\n     * @param textToDisplay the text to be formatted for display.\r\n     */\r\n    private void formatText(String textToDisplay) {\r\n        if (textToDisplay == null || textToDisplay.isBlank()) {\r\n            String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription() + \"\\n\";\r\n            String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();\r\n            if (objectString != null && !objectString.isEmpty()) roomDescLabel.setText(roomDesc + \"\\n\\nObjects in this room:\\n\" + objectString);\r\n            else roomDescLabel.setText(roomDesc);\r\n        } else roomDescLabel.setText(textToDisplay);\r\n        roomDescLabel.setStyle(\"-fx-text-fill: white;\");\r\n        roomDescLabel.setFont(new Font(\"Arial\", 16));\r\n        roomDescLabel.setAlignment(Pos.CENTER);\r\n    }\r\n\r\n\r\n    /**\r\n     * getRoomImage\r\n     * __________________________\r\n     *\r\n     * Get the image for the current room and place\r\n     * it in the roomImageView\r\n     */\r\n    private void getRoomImage() {\r\n\r\n\r\n        int roomNumber = this.model.getPlayer().getCurrentRoom().getRoomNumber();\r\n        String roomImage = this.model.getDirectoryName() + \"/room-images/\" + roomNumber + \".png\";\r\n\r\n\r\n        Image roomImageFile = new Image(roomImage);\r\n        roomImageView = new ImageView(roomImageFile);\r\n        roomImageView.setPreserveRatio(false);\r\n        roomImageView.setFitWidth(800);\r\n        roomImageView.setFitHeight(400);\r\n        /////////////////////////////////////\r\n        ////////////////////////////////////\r\n        ////////////////////////////////////\r\n        pfp = new ImageView(roomImageFile);\r\n        pfp.setPreserveRatio(false);\r\n        pfp.setFitWidth(200);\r\n        pfp.setFitHeight(200);\r\n        /////////////////////////////////////\r\n        ////////////////////////////////////\r\n        /////////////////////////////////////\r\n\r\n\r\n        //set accessible text\r\n        roomImageView.setAccessibleRole(AccessibleRole.IMAGE_VIEW);\r\n        roomImageView.setAccessibleText(this.model.getPlayer().getCurrentRoom().getRoomDescription());\r\n        roomImageView.setFocusTraversable(true);\r\n    }\r\n\r\n\r\n    private ArrayList<Button> getButtons(ArrayList<AdventureObject> objs, boolean yes) {\r\n        ArrayList<Button> buttons = new ArrayList<Button>();\r\n        String[] objects = model.player.getCurrentRoom().getObjectString().split(\", \");\r\n        for (AdventureObject object: objs) {\r\n            String o = object.getName();\r\n            Image objectImageFile = new Image(this.model.getDirectoryName() + \"/objectImages/\" + o + \".jpg\");\r\n            ImageView objectImageView = new ImageView(objectImageFile);\r\n            Button objectButton = new Button();\r\n            objectImageView.setPreserveRatio(true);\r\n            objectImageView.setFitWidth(100);\r\n            objectButton.setGraphic(objectImageView);\r\n            objectButton.setStyle(\"-fx-background-color: #000000;\");\r\n\r\n\r\n//            objectImageView.setFitHeight(100);\r\n//            gridPane.add(objectButton, 0, 1);\r\n            assert false;\r\n            if (yes) {\r\n                makeButtonAccessible(objectButton, object.getName(), \"This object is in the current room.\", \"This object is in the current room. Click it to add the object to your inventory.\");\r\n                objectButton.setOnAction(e -> {\r\n                    String text = model.interpretAction(\"take \" + object.getName());\r\n                    updateScene(text);\r\n                    updateItems();\r\n                });\r\n            } else {\r\n                makeButtonAccessible(objectButton, object.getName(), \"This object is in your inventory.\", \"This object is in your inventory. Click it to add the object to the current room.\");\r\n                objectButton.setOnAction(e -> {\r\n                    String text = model.interpretAction(\"drop \" + object.getName());\r\n                    updateScene(text);\r\n                    updateItems();\r\n                });\r\n            }\r\n            buttons.add(objectButton);\r\n\r\n\r\n\r\n\r\n        }\r\n        return buttons;\r\n    }\r\n    /**\r\n     * updateItems\r\n     * __________________________\r\n     *\r\n     * This method is partially completed, but you are asked to finish it off.\r\n     *\r\n     * The method should populate the objectsInRoom and objectsInInventory Vboxes.\r\n     * Each Vbox should contain a collection of nodes (Buttons, ImageViews, you can decide)\r\n     * Each node represents a different object.\r\n     *\r\n     * Images of each object are in the assets\r\n     * folders of the given adventure game.\r\n     */\r\n    public void updateItems() {\r\n\r\n\r\n        //write some code here to add images of objects in a given room to the objectsInRoom Vbox\r\n//        ArrayList<Button> buttonsRoom = getButtons(model.player.getCurrentRoom().objectsInRoom, true);\r\n\r\n\r\n        //write some code here to add images of objects in a player's inventory room to the objectsInInventory Vbox\r\n        ArrayList<Button> buttonsInventory = getButtons(model.player.inventory, false);\r\n\r\n\r\n        //please use setAccessibleText to add \"alt\" descriptions to your images!\r\n\r\n\r\n        //the path to the image of any is as follows:\r\n        //this.model.getDirectoryName() + \"/objectImages/\" + objectName + \".jpg\";\r\n\r\n\r\n        ScrollPane scO = new ScrollPane(objectsInInventory);\r\n        scO.setFitToWidth(true);\r\n        scO.setStyle(\"-fx-background: #000000; -fx-background-color:transparent;\");\r\n        VBox box = new VBox();\r\n        box.setSpacing(10);\r\n        box.setPadding(new Insets(10));\r\n        for (Button button: buttonsInventory) {\r\n            box.getChildren().add(button);\r\n        }\r\n        scO.setContent(box);\r\n        inventory = scO;\r\n\r\n\r\n        /////////////////////////////////////\r\n        ////////////////////////////////////\r\n        ////////////////////////////////////\r\n        ScrollPane scI = new ScrollPane();\r\n        scI.setFitToWidth(true);\r\n        scI.setStyle(\"-fx-background: #000000; -fx-background-color:transparent;\");\r\n        gridPane.add(scI,2,0, 1, 2);\r\n        VBox box2 = new VBox();\r\n        box2.setSpacing(10);\r\n        box2.setPadding(new Insets(10));\r\n        box2.getChildren().add(settingsButton);\r\n        box2.getChildren().add(inventoryButton);\r\n        if (settingsToggle) {\r\n            settingsToggle = false;\r\n            addSettingsBackEvent();\r\n        }\r\n        if (inventoryToggle) {\r\n            inventoryToggle = false;\r\n            addInventoryBackEvent();\r\n        }\r\n        scI.setContent(box2);\r\n        /////////////////////////////////////\r\n        ///////////////////////////////////\r\n        /////////////////////////////////////\r\n\r\n\r\n    }\r\n\r\n\r\n    /*\r\n     * Show the game instructions.\r\n     *\r\n     * If helpToggle is FALSE:\r\n     * -- display the help text in the CENTRE of the gridPane (i.e. within cell 1,1)\r\n     * -- use whatever GUI elements to get the job done!\r\n     * -- set the helpToggle to TRUE\r\n     * -- REMOVE whatever nodes are within the cell beforehand!\r\n     *\r\n     * If helpToggle is TRUE:\r\n     * -- redraw the room image in the CENTRE of the gridPane (i.e. within cell 1,1)\r\n     * -- set the helpToggle to FALSE\r\n     * -- Again, REMOVE whatever nodes are within the cell beforehand!\r\n     */\r\n    public void showInstructions() {\r\n        javafx.scene.Node n = null;\r\n        for (javafx.scene.Node node : gridPane.getChildren()) {\r\n            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(0)) {\r\n                n = node;\r\n            }\r\n        }\r\n        if (!helpToggle) {\r\n            imageNode = n;\r\n            gridPane.getChildren().remove(n);\r\n            Label label = new Label(model.getInstructions());\r\n            label.setStyle(\"-fx-text-fill: white;-fx-background-color: #000000;\");\r\n            label.setFont(new Font(\"Arial\", 12));\r\n            label.setAlignment(Pos.CENTER);\r\n            label.setPrefWidth(735);\r\n            label.setPrefHeight(421);\r\n            label.setTextOverrun(OverrunStyle.CLIP);\r\n            label.setWrapText(true);\r\n            gridPane.add(label, 0, 0);\r\n            helpToggle = true;\r\n        } else {\r\n            gridPane.getChildren().remove(n);\r\n            gridPane.add(imageNode, 0, 0);\r\n            articulateRoomDescription();\r\n            helpToggle = false;\r\n        }\r\n    }\r\n\r\n\r\n    /**\r\n     * This method handles the event related to the\r\n     * help button.\r\n     */\r\n    public void addInstructionEvent() {\r\n        helpButton.setOnAction(e -> {\r\n            stopArticulation(); //if speaking, stop\r\n            showInstructions();\r\n        });\r\n    }\r\n\r\n\r\n    public void showInventory() {\r\n        javafx.scene.Node n = null;\r\n        for (javafx.scene.Node node : gridPane.getChildren()) {\r\n            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {\r\n                n = node;\r\n            }\r\n        }\r\n        if (!inventoryToggle) {\r\n            Column = n;\r\n            gridPane.getChildren().remove(n);\r\n            VBox invent = new VBox(inventoryBackButton, inventory);\r\n            invent.setSpacing(10);\r\n            invent.setPadding(new Insets(11));\r\n            gridPane.add(invent, 2, 0, 1, 2);\r\n            inventoryToggle = true;\r\n        } else {\r\n            gridPane.getChildren().remove(n);\r\n            gridPane.add(Column, 2, 0, 1, 2);\r\n            inventoryToggle = false;\r\n        }\r\n    }\r\n\r\n\r\n    /**\r\n     * This method handles the event related to the\r\n     * settings button.\r\n     */\r\n    public void addInventoryEvent() {\r\n        inventoryButton.setOnAction(e -> {\r\n            stopArticulation(); //if speaking, stop\r\n            showInventory();\r\n        });\r\n    }\r\n\r\n\r\n    /**\r\n     * This method handles the event related to the\r\n     * settings button.\r\n     */\r\n    public void addInventoryBackEvent() {\r\n        inventoryBackButton.setOnAction(e -> {\r\n            stopArticulation(); //if speaking, stop\r\n            showInventory();\r\n        });\r\n    }\r\n\r\n\r\n    public void showSettings() {\r\n        javafx.scene.Node n = null;\r\n        for (javafx.scene.Node node : gridPane.getChildren()) {\r\n            if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {\r\n                n = node;\r\n            }\r\n        }\r\n        if (!settingsToggle) {\r\n            Column = n;\r\n            gridPane.getChildren().remove(n);\r\n            VBox box = new VBox();\r\n            box.setSpacing(10);\r\n            box.setPadding(new Insets(11));\r\n            box.getChildren().add(settingsBackButton);\r\n            box.getChildren().add(saveButton);\r\n            box.getChildren().add(helpButton);\r\n            box.getChildren().add(loadButton);\r\n            gridPane.add(box, 2, 0, 1, 2);\r\n            settingsToggle = true;\r\n        } else {\r\n            gridPane.getChildren().remove(n);\r\n            gridPane.add(Column, 2, 0);\r\n            settingsToggle = false;\r\n        }\r\n    }\r\n\r\n\r\n    /**\r\n     * This method handles the event related to the\r\n     * settings button.\r\n     */\r\n    public void addSettingsEvent() {\r\n        settingsButton.setOnAction(e -> {\r\n            stopArticulation(); //if speaking, stop\r\n            showSettings();\r\n        });\r\n    }\r\n\r\n\r\n    /**\r\n     * This method handles the event related to the\r\n     * settings back button.\r\n     */\r\n    public void addSettingsBackEvent() {\r\n        settingsBackButton.setOnAction(e -> {\r\n            stopArticulation(); //if speaking, stop\r\n            showSettings();\r\n        });\r\n    }\r\n\r\n\r\n    /**\r\n     * This method handles the event related to the\r\n     * save button.\r\n     */\r\n    public void addSaveEvent() {\r\n        saveButton.setOnAction(e -> {\r\n            gridPane.requestFocus();\r\n            SaveView saveView = new SaveView(this);\r\n        });\r\n    }\r\n\r\n    public void addSaveEvent2() {\r\n        gridPane.requestFocus();\r\n        SaveView saveView = new SaveView(this);\r\n    }\r\n\r\n\r\n    /**\r\n     * This method handles the event related to the\r\n     * load button.\r\n     */\r\n    public void addLoadEvent() {\r\n        loadButton.setOnAction(e -> {\r\n            gridPane.requestFocus();\r\n            LoadView loadView = new LoadView(this);\r\n        });\r\n    }\r\n\r\n\r\n\r\n\r\n    /**\r\n     * This method articulates Room Descriptions\r\n     */\r\n    public void articulateRoomDescription() {\r\n        String musicFile;\r\n        String adventureName = this.model.getDirectoryName();\r\n        String roomName = this.model.getPlayer().getCurrentRoom().getRoomName();\r\n\r\n\r\n        if (!this.model.getPlayer().getCurrentRoom().getVisited()) musicFile = \"./\" + adventureName + \"/sounds/\" + roomName.toLowerCase() + \"-long.mp3\" ;\r\n        else musicFile = \"./\" + adventureName + \"/sounds/\" + roomName.toLowerCase() + \"-short.mp3\" ;\r\n        musicFile = musicFile.replace(\" \",\"-\");\r\n\r\n\r\n        Media sound = new Media(new File(musicFile).toURI().toString());\r\n\r\n\r\n        mediaPlayer = new MediaPlayer(sound);\r\n        mediaPlayer.play();\r\n        mediaPlaying = true;\r\n\r\n\r\n    }\r\n\r\n\r\n    /**\r\n     * This method stops articulations\r\n     * (useful when transitioning to a new room or loading a new game)\r\n     */\r\n    public void stopArticulation() {\r\n        if (mediaPlaying) {\r\n            mediaPlayer.stop(); //shush!\r\n            mediaPlaying = false;\r\n        }\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/views/AdventureGameView.java b/views/AdventureGameView.java
+--- a/views/AdventureGameView.java	
++++ b/views/AdventureGameView.java	
+@@ -185,7 +185,7 @@
+         commandLabel.setFont(new Font("Arial", 16));
+ 
+ 
+-        updateScene(""); //method displays an image and whatever text is supplied
++        updateScene(); //method displays an image and whatever text is supplied
+         updateItems(); //update items shows inventory and objects in rooms
+ 
+ 
+@@ -282,7 +282,7 @@
+         pause.setOnFinished(event -> {
+ //            model.movePlayer("FORCED");
+             submitEvent("FORCED");
+-//            updateScene("");
++//            updateScene(" ");
+ //            updateItems();
+         });
+         for (Passage p: passages) {
+@@ -307,9 +307,9 @@
+         if (text.equalsIgnoreCase("OBSERVE") || text.equalsIgnoreCase("L")) {
+             String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription();
+             String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
+-            if (!objectString.isEmpty()) roomDescLabel.setText(roomDesc + "\n\nObjects in this room:\n" + objectString);
+-            articulateRoomDescription(); //all we want, if we are looking, is to repeat description.
+-            return;
++//            if (!objectString.isEmpty()) roomDescLabel.setText(roomDesc + "\n\nObjects in this room:\n" + objectString);
++//            articulateRoomDescription(); //all we want, if we are looking, is to repeat description.
++//            return;
+         } else if (text.equalsIgnoreCase("HELP") || text.equalsIgnoreCase("H")) {
+             showInstructions();
+             return;
+@@ -332,11 +332,12 @@
+             } else if (output.equals("SAVE!")) {
+                 SaveView.quickSaveGame(model);
+             } else {
+-                updateScene(output);
++                updateScene();
++                run(output);
+                 updateItems();
+             }
+         } else if (output.equals("GAME OVER")) {
+-            updateScene("");
++            updateScene();
+             updateItems();
+             PauseTransition pause = new PauseTransition(Duration.seconds(10));
+             pause.setOnFinished(event -> {
+@@ -348,7 +349,7 @@
+             //Your code will need to display the image in the
+             //current room and pause, then transition to
+             //the forced room.
+-            updateScene("");
++            updateScene();
+             updateItems();
+             forcedHelper();
+         }
+@@ -390,6 +391,7 @@
+     public void updateScene(String textToDisplay) {
+         getRoomImage(); //get the image of the current room
+         formatText(textToDisplay); //format the text to display
++        //run(textToDisplay);
+         roomDescLabel.setPrefWidth(555);
+         roomDescLabel.setPrefHeight(400);
+         roomDescLabel.setTextOverrun(OverrunStyle.CLIP);
+@@ -411,7 +413,78 @@
+ 
+ 
+         //finally, articulate the description
+-        if (textToDisplay == null || textToDisplay.isBlank()) articulateRoomDescription();
++        //if (textToDisplay == null || textToDisplay.isBlank()) articulateRoomDescription();
++    }
++
++    public void updateScene() {
++        getRoomImage(); //get the image of the current room
++        roomDescLabel.setPrefWidth(555);
++        roomDescLabel.setPrefHeight(400);
++        roomDescLabel.setTextOverrun(OverrunStyle.CLIP);
++        roomDescLabel.setWrapText(true);
++        VBox roomPane = new VBox(roomImageView);
++        roomPane.setPadding(new Insets(10));
++        roomPane.setAlignment(Pos.TOP_LEFT);
++        roomPane.setStyle("-fx-background-color: #000000;");
++        HBox bottomthang = new HBox(10);
++        bottomthang.getChildren().addAll(pfp, roomDescLabel);
++        bottomthang.setPadding(new Insets(10));
++        bottomthang.setAlignment(Pos.TOP_LEFT);
++        bottomthang.setStyle("-fx-background-color: #000000;");
++
++
++        gridPane.add(roomPane, 0, 0, 2, 1);
++        gridPane.add(bottomthang, 0, 1, 2, 1);
++        stage.sizeToScene();
++
++
++        //finally, articulate the description
++        //if (textToDisplay == null || textToDisplay.isBlank()) articulateRoomDescription();
++    }
++
++    public void run(String forText) {
++        int txtlen = forText.length();
++        //System.out.println(forText);
++        //System.out.println(txtlen);
++        //formatText(forText);
++        int count = 0;
++        System.out.println("output: "+forText);
++        if (count != txtlen) {
++            while (count != txtlen) {
++                //formatText(forText);
++                //System.out.println(forText.substring(0, count));
++                String outprint = forText.substring(0, count);
++                updateScene(outprint);
++                count += 1;
++                try {
++                    Thread.sleep(10);
++                } catch (InterruptedException e) {
++                    throw new RuntimeException(e);
++                }
++            }
++        }
++
++//        int txtlen = forText.length();
++//        //System.out.println(forText);
++//        //System.out.println(txtlen);
++//        //formatText(forText);
++//        int count = 0;
++//        System.out.println("output: "+forText);
++//        if (count != txtlen) {
++//            while (count != txtlen) {
++//                //formatText(forText);
++//                //System.out.println(forText.substring(0, count));
++//                String outprint = forText.substring(0, count);
++//                formatText(outprint);
++//                count += 1;
++//                try {
++//                    //PauseTransition pause = new PauseTransition(2);
++//                    Thread.sleep(10);
++//                } catch (InterruptedException e) {
++//                    throw new RuntimeException(e);
++//                }
++//            }
++//        }
+     }
+ 
+ 
+@@ -447,7 +520,7 @@
+ 
+ 
+         int roomNumber = this.model.getPlayer().getCurrentRoom().getRoomNumber();
+-        String roomImage = this.model.getDirectoryName() + "/room-images/" + roomNumber + ".png";
++        String roomImage = this.model.getDirectoryName() + "/room-images/" + roomNumber + ".jpg";
+ 
+ 
+         Image roomImageFile = new Image(roomImage);
+@@ -496,6 +569,7 @@
+                 objectButton.setOnAction(e -> {
+                     String text = model.interpretAction("take " + object.getName());
+                     updateScene(text);
++                    //run(text);
+                     updateItems();
+                 });
+             } else {
+@@ -503,6 +577,7 @@
+                 objectButton.setOnAction(e -> {
+                     String text = model.interpretAction("drop " + object.getName());
+                     updateScene(text);
++                    //run(text);
+                     updateItems();
+                 });
+             }
+@@ -624,7 +699,7 @@
+         } else {
+             gridPane.getChildren().remove(n);
+             gridPane.add(imageNode, 0, 0);
+-            articulateRoomDescription();
++            //articulateRoomDescription();
+             helpToggle = false;
+         }
+     }
+Index: views/LoadView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package views;\r\n\r\nimport AdventureModel.AdventureGame;\r\nimport javafx.geometry.Insets;\r\nimport javafx.geometry.Pos;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.ListView;\r\nimport javafx.scene.control.SelectionMode;\r\nimport javafx.scene.layout.VBox;\r\nimport javafx.scene.text.Font;\r\nimport javafx.stage.Modality;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.*;\r\nimport java.util.Arrays;\r\n\r\n\r\n/**\r\n * Class LoadView.\r\n *\r\n * Loads Serialized adventure games.\r\n */\r\npublic class LoadView {\r\n\r\n    private AdventureGameView adventureGameView;\r\n    private Label selectGameLabel;\r\n    private Button selectGameButton;\r\n    private Button closeWindowButton;\r\n\r\n    private ListView<String> GameList;\r\n    private String filename = null;\r\n\r\n    public LoadView(AdventureGameView adventureGameView){\r\n\r\n        //note that the buttons in this view are not accessible!!\r\n        this.adventureGameView = adventureGameView;\r\n        selectGameLabel = new Label(String.format(\"\"));\r\n\r\n        GameList = new ListView<>(); //to hold all the file names\r\n\r\n        final Stage dialog = new Stage(); //dialogue box\r\n        dialog.initModality(Modality.APPLICATION_MODAL);\r\n        dialog.initOwner(adventureGameView.stage);\r\n\r\n        VBox dialogVbox = new VBox(20);\r\n        dialogVbox.setPadding(new Insets(20, 20, 20, 20));\r\n        dialogVbox.setStyle(\"-fx-background-color: #121212;\");\r\n        selectGameLabel.setId(\"CurrentGame\"); // DO NOT MODIFY ID\r\n        GameList.setId(\"GameList\");  // DO NOT MODIFY ID\r\n        GameList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);\r\n        getFiles(GameList); //get files for file selector\r\n        selectGameButton = new Button(\"Change Game\");\r\n        selectGameButton.setId(\"ChangeGame\"); // DO NOT MODIFY ID\r\n        AdventureGameView.makeButtonAccessible(selectGameButton, \"select game\", \"This is the button to select a game\", \"Use this button to indicate a game file you would like to load.\");\r\n\r\n        closeWindowButton = new Button(\"Close Window\");\r\n        closeWindowButton.setId(\"closeWindowButton\"); // DO NOT MODIFY ID\r\n        closeWindowButton.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n        closeWindowButton.setPrefSize(200, 50);\r\n        closeWindowButton.setFont(new Font(16));\r\n        closeWindowButton.setOnAction(e -> dialog.close());\r\n        AdventureGameView.makeButtonAccessible(closeWindowButton, \"close window\", \"This is a button to close the load game window\", \"Use this button to close the load game window.\");\r\n\r\n        //on selection, do something\r\n        selectGameButton.setOnAction(e -> {\r\n            try {\r\n                selectGame(selectGameLabel, GameList);\r\n            } catch (IOException ex) {\r\n                throw new RuntimeException(ex);\r\n            }\r\n        });\r\n\r\n        VBox selectGameBox = new VBox(10, selectGameLabel, GameList, selectGameButton);\r\n\r\n        // Default styles which can be modified\r\n        GameList.setPrefHeight(100);\r\n        selectGameLabel.setStyle(\"-fx-text-fill: #e8e6e3\");\r\n        selectGameLabel.setFont(new Font(16));\r\n        selectGameButton.setStyle(\"-fx-background-color: #17871b; -fx-text-fill: white;\");\r\n        selectGameButton.setPrefSize(200, 50);\r\n        selectGameButton.setFont(new Font(16));\r\n        selectGameBox.setAlignment(Pos.CENTER);\r\n        dialogVbox.getChildren().add(selectGameBox);\r\n        Scene dialogScene = new Scene(dialogVbox, 400, 400);\r\n        dialog.setScene(dialogScene);\r\n        dialog.show();\r\n    }\r\n\r\n    /**\r\n     * Get Files to display in the on screen ListView\r\n     * Populate the listView attribute with .ser file names\r\n     * Files will be located in the Games/Saved directory\r\n     *\r\n     * @param listView the ListView containing all the .ser files in the Games/Saved directory.\r\n     */\r\n    private void getFiles(ListView<String> listView) {\r\n        File file = new File(\"Games/Saved\");\r\n        File[] fileLst = file.listFiles();\r\n        if (fileLst != null) {\r\n            for (File f: fileLst) {\r\n                if (f.getName().endsWith(\".ser\")) {\r\n                    listView.getItems().add(f.getName());\r\n                }\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    /**\r\n     * Select the Game\r\n     * Try to load a game from the Games/Saved\r\n     * If successful, stop any articulation and put the name of the loaded file in the selectGameLabel.\r\n     * If unsuccessful, stop any articulation and start an entirely new game from scratch.\r\n     * In this case, change the selectGameLabel to indicate a new game has been loaded.\r\n     *\r\n     * @param selectGameLabel the label to use to print errors and or successes to the user.\r\n     * @param GameList the ListView to populate\r\n     */\r\n    private void selectGame(Label selectGameLabel, ListView<String> GameList) throws IOException {\r\n        //saved games will be in the Games/Saved folder!\r\n        // todo populate Game list?\r\n        String gameString = GameList.getSelectionModel().getSelectedItem();\r\n        try {\r\n            this.adventureGameView.stopArticulation();\r\n            AdventureGame game = loadGame(\"Games/Saved/\" + gameString);\r\n//            String gameName = game.getDirectoryName();\r\n            selectGameLabel.setText(\"Selected Game: \" + gameString);\r\n            adventureGameView.model = game;\r\n            adventureGameView.updateScene(\"\");\r\n            adventureGameView.updateItems();\r\n\r\n//            GameList.getItems().add(gameName);\r\n        } catch (ClassNotFoundException e) {\r\n            this.adventureGameView.stopArticulation();\r\n            // todo what is game name?\r\n            String[] n = this.adventureGameView.model.getDirectoryName().split(\"/\");\r\n            String gameName = Arrays.stream(n).toList().get(n.length-1);\r\n            AdventureGame newGame = new AdventureGame(gameName);\r\n            selectGameLabel.setText(\"A new\" + gameName + \"game has been loaded\");\r\n//            GameList.getItems().add(gameName);\r\n        }\r\n//        catch (IOException e) {\r\n//            throw new IOException();\r\n//        }\r\n\r\n    }\r\n\r\n    /**\r\n     * Load the Game from a file\r\n     *\r\n     * @param GameFile file to load\r\n     * @return loaded Tetris Model\r\n     */\r\n    public AdventureGame loadGame(String GameFile) throws IOException, ClassNotFoundException {\r\n        // Reading the object from a file\r\n        FileInputStream file = null;\r\n        ObjectInputStream in = null;\r\n        try {\r\n            file = new FileInputStream(GameFile);\r\n            in = new ObjectInputStream(file);\r\n            return (AdventureGame) in.readObject();\r\n        } finally {\r\n            if (in != null) {\r\n                in.close();\r\n                file.close();\r\n            }\r\n        }\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/views/LoadView.java b/views/LoadView.java
+--- a/views/LoadView.java	
++++ b/views/LoadView.java	
+@@ -128,7 +128,7 @@
+ //            String gameName = game.getDirectoryName();
+             selectGameLabel.setText("Selected Game: " + gameString);
+             adventureGameView.model = game;
+-            adventureGameView.updateScene("");
++            adventureGameView.updateScene();
+             adventureGameView.updateItems();
+ 
+ //            GameList.getItems().add(gameName);
+Index: ../assignment2/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8d83bee6-1757-495c-ac0f-7984009733a6\" name=\"Changes\" comment=\"assignment2\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2X5EyeFDx30TI0YiuSMlFJ1Zy87\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/popot/CSC207/filiatr6/lab07&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.AdventureGameApp\">\r\n    <configuration name=\"AdventureGameApp\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"AdventureGameApp\" />\r\n      <module name=\"assignment2\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;C:\\Program Files\\Java\\javafx-sdk-21\\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BasicAdventureTest.getCommandsTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"assignment2\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"BasicAdventureTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"getCommandsTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"BasicAdventureTest.getObjectString\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"assignment2\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"BasicAdventureTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"getObjectString\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.AdventureGameApp\" />\r\n        <item itemvalue=\"JUnit.BasicAdventureTest.getCommandsTest\" />\r\n        <item itemvalue=\"JUnit.BasicAdventureTest.getObjectString\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8d83bee6-1757-495c-ac0f-7984009733a6\" name=\"Changes\" comment=\"\" />\r\n      <created>1697910795952</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1697910795952</updated>\r\n      <workItem from=\"1697910796967\" duration=\"5365000\" />\r\n      <workItem from=\"1697917927009\" duration=\"3613000\" />\r\n      <workItem from=\"1697922217761\" duration=\"14000\" />\r\n      <workItem from=\"1697933248547\" duration=\"6002000\" />\r\n      <workItem from=\"1698075677126\" duration=\"4835000\" />\r\n      <workItem from=\"1698082924520\" duration=\"761000\" />\r\n      <workItem from=\"1698090352109\" duration=\"11439000\" />\r\n      <workItem from=\"1698116001008\" duration=\"8252000\" />\r\n      <workItem from=\"1698176892023\" duration=\"20000\" />\r\n      <workItem from=\"1698181407690\" duration=\"17782000\" />\r\n      <workItem from=\"1698247031583\" duration=\"960000\" />\r\n      <workItem from=\"1698267241586\" duration=\"495000\" />\r\n      <workItem from=\"1698350908680\" duration=\"161000\" />\r\n      <workItem from=\"1698356581190\" duration=\"88000\" />\r\n      <workItem from=\"1698356678858\" duration=\"202000\" />\r\n      <workItem from=\"1698417539765\" duration=\"176000\" />\r\n      <workItem from=\"1698425518610\" duration=\"854000\" />\r\n      <workItem from=\"1698443558315\" duration=\"1939000\" />\r\n      <workItem from=\"1698452126718\" duration=\"39000\" />\r\n      <workItem from=\"1698537644400\" duration=\"604000\" />\r\n      <workItem from=\"1698613950835\" duration=\"658000\" />\r\n      <workItem from=\"1698851414240\" duration=\"45000\" />\r\n      <workItem from=\"1698860446384\" duration=\"16000\" />\r\n      <workItem from=\"1698861056023\" duration=\"43000\" />\r\n      <workItem from=\"1699305708809\" duration=\"1695000\" />\r\n      <workItem from=\"1699379361002\" duration=\"2000\" />\r\n      <workItem from=\"1699382071237\" duration=\"1069000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"assignment2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698247196511</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698247196511</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"assignment2\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698445460649</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698445460649</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"assignment2\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"assignment2\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <breakpoint enabled=\"true\" type=\"java-exception\">\r\n          <properties class=\"java.lang.NullPointerException\" package=\"java.lang\" />\r\n          <option name=\"timeStamp\" value=\"3\" />\r\n        </breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\r\n    <SUITE FILE_PATH=\"coverage/assignment2$AdventureGameApp.ic\" NAME=\"AdventureGameApp Coverage Results\" MODIFIED=\"1697912599190\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/../assignment2/.idea/workspace.xml b/../assignment2/.idea/workspace.xml
+--- a/../assignment2/.idea/workspace.xml	
++++ b/../assignment2/.idea/workspace.xml	
+@@ -4,7 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2" />
++    <list default="true" id="8d83bee6-1757-495c-ac0f-7984009733a6" name="Changes" comment="assignment2">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -12,6 +14,7 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 1
+@@ -21,28 +24,28 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/popot/CSC207/filiatr6/lab07&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Downloaded.Files.Path.Enabled": "false",
++    "Repository.Attach.Annotations": "false",
++    "Repository.Attach.JavaDocs": "false",
++    "Repository.Attach.Sources": "false",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "codeWithMe.voiceChat.enabledByDefault": "false",
++    "git-widget-placeholder": "Develop",
++    "last_opened_file_path": "C:/Users/clara/CSC207/group_39/trick_or_trap",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "project.structure.last.edited": "Libraries",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RunManager" selected="Application.AdventureGameApp">
+     <configuration name="AdventureGameApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="AdventureGameApp" />
+@@ -115,6 +118,9 @@
+       <workItem from="1699305708809" duration="1695000" />
+       <workItem from="1699379361002" duration="2000" />
+       <workItem from="1699382071237" duration="1069000" />
++      <workItem from="1699989263766" duration="900000" />
++      <workItem from="1700090559351" duration="37000" />
++      <workItem from="1700601437116" duration="499000" />
+     </task>
+     <task id="LOCAL-00001" summary="assignment2">
+       <option name="closed" value="true" />
