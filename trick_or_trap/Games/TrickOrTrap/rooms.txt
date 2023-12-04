@@ -7,6 +7,8 @@ STAIRS        100/STAIRSKEY
 STAIRS        2
 CARPET        3
 MIRROR        6
+LEFT        20
+RIGHT        36
 
 2
 First Floor - Main Room Stairs
@@ -66,8 +68,8 @@ RIGHT        27
 First Floor - Kitchen
 You are in a dated kitchen. You see a fridge, a freezer chest, and a sink with a trash can underneath it. There is a dining room on the left side of the room.
 -----
-LEFT        20
-BACK        8
+BACK        20
+RIGHT        8
 FRIDGE      50/FRIDGEMAGNETS
 FRIDGE        11
 FREEZER        51/FREEZERNOTE
@@ -151,10 +153,11 @@ FORCED      10
 First Floor - Dining Room
 You are in the dining room. There is a wooden dinner table with four wooden chairs. Behind the table, you see a window. The kitchen is on the right side of the room.
 -----
-RIGHT      10
+FORWARD      10
 WINDOW      21
 CHAIR      23
 TABLE      25
+RIGHT      1
 
 21
 First Floor - Dining Room Window
@@ -201,7 +204,7 @@ First Floor - Library
 You are in the library. If it weren't for all the dust, it would have been a cozy spot to read some books. You see a bookshelf, a desk, a chair, and a globe. To the left is the corridor and to the right is the living room.
 -----
 LEFT      8
-RIGHT      36
+BACK      36
 BOOKSHELF      28
 DESK      31/FIREPLACEKEY
 DESK      30
@@ -289,7 +292,7 @@ FORCED      27
 First Floor - Living Room
 You are in the living room. You see a couch, a table with a carpet underneath, and an old TV. Along the edges of the room, there is a lamp, a painting, and a fireplace.
 -----
-LEFT      27
+FORWARD      27
 FIREPLACE    52/FIREPLACECODE
 FIREPLACE    38/FIREPLACEKEY
 FIREPLACE      37
@@ -300,13 +303,14 @@ TABLE      42
 CARPET      43
 COUCH      46/ICEPICK
 COUCH      44
+LEFT      1
 
 37
 First Floor - Living Room Fireplace
 There are burnt logs in the fireplace. Below them, you can see there appears to be slight depressions in the thin layer of ash coating the hearth. The depressions almost resemble numbers.  You’ll need a key to open the glass protective cover.
 -----
 INSPECT     37
-FORCED      36
+EXIT      36
 
 38
 First Floor - Living Room Fireplace 2
@@ -393,81 +397,109 @@ FORCED      0
 Trick or Treat!
 -----
 FORCED     102
+SKIP     1
+NEXT     102
 
 102
 2 cut
 Happy Halloween kids!
 -----
 FORCED     103
+SKIP     1
+NEXT     103
 
 103
 3 cut
 Let's hit up a few more houses and then we can compare our candy!
 -----
 FORCED     104
+SKIP     1
+NEXT     104
 
 104
 4 cut
 That house had laffy taffies!
 -----
 FORCED     105
+SKIP     1
+NEXT     105
 
 105
 5 cut
 Hey guys! Wait up!
 -----
 FORCED     106
+SKIP     1
+NEXT     106
 
 106
 6 cut
 Hey Billy, do you know any candy facts?
 -----
 FORCED     107
+SKIP     1
+NEXT     107
 
 107
 7 cut
 Did you guys know that the first candy was invented in ancient Egypt? *Krrr* over
 -----
 FORCED     108
+SKIP     1
+NEXT     108
 
 108
 8 cut
 Bahahaha of course you'd know that! *Krrr* over... huh? I think my walkie-talky's broken!
 -----
 FORCED     109
+SKIP     1
+NEXT     109
 
 109
 9 cut
 That's what you get for only getting walkie-talkies for the two of you!
 -----
 FORCED     110
+SKIP     1
+NEXT     110
 
 110
 10 cut
 Hey, is that house open for trick or treating?
 -----
 FORCED     111
+SKIP     1
+NEXT     111
 
 111
 11 cut
 It doesn't have any lights on. Besides, it looks creepy...
 -----
 FORCED     112
+SKIP     1
+NEXT     112
 
 112
 12 cut
 Was this house always here?
 -----
 FORCED     113
+SKIP     1
+NEXT     113
 
 113
 13 cut
 Guys, it's fine! There's a kid there, let's go!
 -----
 FORCED     114
+SKIP     1
+NEXT     114
 
 114
 14 cut
 Huh...? Where did everyone go? As you stand up, your notepad and pen slip out of your pocket. You bend down to pick them up before inspecting your surroundings.
 -----
 FORCED     1
+SKIP     1
+NEXT     1
