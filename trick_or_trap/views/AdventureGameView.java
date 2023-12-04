@@ -3,6 +3,8 @@ package views;
 
 import AdventureModel.AdventureGame;
 import AdventureModel.*;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -16,12 +18,16 @@ import javafx.scene.layout.*;
 import javafx.scene.input.KeyEvent; //you will need these!
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import javafx.event.EventHandler; //you will need this too!
 import javafx.scene.AccessibleRole;
+import javafx.animation.Timeline;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import views.SaveView.*;
 
 
@@ -43,7 +49,7 @@ public class AdventureGameView {
 
     AdventureGame model; //model of the game
     Stage stage; //stage on which all is rendered
-    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton, summaryButton, summaryBackButton; //buttons
+    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton, summaryButton, summaryBackButton, textSpeedButton; //buttons
     Boolean helpToggle = false; //is help on display?
     Boolean settingsToggle = false; //is settings on display?
     Boolean inventoryToggle = false; //is inventory on display?
@@ -60,6 +66,12 @@ public class AdventureGameView {
     private boolean mediaPlaying; //to know if the audio is playing
     private javafx.scene.Node imageNode; // store the image and text after displaying instructions
     private javafx.scene.Node Column; // store the icons column after displaying settings
+    public int pause_duration = 5; // num seconds that the user wants in between new text (e.g. during forced movement)
+    Button newGameButton, loadGameButton, titleScreenSettingsButton, gameSummaryButton; // title screen buttons
+    Button titleBackButton; // return to title screen button from game
+    Label gameTitleLabel = new Label("Trick Or Trap"); // title label
+    Scene titleScene; // the scene for the title screen
+    Scene mainGameScene;
 
 
     /**
@@ -71,7 +83,138 @@ public class AdventureGameView {
         this.model = model;
         this.stage = stage;
         intiUI();
+        titleScreenUI();
     }
+
+    public void titleScreenUI() {
+        // setting up the stage
+        this.stage.setTitle("group_39's Adventure Game");
+
+
+        // Buttons
+        newGameButton = new Button("New Game");
+        newGameButton.setId("New Game");
+        customizeButton2(newGameButton, 100, 100);
+        makeButtonAccessible(newGameButton, "New Game Button", "This button plays a new game.", "This button plays a new game. Click it to create a new save slot and play a new game.");
+        addNewGameEvent();
+
+        loadGameButton = new Button("Load Game");
+        loadGameButton.setId("Load Game");
+        customizeButton2(loadGameButton, 100, 100);
+        makeButtonAccessible(loadGameButton, "Load Game Button", "This button plays a previous played game.", "This button plays a previously played game. Click it to choose from your save slots.");
+        addLoadGameEvent();
+
+        titleScreenSettingsButton = new Button("Settings");
+        titleScreenSettingsButton.setId("Settings");
+        customizeButton2(titleScreenSettingsButton, 100, 100);
+        makeButtonAccessible(titleScreenSettingsButton, "Settings Button", "This button opens the settings.", "This button opens the settings. Click it to edit your preferences for more suitable gameplay.");
+        addTitleSettingsEvent();
+
+        gameSummaryButton = new Button("Game Instructions");
+        gameSummaryButton.setId("Game Summary");
+        customizeButton2(gameSummaryButton, 100, 100);
+        makeButtonAccessible(gameSummaryButton, "Game Summary Button", "This button provides a summary of the game.", "This button provides a summary of the game. Click it to learn how to play.");
+        addGameSummaryEvent();
+
+        gameTitleLabel.setStyle("-fx-text-fill: #801906;");
+        gameTitleLabel.setFont(new Font("Chiller", 130));
+
+        VBox vboxButtons = new VBox();
+        vboxButtons.setAlignment(Pos.CENTER);
+        vboxButtons.setPadding(new Insets(100));
+        vboxButtons.setSpacing(25);
+        newGameButton.setPrefWidth(300);
+        loadGameButton.setPrefWidth(300);
+        titleScreenSettingsButton.setPrefWidth(300);
+        gameSummaryButton.setPrefWidth(300);
+        vboxButtons.getChildren().addAll(newGameButton, loadGameButton, titleScreenSettingsButton, gameSummaryButton);
+
+        HBox hboxTitle = new HBox();
+        hboxTitle.setAlignment(Pos.CENTER);
+        hboxTitle.getChildren().add(gameTitleLabel);
+
+        VBox vboxMain = new VBox();
+//       IMAGE FROM https://tenor.com/view/fnkgif-haunted-house-lightening-storm-is-coming-scary-gif-13292679
+        BackgroundImage background = new BackgroundImage(
+                new Image("https://media.tenor.com/YYaBvE0VgxsAAAAC/fnkgif-haunted-house.gif",1000,800
+                        ,false,true),
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                BackgroundSize.DEFAULT);
+        vboxMain.setBackground(new Background(background));
+
+        vboxMain.getChildren().addAll(hboxTitle,vboxButtons);
+        vboxMain.setPadding(new Insets(50, 50, 50, 50));
+        titleScene = new Scene(vboxMain, 1000, 800);
+        titleScene.setFill(Color.BLACK);
+        this.stage.setScene(titleScene);
+        this.stage.setResizable(false);
+        this.stage.show();
+    }
+
+    /**
+     * This method handles the event related to the
+     * title summary button.
+     */
+    private void addGameSummaryEvent() {
+        gameSummaryButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            OverviewView summaryView = new OverviewView(this);
+        });    }
+
+    /**
+     * This method handles the event related to the
+     * title settings button.
+     */
+    private void addTitleSettingsEvent() {
+        titleScreenSettingsButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            SettingsView settingsView = new SettingsView(this);
+        });
+    }
+
+    /**
+     * This method handles the event related to the
+     * title laod game button.
+     */
+    private void addLoadGameEvent() {
+        loadGameButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            TitleLoadView titleLoadView = new TitleLoadView(model, this);
+        });
+    }
+
+    /**
+     * This method handles the event related to the
+     * select game button.
+     */
+    public void changeSceneToGameEvent() {
+        gridPane.requestFocus();
+        stage.setScene(mainGameScene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    /**
+     * This method handles the event related to the
+     * title new game button.
+     */
+    private void addNewGameEvent() {
+        newGameButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            stage.setScene(mainGameScene);
+            stage.setResizable(false);
+            AdventureGame game = null;
+            try {
+                game = LoadView.loadGame("Games/Saved/" + "NewGameSave.ser");
+                model = game;
+                updateScene("");
+                updateItems();
+                stage.show();
+            } catch (IOException | ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+
+        });    }
 
 
     /**
@@ -182,6 +325,20 @@ public class AdventureGameView {
         makeButtonAccessible(summaryBackButton, "Summary Back Button", "This button closes the summary tab", "This button closes the summary tab and reverts the button UI to the default. Click to close the menu.");
         addSummaryBackEvent();
 
+        titleBackButton = new Button("Return to Title Screen");
+        titleBackButton.setId("Return to Title Screen");
+        titleBackButton.setWrapText(true);
+        customizeButton(titleBackButton, 100, 100);
+        makeButtonAccessible(titleBackButton, "Return to Title Screen Button", "This button will return to the title screen.", "This button will return to the title screen. Click it to return.");
+        addTitleReturnEvent();
+
+
+        textSpeedButton = new Button("Text\nSpeed\nToggle");
+        textSpeedButton.setId("TextSpeed");
+        customizeButton(textSpeedButton, 100, 100);
+        makeButtonAccessible(textSpeedButton, "Text Speed Toggle Button", "This button allows you to toggle text speed.", "This button opens the menu in which you can toggle the speed that the text moves. Click to open the menu.");
+        addTextSpeedEvent();
+
 
         inputTextField = new TextField();
         inputTextField.setFont(new Font("Arial", 16));
@@ -210,15 +367,86 @@ public class AdventureGameView {
 
 
         // Render everything
-        var scene = new Scene( gridPane ,  1000, 800);
-        scene.setFill(Color.BLACK);
-        this.stage.setScene(scene);
-        this.stage.setResizable(false);
-        this.stage.show();
+        mainGameScene = new Scene( gridPane ,  1000, 800);
+        mainGameScene.setFill(Color.BLACK);
+//        this.stage.setScene(scene);
+//        this.stage.setResizable(false);
+//        this.stage.show();
 
 
     }
 
+    /**
+     * This method handles the event related to the
+     * return to title button.
+     */
+    private void addTitleReturnEvent() {
+        titleBackButton.setOnAction(e -> {
+            stopArticulation(); //if speaking, stop
+            int width = 300;
+            int roomNumber = model.player.getCurrentRoom().getRoomNumber();
+
+            stage.requestFocus();
+            Stage namingStage = new Stage();
+            namingStage.initModality(Modality.APPLICATION_MODAL);
+
+            namingStage.setTitle("Save?");
+
+            Label namingLabel = new Label("Would you like to save? \n Name your save slot:");
+            namingLabel.setId("NamingLabel");
+            namingLabel.setStyle("-fx-text-fill: white;");
+            namingLabel.setFont(new Font("Arial", 20));
+
+            TextField namingTextField = new TextField("Untitled Save");
+            namingTextField.setPromptText("Name your save here.");
+
+            Button yesButton = new Button("Yes");
+            yesButton.setId("Yes");
+            customizeButton(yesButton, width, 50);
+            makeButtonAccessible(yesButton, "Yes Button", "This button names the save slot base on the text input.", "This button names the save slot base on the text input. Click it return.");
+
+            yesButton.setOnAction(e1 -> {
+                namingStage.requestFocus();
+                SaveView.SaveGameWithName(model, namingTextField.getText());
+                namingStage.close();
+                stage.setScene(titleScene);
+                stage.setResizable(false);
+                stage.show();
+            });
+
+            Button noButton = new Button("No");
+            noButton.setId("No");
+            customizeButton(noButton, width, 50);
+            makeButtonAccessible(noButton, "No Button", "This button denies naming the save slot.", "This button denies naming the save slot. Click it return.");
+
+            noButton.setOnAction(e1 -> {
+                namingStage.requestFocus();
+                namingStage.close();
+                stage.setScene(titleScene);
+                stage.setResizable(false);
+                stage.show();
+            });
+
+            HBox buttonsHBox = new HBox();
+            buttonsHBox.getChildren().addAll(yesButton, noButton);
+            buttonsHBox.setSpacing(10);
+
+            VBox namingVBbox = new VBox();
+            namingVBbox.setSpacing(10);
+            namingVBbox.setPadding(new Insets(10, 10, 10, 10));
+            namingVBbox.setMaxWidth(width);
+            namingVBbox.setStyle("-fx-background-color: #121212;");
+            namingVBbox.getChildren().addAll(namingLabel, namingTextField, buttonsHBox);
+
+            Scene namingScene = new Scene(namingVBbox, 300, 120);
+            namingScene.setFill(Color.BLACK);
+            namingStage.setScene(namingScene);
+            namingStage.setResizable(false);
+            namingStage.show();
+
+//            SaveView.quickSaveGame(model);
+        });
+    }
 
 
 
@@ -254,6 +482,20 @@ public class AdventureGameView {
         inputButton.setPrefSize(w, h);
         inputButton.setFont(new Font("Arial", 16));
         inputButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
+    }
+
+    /**
+     * customizeButton2
+     * __________________________
+     *
+     * @param inputButton the button to make stylish :)
+     * @param w width
+     * @param h height
+     */
+    private void customizeButton2(Button inputButton, int w, int h) {
+        inputButton.setPrefSize(w, h);
+        inputButton.setFont(new Font("Arial", 16));
+        inputButton.setStyle("-fx-background-color: #cc872d; -fx-text-fill: white;");
     }
 
 
@@ -292,7 +534,8 @@ public class AdventureGameView {
 
     private void forcedHelper() {
         List<Passage> passages = model.player.getCurrentRoom().getMotionTable().getDirection();
-        PauseTransition pause = new PauseTransition(Duration.seconds(5));
+
+        PauseTransition pause = new PauseTransition(Duration.seconds(this.pause_duration));
         pause.setOnFinished(event -> {
 //            model.movePlayer("FORCED");
             submitEvent("FORCED");
@@ -336,15 +579,17 @@ public class AdventureGameView {
         String output = this.model.interpretAction(text); //process the command!
 
         if (output == null || (!output.equals("GAME OVER") && !output.equals("FORCED") && !output.equals("HELP"))) {
-            updateScene(output);
-            updateItems();
-        } else if (output.equals("INVENTORY!")) {
-            if (settingsToggle) {
-                showSettings();
+            if (output == null){
+                updateScene(output);
+                updateItems();
+            } else if (output.equals("INVENTORY!")){
+                if (settingsToggle) {
+                    showSettings();
+                }
+                showInventory();
+            } else if (output.equals("SAVE!")) {
+                SaveView.quickSaveGame(model);
             }
-            showInventory();
-        } else if (output.equals("SAVE!")) {
-            SaveView.quickSaveGame(model);
         } else if (output.equals("GAME OVER")) {
             updateScene("");
             updateItems();
@@ -398,6 +643,7 @@ public class AdventureGameView {
      *
      * @param textToDisplay the text to display below the image.
      */
+
     public void updateScene(String textToDisplay) {
         // find room image
         javafx.scene.Node j = null;
@@ -438,8 +684,6 @@ public class AdventureGameView {
         gridPane.add(roomPane, 0, 0, 2, 1);
         gridPane.add(bottomthang, 0, 1, 2, 1);
         stage.sizeToScene();
-
-
         //finally, articulate the description
         if (textToDisplay == null || textToDisplay.isBlank()) articulateRoomDescription();
     }
@@ -454,15 +698,35 @@ public class AdventureGameView {
      * @param textToDisplay the text to be formatted for display.
      */
     private void formatText(String textToDisplay) {
+        String roomText;
         if (textToDisplay == null || textToDisplay.isBlank()) {
             String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
             String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
-            if (objectString != null && !objectString.isEmpty()) roomDescLabel.setText(roomDesc + "\n\nObjects in this room:\n" + objectString);
-            else roomDescLabel.setText(roomDesc);
-        } else roomDescLabel.setText(textToDisplay);
+            if (objectString != null && !objectString.isEmpty()) roomText = roomDesc + "\n\nObjects in this room:\n" + objectString;
+            else roomText = roomDesc;
+        } else roomText = textToDisplay;
+
+        roomDescLabel.setText(textToDisplay);
         roomDescLabel.setStyle("-fx-text-fill: white;");
         roomDescLabel.setFont(new Font("Arial", 16));
-        roomDescLabel.setAlignment(Pos.CENTER);
+        roomDescLabel.setAlignment(Pos.CENTER_LEFT);
+
+        IntegerProperty i = new SimpleIntegerProperty(0);
+        Timeline line = new Timeline();
+
+        KeyFrame keyFrame = new KeyFrame(
+                Duration.seconds(.025),
+                event -> {
+                    if (i.get() >= roomText.length()) {
+                        line.stop();
+                    } else {
+                        roomDescLabel.setText((roomText.substring(0, i.get())));
+                        i.set(i.get() + 1);
+                    }
+                });
+        line.getKeyFrames().add(keyFrame);
+        line.setCycleCount(Animation.INDEFINITE);
+        line.play();
     }
 
 
@@ -492,7 +756,13 @@ public class AdventureGameView {
         roomImageView.setFocusTraversable(true);
     }
 
-
+    /**
+     * getButtons
+     * Gets the buttons to display as objects
+     * @param objs list of objects
+     * @param yes true for room objects, false for inventory objects
+     * @return
+     */
     private ArrayList<Button> getButtons(ArrayList<AdventureObject> objs, boolean yes) {
         ArrayList<Button> buttons = new ArrayList<Button>();
         String[] objects = model.player.getCurrentRoom().getObjectString().split(", ");
@@ -726,10 +996,7 @@ public class AdventureGameView {
             VBox box = new VBox();
             box.setSpacing(10);
             box.setPadding(new Insets(11));
-            box.getChildren().add(settingsBackButton);
-            box.getChildren().add(saveButton);
-            box.getChildren().add(helpButton);
-            box.getChildren().add(loadButton);
+            box.getChildren().addAll(settingsBackButton, saveButton, helpButton, titleBackButton, textSpeedButton);
             gridPane.add(box, 2, 0, 1, 2);
             settingsToggle = true;
         } else {
@@ -815,7 +1082,6 @@ public class AdventureGameView {
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
                 k = node;
-                // ask matthew why tf break here no good
             }
         }
 
@@ -872,7 +1138,44 @@ public class AdventureGameView {
     public void addSaveEvent() {
         saveButton.setOnAction(e -> {
             gridPane.requestFocus();
-            SaveView saveView = new SaveView(this);
+//            SaveView.quickSaveGame(model);
+            int width = 300;
+            Stage namingStage = new Stage();
+            namingStage.initModality(Modality.APPLICATION_MODAL);
+
+            namingStage.setTitle("Name your save slot!");
+
+            Label namingLabel = new Label("Name your save slot:");
+            namingLabel.setId("NamingLabel");
+            namingLabel.setStyle("-fx-text-fill: white;");
+            namingLabel.setFont(new Font("Arial", 20));
+
+            TextField namingTextField = new TextField("Untitled Save");
+            namingTextField.setPromptText("Name your save here.");
+
+            Button confirmButton = new Button("Confirm");
+            confirmButton.setId("Confirm");
+            customizeButton(confirmButton, width, 50);
+            makeButtonAccessible(confirmButton, "Confirm Button", "This button renames the save slot base on the text input.", "This button renames the save slot base on the text input. Click it return.");
+
+            confirmButton.setOnAction(e1 -> {
+                namingStage.requestFocus();
+                SaveView.SaveGameWithName(model, namingTextField.getText());
+                namingStage.close();
+            });
+
+            VBox namingVBbox = new VBox();
+            namingVBbox.setSpacing(10);
+            namingVBbox.setPadding(new Insets(10,10,10,10));
+            namingVBbox.setMaxWidth(width);
+            namingVBbox.setStyle("-fx-background-color: #121212;");
+            namingVBbox.getChildren().addAll(namingLabel, namingTextField, confirmButton);
+
+            Scene namingScene = new Scene(namingVBbox, 300, 120);
+            namingScene.setFill(Color.BLACK);
+            namingStage.setScene(namingScene);
+            namingStage.setResizable(false);
+            namingStage.show();
         });
     }
 
@@ -981,6 +1284,18 @@ public class AdventureGameView {
             pfp.setFitHeight(200);
         }
 
+    }
+
+    /**
+     * addTextSpeedEvent
+     *
+     * This button opens the text speed toggle menu from settings.
+     */
+    public void addTextSpeedEvent() {
+        textSpeedButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            TextSpeedView textSpeedView = new TextSpeedView(this);
+        });
     }
 }
 
