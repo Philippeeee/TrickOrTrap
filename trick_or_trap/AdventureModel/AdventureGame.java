@@ -191,9 +191,10 @@ public class AdventureGame implements Serializable {
                 return "INVENTORY!";
             } else if(inputArray[0].equals("TAKE") && inputArray.length < 2) {
                 return "THE TAKE COMMAND REQUIRES AN OBJECT";
-            } else if(inputArray[0].equals("DROP") && inputArray.length < 2) {
-                return "THE DROP COMMAND REQUIRES AN OBJECT";
-            } else if(inputArray[0].equals("TAKE") && inputArray.length == 2) {
+            }
+//            else if(inputArray[0].equals("DROP") && inputArray.length < 2) {
+//                return "THE DROP COMMAND REQUIRES AN OBJECT";
+             else if(inputArray[0].equals("TAKE") && inputArray.length == 2) {
                 if(this.player.getCurrentRoom().checkIfObjectInRoom(inputArray[1])) {
                     this.player.takeObject(inputArray[1]);
 
@@ -205,18 +206,18 @@ public class AdventureGame implements Serializable {
                     return "THIS OBJECT IS NOT HERE:\n " + inputArray[1];
                 }
             }
-            else if(inputArray[0].equals("DROP") && inputArray.length == 2) {
-                if(this.player.checkIfObjectInInventory(inputArray[1])) {
-                    this.player.dropObject(inputArray[1]);
-
-                    // added for summary feature
-                    addToSummaryText("You dropped: "+ inputArray[1] + " in " + this.player.getCurrentRoom().getRoomName() + ".");
-
-                    return "YOU HAVE DROPPED:\n " + inputArray[1];
-                } else {
-                    return "THIS OBJECT IS NOT IN YOUR INVENTORY:\n " + inputArray[1];
-                }
-            }
+//            else if(inputArray[0].equals("DROP") && inputArray.length == 2) {
+//                if(this.player.checkIfObjectInInventory(inputArray[1])) {
+//                    this.player.dropObject(inputArray[1]);
+//
+//                    // added for summary feature
+//                    addToSummaryText("You dropped: "+ inputArray[1] + " in " + this.player.getCurrentRoom().getRoomName() + ".");
+//
+//                    return "YOU HAVE DROPPED:\n " + inputArray[1];
+//                } else {
+//                    return "THIS OBJECT IS NOT IN YOUR INVENTORY:\n " + inputArray[1];
+//                }
+//            }
         }
         return "INVALID COMMAND.";
     }
