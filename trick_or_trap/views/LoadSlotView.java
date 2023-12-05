@@ -199,7 +199,8 @@ public class LoadSlotView {
                 saveNameButton.setText(namingTextField.getText());
                 File file = new File("Games/Saved/" + fileName);
                 String rename = Integer.toString(roomNumber) + "--" + String.join(".", time) + "--" + namingTextField.getText();
-                file.renameTo(new File("Games/Saved/" + rename + ".ser"));
+                fileName = rename + ".ser";
+                file.renameTo(new File("Games/Saved/" + fileName));
                 namingStage.close();
             });
 

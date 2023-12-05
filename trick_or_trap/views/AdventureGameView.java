@@ -92,7 +92,6 @@ public class AdventureGameView {
 
     public void titleScreenUI() {
         // setting up the stage
-        stopArticulation();
         this.stage.setTitle("group_39's Adventure Game");
 
 
@@ -579,8 +578,8 @@ public class AdventureGameView {
             @Override
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode().equals(KeyCode.RIGHT)){
-                        submitEvent("FORCED");
-                        inputTextField.setText("");
+                    submitEvent("FORCED");
+                    inputTextField.setText("");
                 }
             }
         };
@@ -789,9 +788,9 @@ public class AdventureGameView {
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode().equals(KeyCode.SPACE)){
                     String roomt = roomDescLabel.getText();
-                        line.stop();
-                        roomDescLabel.setText(roomText);
-                        inputTextField.setText("");
+                    line.stop();
+                    roomDescLabel.setText(roomText);
+                    inputTextField.setText("");
                 }
             }
         };
@@ -982,14 +981,19 @@ public class AdventureGameView {
             imageNode = n;
             gridPane.getChildren().remove(n);
             Label label = new Label(model.getInstructions());
-            label.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
+            label.setStyle("-fx-text-fill: white;-fx-background-color: #121212;");
             label.setFont(new Font("Arial", 12));
             label.setAlignment(Pos.CENTER);
             label.setPrefWidth(735);
-            label.setPrefHeight(421);
+//            label.setPrefHeight(800);
             label.setTextOverrun(OverrunStyle.CLIP);
             label.setWrapText(true);
-            gridPane.add(label, 0, 0);
+
+            ScrollPane sp = new ScrollPane();
+            sp.setPrefHeight(400);
+            sp.setContent(label);
+
+            gridPane.add(sp, 0, 0);
             helpToggle = true;
         } else {
             gridPane.getChildren().remove(n);
