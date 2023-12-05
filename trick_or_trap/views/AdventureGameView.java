@@ -28,13 +28,11 @@ import javafx.scene.AccessibleRole;
 import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import views.SaveView.*;
 
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 
@@ -232,6 +230,7 @@ public class AdventureGameView {
 //        Inventory + Room items
         objectsInInventory.setSpacing(20);
         objectsInInventory.setAlignment(Pos.TOP_CENTER);
+        objectsInInventory.setStyle("-fx-background-color: #000000;");
 //        objectsInRoom.setSpacing(10);
 //        objectsInRoom.setAlignment(Pos.TOP_CENTER);
 
@@ -288,7 +287,7 @@ public class AdventureGameView {
 
         replayButton = new Button(" Audio \nReplay");
         replayButton.setId("Audio Replay");
-        customizeButton(replayButton, 100, 100);
+        customizeButton2(replayButton, 100, 100);
         makeButtonAccessible(replayButton, "Audio Replay Button", "This button gives replays room audio", "This button gives replays room description dictation audio.");
         addReplayEvent();
 
@@ -316,6 +315,7 @@ public class AdventureGameView {
 
         inventoryBackButton = new Button("Back");
         inventoryBackButton.setId("Back");
+        inventoryBackButton.setStyle("-fx-background-color: #000000;");
         customizeButton2(inventoryBackButton, 100, 100);
         makeButtonAccessible(inventoryBackButton, "Inventory Back Button", "This button will return to the view before pressing 'Inventory'", "This button will return to the view before pressing 'Inventory'. Click it to return.");
         addInventoryBackEvent();
@@ -524,7 +524,9 @@ public class AdventureGameView {
      * graph by invoking requestFocus method.
      */
     private void addTextHandlingEvent() {
-        EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {
+        if (inventoryToggle) {
+            showInventory();
+        } EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode().equals(KeyCode.ENTER)) {
@@ -542,6 +544,9 @@ public class AdventureGameView {
 
 
     private void forcedHelper() {
+        if (inventoryToggle) {
+            showInventory();
+        }
         List<Passage> passages = model.player.getCurrentRoom().getMotionTable().getDirection();
 
         int temp = this.pause_duration;
@@ -572,6 +577,9 @@ public class AdventureGameView {
      * @param text the command that needs to be processed
      */
     private void submitEvent(String text) {
+        if (inventoryToggle) {
+            showInventory();
+        }
 
 
         text = text.strip(); //get rid of white space
@@ -781,7 +789,7 @@ public class AdventureGameView {
      * @return
      */
     private ArrayList<Button> getButtons(ArrayList<AdventureObject> objs, boolean yes) {
-        ArrayList<Button> buttons = new ArrayList<Button>();
+        ArrayList<Button> buttons = new ArrayList<>();
         String[] objects = model.player.getCurrentRoom().getObjectString().split(", ");
         for (AdventureObject object: objs) {
             String o = object.getName();
@@ -789,7 +797,8 @@ public class AdventureGameView {
             ImageView objectImageView = new ImageView(objectImageFile);
             Button objectButton = new Button();
             objectImageView.setPreserveRatio(true);
-            objectImageView.setFitWidth(100);
+            objectImageView.setFitWidth(80);
+            objectButton.setAlignment(Pos.CENTER);
             objectButton.setGraphic(objectImageView);
             objectButton.setStyle("-fx-background-color: #000000;");
 
@@ -851,16 +860,16 @@ public class AdventureGameView {
         //this.model.getDirectoryName() + "/objectImages/" + objectName + ".jpg";
 
 
-        ScrollPane scO = new ScrollPane(objectsInInventory);
-        scO.setFitToWidth(true);
-        scO.setStyle("-fx-background: #000000; -fx-background-color:transparent;");
+
         VBox box = new VBox();
-        box.setSpacing(10);
-        box.setPadding(new Insets(10));
+        box.setSpacing(0);
+        box.setPadding(new Insets(0));
         for (Button button: buttonsInventory) {
             box.getChildren().add(button);
         }
-        scO.setContent(box);
+        ScrollPane scO = new ScrollPane(box);
+        scO.setFitToWidth(true);
+        scO.setStyle("-fx-background: #000000; -fx-background-color:black;");
         inventory = scO;
 
 
@@ -869,11 +878,13 @@ public class AdventureGameView {
         ////////////////////////////////////
         ScrollPane scI = new ScrollPane();
         scI.setFitToWidth(true);
-        scI.setStyle("-fx-background: #000000; -fx-background-color:transparent;");
+        scI.setStyle("-fx-background: #000000; -fx-background-color:black;");
         gridPane.add(scI,2,0, 1, 2);
         VBox box2 = new VBox();
-        box2.setSpacing(10);
-        box2.setPadding(new Insets(10));
+        if (box2.getChildren().isEmpty()) {
+            box2.setSpacing(10);
+            box2.setPadding(new Insets(10));
+        }
         box2.getChildren().add(settingsButton);
         box2.getChildren().add(inventoryButton);
         box2.getChildren().add(summaryButton);
@@ -965,8 +976,8 @@ public class AdventureGameView {
             Column = n;
             gridPane.getChildren().remove(n);
             VBox invent = new VBox(inventoryBackButton, inventory);
-            invent.setSpacing(10);
-            invent.setPadding(new Insets(11));
+            invent.setSpacing(11);
+            invent.setPadding(new Insets(11, 11, 11, 11));
             gridPane.add(invent, 2, 0, 1, 2);
             inventoryToggle = true;
         } else {
