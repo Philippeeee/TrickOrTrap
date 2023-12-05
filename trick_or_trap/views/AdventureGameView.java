@@ -74,6 +74,7 @@ public class AdventureGameView {
     private final Timeline line = new Timeline();
 
 
+
     /**
      * Adventure Game View Constructor
      * __________________________
@@ -569,6 +570,17 @@ public class AdventureGameView {
                 pause.play();
             }
         }
+
+        EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode().equals(KeyCode.RIGHT)){
+                        submitEvent("FORCED");
+                        inputTextField.setText("");
+                }
+            }
+        };
+        this.inputTextField.addEventHandler(KeyEvent.KEY_RELEASED, eventHandler);
     }
     /**
      * submitEvent
@@ -727,12 +739,18 @@ public class AdventureGameView {
      */
     private void formatText(String textToDisplay) {
         String roomText;
+        String otherText;
         if (textToDisplay == null || textToDisplay.isBlank()) {
-            String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
-            String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
-            if (objectString != null && !objectString.isEmpty()) roomText = roomDesc + "\n\nObjects in this room:\n" + objectString;
-            else roomText = roomDesc;
-        } else roomText = textToDisplay;
+//            String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
+//            String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
+//            if (objectString != null && !objectString.isEmpty()) roomText = roomDesc + "\n\nObjects in this room:\n" + objectString;
+//            else roomText = roomDesc;
+            //roomText = "";
+            roomText = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
+            Room room = this.model.getPlayer().getCurrentRoom();
+            System.out.println(room.getRoomNumber());
+            System.out.println(roomText);
+        } else roomText = this.model.getPlayer().getCurrentRoom().getRoomDescription(); otherText = textToDisplay;
 
         roomDescLabel.setText(textToDisplay);
         roomDescLabel.setStyle("-fx-text-fill: white;");
@@ -740,10 +758,8 @@ public class AdventureGameView {
         roomDescLabel.setAlignment(Pos.CENTER_LEFT);
 
         IntegerProperty i = new SimpleIntegerProperty(0);
-//        Timeline line = new Timeline();
         check.set(false);
         IntegerProperty  comparenum = num;
-
 
         KeyFrame keyFrame = new KeyFrame(
                 Duration.seconds(.025),
@@ -768,22 +784,10 @@ public class AdventureGameView {
             @Override
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode().equals(KeyCode.SPACE)){
-                    int roomt = 0;
-                    try{
-                        roomt = roomDescLabel.getText().length();
-                    } catch (Exception e){
-                        System.out.println("The text is null");
-                    }
-
-                    if(roomt == roomText.length()){
-                        //submitEvent(inputTextField.getText().strip());
-                        submitEvent("FORCED");
-                        inputTextField.setText("");
-                    }else {
+                    String roomt = roomDescLabel.getText();
                         line.stop();
                         roomDescLabel.setText(roomText);
                         inputTextField.setText("");
-                    }
                 }
             }
         };
