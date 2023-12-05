@@ -44,6 +44,8 @@ public class AdventureGame implements Serializable {
             FileOutputStream outfile = new FileOutputStream(file);
             ObjectOutputStream oos = new ObjectOutputStream(outfile);
             oos.writeObject(this);
+            oos.close();
+            outfile.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,7 +64,7 @@ public class AdventureGame implements Serializable {
         loader.loadGame();
 
         // set up the player's current location
-        this.player = new Player(this.rooms.get(1));
+        this.player = new Player(this.rooms.get(101));
     }
 
     /**
@@ -175,18 +177,23 @@ public class AdventureGame implements Serializable {
                 }
             } //something is up here! We are dead or we won.
             return null;
+        } else if (inputArray[0].equals("SAVE")){
+            return "SAVE!";
         } else if(Arrays.asList(this.actionVerbs).contains(inputArray[0])) {
             if(inputArray[0].equals("QUIT")) {
                 // added for summary feature
                 addToSummaryText("You quit the game.");
 
                 return "GAME OVER"; //time to stop!
-            }
-            else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() == 0) return "INVENTORY IS EMPTY";
-            else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() > 0) return "THESE OBJECTS ARE IN YOUR INVENTORY:\n" + this.player.getInventory().toString();
-            else if(inputArray[0].equals("TAKE") && inputArray.length < 2) return "THE TAKE COMMAND REQUIRES AN OBJECT";
-            else if(inputArray[0].equals("DROP") && inputArray.length < 2) return "THE DROP COMMAND REQUIRES AN OBJECT";
-            else if(inputArray[0].equals("TAKE") && inputArray.length == 2) {
+            } else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() == 0) {
+                return "INVENTORY!";
+            } else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() > 0) {
+                return "INVENTORY!";
+            } else if(inputArray[0].equals("TAKE") && inputArray.length < 2) {
+                return "THE TAKE COMMAND REQUIRES AN OBJECT";
+            } else if(inputArray[0].equals("DROP") && inputArray.length < 2) {
+                return "THE DROP COMMAND REQUIRES AN OBJECT";
+            } else if(inputArray[0].equals("TAKE") && inputArray.length == 2) {
                 if(this.player.getCurrentRoom().checkIfObjectInRoom(inputArray[1])) {
                     this.player.takeObject(inputArray[1]);
 
