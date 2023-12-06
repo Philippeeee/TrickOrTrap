@@ -69,7 +69,13 @@ public class AdventureGameView {
     private boolean mediaPlaying; //to know if the audio is playing
     private javafx.scene.Node imageNode; // store the image and text after displaying instructions
     private javafx.scene.Node Column; // store the icons column after displaying settings
-    public int pause_duration = 5; // num seconds that the user wants in between new text (e.g. during forced movement)
+    /**
+     * num seconds that the user wants in between new text (e.g. during forced movement)
+     */
+    public int pause_duration = 5;
+    /**
+     * medium text speed toggle
+     */
     public String speed = "MEDIUM";
     Button newGameButton, loadGameButton, titleScreenSettingsButton, gameSummaryButton; // title screen buttons
     Button titleBackButton; // return to title screen button from game
@@ -88,6 +94,8 @@ public class AdventureGameView {
      * Adventure Game View Constructor
      * __________________________
      * Initializes attributes
+     * @param model the model
+     * @param stage the stage
      */
     public AdventureGameView(AdventureGame model, Stage stage) {
         this.model = model;
@@ -1030,15 +1038,13 @@ public class AdventureGameView {
     }
 
 
-    /*
+    /**
      * Show the game instructions.
-     *
      * If helpToggle is FALSE:
      * -- display the help text in the CENTRE of the gridPane (i.e. within cell 1,1)
      * -- use whatever GUI elements to get the job done!
      * -- set the helpToggle to TRUE
      * -- REMOVE whatever nodes are within the cell beforehand!
-     *
      * If helpToggle is TRUE:
      * -- redraw the room image in the CENTRE of the gridPane (i.e. within cell 1,1)
      * -- set the helpToggle to FALSE

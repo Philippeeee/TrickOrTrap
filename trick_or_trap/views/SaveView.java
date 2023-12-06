@@ -40,6 +40,7 @@ public class SaveView {
 
     /**
      * Constructor
+     * @param adventureGameView adventure game view
      */
     public SaveView(AdventureGameView adventureGameView) {
         this.adventureGameView = adventureGameView;
@@ -113,6 +114,7 @@ public class SaveView {
      * Save the game to a serialized (binary) file.
      * Files will be saved to the Games/Saved directory.
      * load the file and set the saveFileErrorLabel to the text in saveFileSuccess
+     * @param model model
      */
     public static void quickSaveGame(AdventureGame model) {
         String time = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
@@ -127,6 +129,8 @@ public class SaveView {
      * Save the game to a serialized (binary) file.
      * Files will be saved to the Games/Saved directory.
      * load the file and set the saveFileErrorLabel to the text in saveFileSuccess
+     * @param model the model
+     * @param name the name of the game
      */
     public static void SaveGameWithName(AdventureGame model, String name) {
         String time = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());

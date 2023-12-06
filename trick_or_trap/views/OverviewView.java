@@ -28,6 +28,7 @@ public class OverviewView {
 
     /**
      * Constructor
+     * @param adventureGameView adventure game view
      */
     public OverviewView(AdventureGameView adventureGameView){
         this.adventureGameView = adventureGameView;

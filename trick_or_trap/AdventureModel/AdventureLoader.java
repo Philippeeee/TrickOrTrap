@@ -26,6 +26,7 @@ public class AdventureLoader {
 
      /**
      * Load game from directory
+      * @throws IOException io
      */
     public void loadGame() throws IOException {
         parseRooms();
@@ -90,6 +91,7 @@ public class AdventureLoader {
 
      /**
      * Parse Objects File
+      * @throws IOException io
      */
     public void parseObjects() throws IOException {
 
@@ -113,6 +115,7 @@ public class AdventureLoader {
 
      /**
      * Parse Synonyms File
+      * @throws IOException io
      */
     public void parseSynonyms() throws IOException {
         String synonymsFileName = this.adventureName + "/synonyms.txt";
@@ -132,6 +135,8 @@ public class AdventureLoader {
      * Parse Files other than Rooms, Objects and Synonyms
      *
      * @param fileName the file to parse
+     * @return the parsed string
+     * @throws IOException io
      */
     public String parseOtherFile(String fileName) throws IOException {
         String text = "";

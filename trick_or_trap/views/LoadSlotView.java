@@ -44,6 +44,9 @@ public class LoadSlotView {
 
     /**
      * Constructor
+     * @param adventureGame adventure game
+     * @param titleLoadView loadview from the title
+     * @param fileName name of the file
      */
     public LoadSlotView(AdventureGame adventureGame, TitleLoadView titleLoadView, String fileName){
         this.model = adventureGame;
@@ -259,6 +262,8 @@ public class LoadSlotView {
      *
      * @param GameFile file to load
      * @return loaded selected save slot
+     * @throws IOException io
+     * @throws ClassNotFoundException class not found
      */
     public AdventureGame loadGame(String GameFile) throws IOException, ClassNotFoundException {
         // Reading the object from a file

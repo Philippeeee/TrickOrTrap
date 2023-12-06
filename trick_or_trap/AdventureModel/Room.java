@@ -9,22 +9,24 @@ import java.util.List;
  * room in the Adventure Game.
  */
 public class Room implements Serializable {
-
+    /**
+     * the name of the adventure
+     */
     private final String adventureName;
     /**
      * The number of the room.
      */
-    private int roomNumber;
+    private int roomNumber; // the room number
 
     /**
      * The name of the room.
      */
-    private String roomName;
+    private String roomName; // the room name
 
     /**
      * The description of the room.
      */
-    private String roomDescription;
+    private String roomDescription; // the room description
 
     /**
      * The passage table for the room.
@@ -47,6 +49,7 @@ public class Room implements Serializable {
      * @param roomName: The name of the room.
      * @param roomNumber: The number of the room.
      * @param roomDescription: The description of the room.
+     * @param adventureName adventure name
      */
     public Room(String roomName, int roomNumber, String roomDescription, String adventureName){
         this.roomName = roomName;
@@ -142,7 +145,7 @@ public class Room implements Serializable {
      * Getter for returning an AdventureObject with a given name
      *
      * @param objectName: Object name to find in the room
-     * @return: AdventureObject
+     * @return AdventureObject
      */
     public AdventureObject getObject(String objectName){
         for(int i = 0; i<objectsInRoom.size();i++){
@@ -154,7 +157,7 @@ public class Room implements Serializable {
     /**
      * Getter method for the number attribute.
      *
-     * @return: number of the room
+     * @return number of the room
      */
     public int getRoomNumber(){
         return this.roomNumber;
@@ -163,7 +166,7 @@ public class Room implements Serializable {
     /**
      * Getter method for the description attribute.
      *
-     * @return: description of the room
+     * @return description of the room
      */
     public String getRoomDescription(){
         return this.roomDescription.replace("\n", " ");
@@ -173,7 +176,7 @@ public class Room implements Serializable {
     /**
      * Getter method for the name attribute.
      *
-     * @return: name of the room
+     * @return name of the room
      */
     public String getRoomName(){
         return this.roomName;
@@ -183,7 +186,7 @@ public class Room implements Serializable {
     /**
      * Getter method for the visit attribute.
      *
-     * @return: visit status of the room
+     * @return visit status of the room
      */
     public boolean getVisited(){
         return this.isVisited;
@@ -193,7 +196,7 @@ public class Room implements Serializable {
     /**
      * Getter method for the motionTable attribute.
      *
-     * @return: motion table of the room
+     * @return motion table of the room
      */
     public PassageTable getMotionTable(){
         return this.motionTable;
