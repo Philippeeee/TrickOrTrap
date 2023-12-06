@@ -42,11 +42,15 @@ public class OverviewView {
         howToPlayContentLabel.setText(this.adventureGameView.model.getInstructions());
         howToPlayContentLabel.setWrapText(true);
         howToPlayContentLabel.setStyle("-fx-background-color: #121212; -fx-text-fill: white;");
+        howToPlayContentLabel.setFont(new Font(16));
+        howToPlayContentLabel.setWrapText(true);
+        howToPlayContentLabel.setPrefWidth(1000);
 
         howToPlayContentScrollPane.setStyle("-fx-text-fill: white;");
         howToPlayContentScrollPane.setContent(howToPlayContentLabel);
         howToPlayContentScrollPane.setFitToWidth(true);
         howToPlayContentScrollPane.setStyle("-fx-background-color: #121212;");
+        howToPlayContentScrollPane.setPrefHeight(300);
 
         summaryLabel.setStyle("-fx-text-fill: white;");
         summaryLabel.setFont(new Font("Arial", 60));
