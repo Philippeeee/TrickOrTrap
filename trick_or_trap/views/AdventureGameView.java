@@ -75,12 +75,11 @@ public class AdventureGameView {
     Button titleBackButton; // return to title screen button from game
     Label gameTitleLabel = new Label("Trick Or Trap"); // title label
     Scene titleScene; // the scene for the title screen
-    Scene mainGameScene;
-    KeyFrame keyFramemed, keyFrameslow, keyFramefast;
-
-    private AtomicBoolean check = new AtomicBoolean(true);
-    private IntegerProperty num = new SimpleIntegerProperty(0);
-    private final Timeline line = new Timeline();
+    Scene mainGameScene; // the scene where the game is played
+    KeyFrame keyFramemed, keyFrameslow, keyFramefast; // the keyframes for each mode of text speed
+    private AtomicBoolean check = new AtomicBoolean(true); // boolean for lambda for text animation
+    private IntegerProperty num = new SimpleIntegerProperty(0); // integer for text animation
+    private final Timeline line = new Timeline(); // the timeline which the text animation's keyframes are on
 
 
 
@@ -97,6 +96,9 @@ public class AdventureGameView {
         titleScreenUI();
     }
 
+    /**
+     * Initializes the title screen.
+     */
     public void titleScreenUI() {
         stopArticulation();
         // setting up the stage
@@ -554,7 +556,10 @@ public class AdventureGameView {
 
     }
 
-
+    /**
+     *
+     * This method is the helper function for the submitEvent method. This method handles consecutive forced events.
+     */
     private void forcedHelper() {
         if (inventoryToggle) {
             showInventory();
@@ -566,7 +571,6 @@ public class AdventureGameView {
             this.pause_duration = 15;
         }
 
-        System.out.println(model.player.getCurrentRoom().getRoomDescription().length());
         PauseTransition pause = new PauseTransition(Duration.seconds((double) model.player.getCurrentRoom().getRoomDescription().length() / 10 * this.pause_duration));
         this.pause_duration = temp;
 
@@ -780,49 +784,6 @@ public class AdventureGameView {
         check.set(false);
         IntegerProperty comparenum = num;
 
-        //if (speed.){
-
-//        if (speed.equals("SLOW")){
-//            try{
-//                line.getKeyFrames().clear();
-//                line.getKeyFrames().add(this.keyFrameslow);
-//                System.out.println("slowspeed");
-//            }catch (Exception e){
-//                System.out.println("slowww");
-//            }
-//        } else if (speed.equals("MEDIUM")){
-//            try{
-//                line.getKeyFrames().clear();
-//                line.getKeyFrames().add(this.keyFramemed);
-//                System.out.println("medspeed");
-//            }catch (Exception e){
-//                System.out.println("medium");
-//            }
-//        } else{
-//            try{
-//                line.getKeyFrames().clear();
-//                System.out.println("fastspeed");
-//                line.getKeyFrames().add(this.keyFramefast);
-//            }catch (Exception e){
-//                System.out.println("fast");
-//            }
-//
-//        }
-        //.getKeyFrames().add(keyFrameslow);\
-
-
-//        line.getKeyFrames().clear();
-//        switch (speed){
-//            case "SLOW":
-//                line.getKeyFrames().add(keyFrameslow);
-//                break;
-//            case "MEDIUM":
-//                line.getKeyFrames().add(keyFramemed);
-//                break;
-//            case "FAST":
-//                line.getKeyFrames().add(keyFramefast);
-//        }
-
         line.getKeyFrames().removeAll(keyFramefast, keyFrameslow, keyFramemed);
         if (speed.equals("SLOW")) {
             line.stop();
@@ -884,7 +845,6 @@ public class AdventureGameView {
             line.getKeyFrames().add(keyFramefast);
             System.out.println("fast");
         }
-//        line.getKeyFrames().add(keyFramefast);
 
         line.setCycleCount(Animation.INDEFINITE);
         line.play();
@@ -1129,7 +1089,9 @@ public class AdventureGameView {
         });
     }
 
-
+    /**
+     * This method shows the inventory.
+     */
     public void showInventory() {
         javafx.scene.Node n = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
@@ -1176,7 +1138,9 @@ public class AdventureGameView {
         });
     }
 
-
+    /**
+     * This method shows the settings.
+     */
     public void showSettings() {
         javafx.scene.Node n = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
@@ -1388,6 +1352,9 @@ public class AdventureGameView {
         });
     }
 
+    /**
+     * Save event used for non button clicks
+     */
     public void addSaveEvent2() {
         gridPane.requestFocus();
         SaveView saveView = new SaveView(this);

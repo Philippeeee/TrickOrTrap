@@ -96,6 +96,10 @@ public class TitleLoadView {
         this.stage.setResizable(false);
         this.stage.show();
     }
+
+    /**
+     * This method closes the load view with the save slots and returns to the title screen.
+     */
     private void addReturnEvent() {
         this.returnToTitleScreenButton.setOnAction(e -> {
             this.stage.requestFocus();
