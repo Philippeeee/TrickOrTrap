@@ -7,14 +7,39 @@ import java.util.*;
  * Class AdventureGame.  Handles all the necessary tasks to run the Adventure game.
  */
 public class AdventureGame implements Serializable {
-    private final String directoryName; //An attribute to store the Introductory text of the game.
-    private String helpText; //A variable to store the Help text of the game. This text is displayed when the user types "HELP" command.
-    private final HashMap<Integer, Room> rooms; //A list of all the rooms in the game.
-    private HashMap<String,String> synonyms = new HashMap<>(); //A HashMap to store synonyms of commands.
-    private final String[] actionVerbs = {"QUIT","INVENTORY","TAKE","DROP"}; //List of action verbs (other than motions) that exist in all games. Motion vary depending on the room and game.
-    public Player player; //The Player of the game.
-    private String summaryText; // A variable to store the Summary text of the game. This text is displayed when the user clicks the "Summary" button.
-    private int numSumTextLines = 0; // A counter to store the number of lines of text in the Summary, in order to scale the ScrollPane appropriately
+    /**
+     * An attribute to store the Introductory text of the game.
+     */
+    private final String directoryName;
+    /**
+     * A variable to store the Help text of the game. This text is displayed when the user types "HELP" command.
+     */
+    private String helpText;
+    /**
+     * A list of all the rooms in the game.
+     */
+    private final HashMap<Integer, Room> rooms;
+    /**
+     * A HashMap to store synonyms of commands.
+     */
+    private HashMap<String,String> synonyms = new HashMap<>();
+    /**
+     * List of action verbs (other than motions) that exist in all games. Motion vary depending on the room and game.
+     *
+     */
+    private final String[] actionVerbs = {"QUIT","INVENTORY","TAKE","DROP"};
+    /**
+     * the player of the game
+     */
+    public Player player;
+    /**
+     * A variable to store the Summary text of the game. This text is displayed when the user clicks the "Summary" button.
+     */
+    private String summaryText;
+    /**
+     * A counter to store the number of lines of text in the Summary, in order to scale the ScrollPane appropriately.
+     */
+    private int numSumTextLines = 0;
 
     /**
      * Adventure Game Constructor
@@ -155,6 +180,7 @@ public class AdventureGame implements Serializable {
      * interpret the user's action.
      *
      * @param command String representation of the command.
+     * @return the action to be taken from the command
      */
     public String interpretAction(String command){
 
@@ -246,6 +272,7 @@ public class AdventureGame implements Serializable {
      * getPlayer
      * __________________________
      * Getter method for Player
+     * @return the player
      */
     public Player getPlayer() {
         return this.player;

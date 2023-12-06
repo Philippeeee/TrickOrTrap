@@ -10,9 +10,19 @@ import java.io.IOException;
  */
 public class AdventureGameApp extends  Application {
 
-    AdventureGame model;
-    AdventureGameView view;
+    AdventureGame model; // the game model
+    AdventureGameView view; // the game view
 
+    /**
+     * constructor
+     */
+    public AdventureGameApp(){
+    }
+
+    /**
+     * main
+     * @param args args
+     */
     public static void main(String[] args) {
         launch(args);
     }

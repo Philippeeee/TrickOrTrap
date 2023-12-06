@@ -20,6 +20,7 @@ public class Player implements Serializable {
 
     /**
      * Adventure Game Player Constructor
+     * @param currentRoom current room
      */
     public Player(Room currentRoom) {
         this.inventory = new ArrayList<AdventureObject>();

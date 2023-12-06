@@ -37,6 +37,8 @@ public class TitleLoadView {
 
     /**
      * Constructor
+     * @param model model
+     * @param adventureGameView adventure game view
      */
     public TitleLoadView(AdventureGame model, AdventureGameView adventureGameView){
         this.model = model;

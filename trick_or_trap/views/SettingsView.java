@@ -25,6 +25,7 @@ public class SettingsView {
 
     /**
      * Constructor
+     * @param adventureGameView adventure game view
      */
     public SettingsView(AdventureGameView adventureGameView){
         this.adventureGameView = adventureGameView;

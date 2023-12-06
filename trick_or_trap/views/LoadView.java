@@ -32,6 +32,10 @@ public class LoadView {
     private ListView<String> GameList;
     private String filename = null;
 
+    /**
+     * View of the load
+     * @param adventureGameView adventure game view
+     */
     public LoadView(AdventureGameView adventureGameView){
 
         //note that the buttons in this view are not accessible!!
@@ -151,7 +155,9 @@ public class LoadView {
      * Load the Game from a file
      *
      * @param GameFile file to load
-     * @return loaded Tetris Model
+     * @return loaded game
+     * @throws IOException io
+     * @throws ClassNotFoundException class not found
      */
     public static AdventureGame loadGame(String GameFile) throws IOException, ClassNotFoundException {
         // Reading the object from a file
