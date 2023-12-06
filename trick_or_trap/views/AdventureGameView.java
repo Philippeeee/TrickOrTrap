@@ -98,6 +98,7 @@ public class AdventureGameView {
     }
 
     public void titleScreenUI() {
+        stopArticulation();
         // setting up the stage
         this.stage.setTitle("group_39's Adventure Game");
 
