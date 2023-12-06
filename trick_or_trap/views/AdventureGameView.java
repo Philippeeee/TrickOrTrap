@@ -7,6 +7,7 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -28,11 +29,14 @@ import javafx.scene.AccessibleRole;
 import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -66,6 +70,8 @@ public class AdventureGameView {
     private javafx.scene.Node imageNode; // store the image and text after displaying instructions
     private javafx.scene.Node Column; // store the icons column after displaying settings
     public int pause_duration = 5; // num seconds that the user wants in between new text (e.g. during forced movement)
+    public double frame_duration = 0.08;
+    public String speed = "MEDIUM";
     Button newGameButton, loadGameButton, titleScreenSettingsButton, gameSummaryButton; // title screen buttons
     Button titleBackButton; // return to title screen button from game
     Label gameTitleLabel = new Label("Trick Or Trap"); // title label
@@ -75,6 +81,7 @@ public class AdventureGameView {
     private AtomicBoolean check = new AtomicBoolean(true);
     private IntegerProperty num = new SimpleIntegerProperty(0);
     private final Timeline line = new Timeline();
+
 
 
 
@@ -696,7 +703,11 @@ public class AdventureGameView {
         gridPane.getChildren().remove(j);
 
         getRoomImage(); //get the image of the current room
+        check.set(false);
+        num.set(num.get()+1);
+
         getPfpImage(); // get the image of the current pfp if applicable
+        roomDescLabel.setText("");
         check.set(false);
         num.set(num.get()+1);
 
@@ -740,31 +751,68 @@ public class AdventureGameView {
      *
      * @param textToDisplay the text to be formatted for display.
      */
-    private void formatText(String textToDisplay) {
+    public void formatText(String textToDisplay) {
         String roomText;
         String otherText;
-        if (textToDisplay == null || textToDisplay.isBlank()) {
+        //if (textToDisplay == null || textToDisplay.isBlank()) {
 //            String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
 //            String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
 //            if (objectString != null && !objectString.isEmpty()) roomText = roomDesc + "\n\nObjects in this room:\n" + objectString;
 //            else roomText = roomDesc;
             //roomText = "";
-            roomText = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
-            Room room = this.model.getPlayer().getCurrentRoom();
-            System.out.println(room.getRoomNumber());
-            System.out.println(roomText);
-        } else roomText = this.model.getPlayer().getCurrentRoom().getRoomDescription(); otherText = textToDisplay;
+            //roomText = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
+            //Room room = this.model.getPlayer().getCurrentRoom();
+            //System.out.println(room.getRoomNumber());
+            //System.out.println(roomText);
+        //} else
+            roomText = this.model.getPlayer().getCurrentRoom().getRoomDescription();
 
-        roomDescLabel.setText(textToDisplay);
+        //roomDescLabel.setText(textToDisplay);
         roomDescLabel.setStyle("-fx-text-fill: white;");
         roomDescLabel.setFont(new Font("Arial", 16));
         roomDescLabel.setAlignment(Pos.CENTER_LEFT);
 
         IntegerProperty i = new SimpleIntegerProperty(0);
-        check.set(false);
-        IntegerProperty  comparenum = num;
+        DoubleProperty speedy = new SimpleDoubleProperty(this.frame_duration);
 
-        KeyFrame keyFrame = new KeyFrame(
+
+        check.set(false);
+        IntegerProperty comparenum = num;
+
+        //if (speed.){
+        KeyFrame keyFrameslow = new KeyFrame(
+                Duration.seconds(.1),
+                event -> {
+                    if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
+                        line.stop();
+                    } else {
+                        try{
+                            roomDescLabel.setText((roomText.substring(0, i.get())));
+                            i.set(i.get() + 1);
+                        } catch (Exception e){
+                            roomDescLabel.setText(roomText);
+                            i.set(i.get() + 1);
+                        }
+                    }
+                });//}
+
+        KeyFrame keyFramemed = new KeyFrame(
+                Duration.seconds(.07),
+                event -> {
+                    if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
+                        line.stop();
+                    } else {
+                        try{
+                            roomDescLabel.setText((roomText.substring(0, i.get())));
+                            i.set(i.get() + 1);
+                        } catch (Exception e){
+                            roomDescLabel.setText(roomText);
+                            i.set(i.get() + 1);
+                        }
+                    }
+                });
+
+        KeyFrame keyFramefast = new KeyFrame(
                 Duration.seconds(.025),
                 event -> {
                     if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
@@ -779,7 +827,35 @@ public class AdventureGameView {
                         }
                     }
                 });
-        line.getKeyFrames().add(keyFrame);
+
+
+        if (speed.equals("SLOW")){
+            try{
+                line.getKeyFrames().clear();
+            }catch (Exception e){
+                System.out.println("slowww");
+            }
+            line.getKeyFrames().add(keyFrameslow);
+        }
+
+        else if (speed.equals("MEDIUM")){
+            try{
+                line.getKeyFrames().clear();
+            }catch (Exception e){
+                System.out.println("slowww");
+            }
+            line.getKeyFrames().add(keyFramemed);
+        }
+
+        else{
+            try{
+                line.getKeyFrames().clear();
+            }catch (Exception e){
+                System.out.println("slowww");
+            }
+            line.getKeyFrames().add(keyFramefast);
+        }
+        line.getKeyFrames().add(keyFrameslow);
         line.setCycleCount(Animation.INDEFINITE);
         line.play();
 
@@ -787,16 +863,15 @@ public class AdventureGameView {
             @Override
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode().equals(KeyCode.SPACE)){
-                    String roomt = roomDescLabel.getText();
-                    line.stop();
-                    roomDescLabel.setText(roomText);
-                    inputTextField.setText("");
+                    //String roomt = roomDescLabel.getText();
+                        line.stop();
+                        roomDescLabel.setText(roomText);
+                        inputTextField.setText("");
                 }
             }
         };
         this.inputTextField.addEventHandler(KeyEvent.KEY_RELEASED, eventHandler);
     }
-
 
 
     /**
@@ -818,6 +893,17 @@ public class AdventureGameView {
         roomImageView.setPreserveRatio(false);
         roomImageView.setFitWidth(800);
         roomImageView.setFitHeight(400);
+        /////////////////////////////////////
+        ////////////////////////////////////
+        ////////////////////////////////////
+        pfp = new ImageView(roomImageFile);
+        pfp.setPreserveRatio(false);
+        pfp.setFitWidth(200);
+        pfp.setFitHeight(200);
+        /////////////////////////////////////
+        ////////////////////////////////////
+        /////////////////////////////////////
+
 
         //set accessible text
         roomImageView.setAccessibleRole(AccessibleRole.IMAGE_VIEW);
@@ -832,8 +918,6 @@ public class AdventureGameView {
      * @param yes true for room objects, false for inventory objects
      * @return
      */
-
-
     private ArrayList<Button> getButtons(ArrayList<AdventureObject> objs, boolean yes) {
         ArrayList<Button> buttons = new ArrayList<>();
         String[] objects = model.player.getCurrentRoom().getObjectString().split(", ");
@@ -1077,7 +1161,7 @@ public class AdventureGameView {
             box.setSpacing(10);
             box.setPadding(new Insets(11));
             textSpeedButton.setPrefSize(100, 100);
-            box.getChildren().addAll(settingsBackButton, saveButton, helpButton, titleBackButton, textSpeedButton);
+            box.getChildren().addAll(settingsBackButton, saveButton, helpButton, textSpeedButton, titleBackButton);
             gridPane.add(box, 2, 0, 1, 2);
             settingsToggle = true;
         } else {
@@ -1133,7 +1217,10 @@ public class AdventureGameView {
         // replace room image with summary
 
         // create Label (for ScrollPane)
-        Label summary_text = new Label(model.getSummaryText());
+        if (this.model.getSummaryText().isEmpty()) {
+            this.model.addToSummaryText("Beginning of game.");
+        }
+        Label summary_text = new Label(this.model.getSummaryText());
         summary_text.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
         summary_text.setFont(new Font("Arial", 12));
         summary_text.setAlignment(Pos.CENTER);
