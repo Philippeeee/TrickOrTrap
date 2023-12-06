@@ -70,13 +70,13 @@ public class AdventureGameView {
     private javafx.scene.Node imageNode; // store the image and text after displaying instructions
     private javafx.scene.Node Column; // store the icons column after displaying settings
     public int pause_duration = 5; // num seconds that the user wants in between new text (e.g. during forced movement)
-    public double frame_duration = 0.08;
     public String speed = "MEDIUM";
     Button newGameButton, loadGameButton, titleScreenSettingsButton, gameSummaryButton; // title screen buttons
     Button titleBackButton; // return to title screen button from game
     Label gameTitleLabel = new Label("Trick Or Trap"); // title label
     Scene titleScene; // the scene for the title screen
     Scene mainGameScene;
+    KeyFrame keyFramemed, keyFrameslow, keyFramefast;
 
     private AtomicBoolean check = new AtomicBoolean(true);
     private IntegerProperty num = new SimpleIntegerProperty(0);
@@ -773,89 +773,117 @@ public class AdventureGameView {
         roomDescLabel.setAlignment(Pos.CENTER_LEFT);
 
         IntegerProperty i = new SimpleIntegerProperty(0);
-        DoubleProperty speedy = new SimpleDoubleProperty(this.frame_duration);
 
 
         check.set(false);
         IntegerProperty comparenum = num;
 
         //if (speed.){
-        KeyFrame keyFrameslow = new KeyFrame(
-                Duration.seconds(.1),
-                event -> {
-                    if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
-                        line.stop();
-                    } else {
-                        try{
-                            roomDescLabel.setText((roomText.substring(0, i.get())));
-                            i.set(i.get() + 1);
-                        } catch (Exception e){
-                            roomDescLabel.setText(roomText);
-                            i.set(i.get() + 1);
+
+//        if (speed.equals("SLOW")){
+//            try{
+//                line.getKeyFrames().clear();
+//                line.getKeyFrames().add(this.keyFrameslow);
+//                System.out.println("slowspeed");
+//            }catch (Exception e){
+//                System.out.println("slowww");
+//            }
+//        } else if (speed.equals("MEDIUM")){
+//            try{
+//                line.getKeyFrames().clear();
+//                line.getKeyFrames().add(this.keyFramemed);
+//                System.out.println("medspeed");
+//            }catch (Exception e){
+//                System.out.println("medium");
+//            }
+//        } else{
+//            try{
+//                line.getKeyFrames().clear();
+//                System.out.println("fastspeed");
+//                line.getKeyFrames().add(this.keyFramefast);
+//            }catch (Exception e){
+//                System.out.println("fast");
+//            }
+//
+//        }
+        //.getKeyFrames().add(keyFrameslow);\
+
+
+//        line.getKeyFrames().clear();
+//        switch (speed){
+//            case "SLOW":
+//                line.getKeyFrames().add(keyFrameslow);
+//                break;
+//            case "MEDIUM":
+//                line.getKeyFrames().add(keyFramemed);
+//                break;
+//            case "FAST":
+//                line.getKeyFrames().add(keyFramefast);
+//        }
+
+        line.getKeyFrames().removeAll(keyFramefast, keyFrameslow, keyFramemed);
+        if (speed.equals("SLOW")) {
+            line.stop();
+            this.keyFrameslow = new KeyFrame(
+                    Duration.seconds(.5),
+                    event -> {
+                        if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
+                            line.stop();
+                        } else {
+                            try{
+                                roomDescLabel.setText((roomText.substring(0, i.get())));
+                                i.set(i.get() + 1);
+                            } catch (Exception e){
+                                roomDescLabel.setText(roomText);
+                                i.set(i.get() + 1);
+                            }
                         }
-                    }
-                });//}
-
-        KeyFrame keyFramemed = new KeyFrame(
-                Duration.seconds(.07),
-                event -> {
-                    if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
-                        line.stop();
-                    } else {
-                        try{
-                            roomDescLabel.setText((roomText.substring(0, i.get())));
-                            i.set(i.get() + 1);
-                        } catch (Exception e){
-                            roomDescLabel.setText(roomText);
-                            i.set(i.get() + 1);
-                        }
-                    }
-                });
-
-        KeyFrame keyFramefast = new KeyFrame(
-                Duration.seconds(.025),
-                event -> {
-                    if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
-                        line.stop();
-                    } else {
-                        try{
-                            roomDescLabel.setText((roomText.substring(0, i.get())));
-                            i.set(i.get() + 1);
-                        } catch (Exception e){
-                            roomDescLabel.setText(roomText);
-                            i.set(i.get() + 1);
-                        }
-                    }
-                });
-
-
-        if (speed.equals("SLOW")){
-            try{
-                line.getKeyFrames().clear();
-            }catch (Exception e){
-                System.out.println("slowww");
-            }
+                    });
             line.getKeyFrames().add(keyFrameslow);
+            System.out.println("slow");
         }
-
-        else if (speed.equals("MEDIUM")){
-            try{
-                line.getKeyFrames().clear();
-            }catch (Exception e){
-                System.out.println("slowww");
-            }
+        if (speed.equals("MEDIUM")) {
+            line.stop();
+            this.keyFramemed = new KeyFrame(
+                    Duration.seconds(.07),
+                    event -> {
+                        if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
+                            line.stop();
+                        } else {
+                            try{
+                                roomDescLabel.setText((roomText.substring(0, i.get())));
+                                i.set(i.get() + 1);
+                            } catch (Exception e){
+                                roomDescLabel.setText(roomText);
+                                i.set(i.get() + 1);
+                            }
+                        }
+                    });
             line.getKeyFrames().add(keyFramemed);
+            System.out.println("med");
         }
-
-        else{
-            try{
-                line.getKeyFrames().clear();
-            }catch (Exception e){
-                System.out.println("slowww");
-            }
+        if (speed.equals("FAST")){
+            line.stop();
+            this.keyFramefast = new KeyFrame(
+                    Duration.seconds(.02),
+                    event -> {
+                        if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
+                            line.stop();
+                        } else {
+                            try{
+                                roomDescLabel.setText((roomText.substring(0, i.get())));
+                                i.set(i.get() + 1);
+                            } catch (Exception e){
+                                roomDescLabel.setText(roomText);
+                                i.set(i.get() + 1);
+                            }
+                        }
+                    });
             line.getKeyFrames().add(keyFramefast);
+            System.out.println("fast");
         }
-        line.getKeyFrames().add(keyFrameslow);
+//        line.getKeyFrames().add(keyFramefast);
+
         line.setCycleCount(Animation.INDEFINITE);
         line.play();
 

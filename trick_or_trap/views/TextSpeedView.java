@@ -50,7 +50,6 @@ public class TextSpeedView {
         slowSpeedButton.setOnAction(e -> {
             // when the user has selected one of the buttons, update the UI and the internal value
             this.adventureGameView.pause_duration = slow;
-            this.adventureGameView.frame_duration = 0.1;
             this.adventureGameView.speed = "SLOW";
             this.speedDescrip.setText(this.speedLabel + this.adventureGameView.speed);
         });
@@ -66,7 +65,6 @@ public class TextSpeedView {
         medSpeedButton.setOnAction(e -> {
             // when the user has selected one of the buttons, update the UI and the internal value
             this.adventureGameView.pause_duration = medium;
-            this.adventureGameView.frame_duration = .07;
             this.adventureGameView.speed = "MEDIUM";
             this.speedDescrip.setText(this.speedLabel + this.adventureGameView.speed);
         });
@@ -82,7 +80,6 @@ public class TextSpeedView {
         hiSpeedButton.setOnAction(e -> {
             // when the user has selected one of the buttons, update the UI and the internal value
             this.adventureGameView.pause_duration = fast;
-            this.adventureGameView.frame_duration = .025;
             this.adventureGameView.speed = "FAST";
             this.speedDescrip.setText(this.speedLabel + this.adventureGameView.speed);
         });
