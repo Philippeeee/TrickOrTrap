@@ -709,6 +709,9 @@ public class AdventureGameView {
 
         getPfpImage(); // get the image of the current pfp if applicable
         roomDescLabel.setText("");
+        check.set(false);
+        num.set(num.get()+1);
+
         formatText(textToDisplay); //format the text to display
         roomDescLabel.setPrefWidth(555);
         roomDescLabel.setPrefHeight(400);
@@ -731,6 +734,8 @@ public class AdventureGameView {
         textEntry.setSpacing(10);
         textEntry.setAlignment(Pos.CENTER);
         gridPane.add( textEntry, 0, 2, 3, 1 );
+
+
         gridPane.add(roomPane, 0, 0, 2, 1);
         gridPane.add(bottomthang, 0, 1, 2, 1);
         stage.sizeToScene();
@@ -986,19 +991,17 @@ public class AdventureGameView {
         //this.model.getDirectoryName() + "/objectImages/" + objectName + ".jpg";
 
 
-        ScrollPane scO = new ScrollPane(objectsInInventory);
-        scO.setFitToWidth(true);
-        scO.setStyle("-fx-background: #000000; -fx-background-color:transparent;");
+
         VBox box = new VBox();
         box.setSpacing(0);
         box.setPadding(new Insets(0));
         for (Button button: buttonsInventory) {
             box.getChildren().add(button);
         }
-        ScrollPane sc1 = new ScrollPane(box);
-        sc1.setFitToWidth(true);
-        sc1.setStyle("-fx-background: #000000; -fx-background-color:black;");
-        inventory = sc1;
+        ScrollPane scO = new ScrollPane(box);
+        scO.setFitToWidth(true);
+        scO.setStyle("-fx-background: #000000; -fx-background-color:black;");
+        inventory = scO;
 
 
         /////////////////////////////////////
