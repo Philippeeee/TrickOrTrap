@@ -3,8 +3,11 @@ package views;
 
 import AdventureModel.AdventureGame;
 import AdventureModel.*;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -16,13 +19,18 @@ import javafx.scene.layout.*;
 import javafx.scene.input.KeyEvent; //you will need these!
 import javafx.scene.input.KeyCode;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import javafx.event.EventHandler; //you will need this too!
 import javafx.scene.AccessibleRole;
-import views.SaveView.*;
+import javafx.animation.Timeline;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 
 
 import java.io.File;
@@ -30,6 +38,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 
 /**
@@ -43,7 +52,7 @@ public class AdventureGameView {
 
     AdventureGame model; //model of the game
     Stage stage; //stage on which all is rendered
-    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton, summaryButton, summaryBackButton; //buttons
+    Button saveButton, loadButton, helpButton, settingsButton, inventoryButton, settingsBackButton, inventoryBackButton, summaryButton, summaryBackButton, textSpeedButton, replayButton; //buttons
     Boolean helpToggle = false; //is help on display?
     Boolean settingsToggle = false; //is settings on display?
     Boolean inventoryToggle = false; //is inventory on display?
@@ -60,6 +69,19 @@ public class AdventureGameView {
     private boolean mediaPlaying; //to know if the audio is playing
     private javafx.scene.Node imageNode; // store the image and text after displaying instructions
     private javafx.scene.Node Column; // store the icons column after displaying settings
+    public int pause_duration = 5; // num seconds that the user wants in between new text (e.g. during forced movement)
+    public String speed = "MEDIUM";
+    Button newGameButton, loadGameButton, titleScreenSettingsButton, gameSummaryButton; // title screen buttons
+    Button titleBackButton; // return to title screen button from game
+    Label gameTitleLabel = new Label("Trick Or Trap"); // title label
+    Scene titleScene; // the scene for the title screen
+    Scene mainGameScene; // the scene where the game is played
+    KeyFrame keyFramemed, keyFrameslow, keyFramefast; // the keyframes for each mode of text speed
+    private AtomicBoolean check = new AtomicBoolean(true); // boolean for lambda for text animation
+    private IntegerProperty num = new SimpleIntegerProperty(0); // integer for text animation
+    private final Timeline line = new Timeline(); // the timeline which the text animation's keyframes are on
+
+
 
 
     /**
@@ -71,7 +93,142 @@ public class AdventureGameView {
         this.model = model;
         this.stage = stage;
         intiUI();
+        titleScreenUI();
     }
+
+    /**
+     * Initializes the title screen.
+     */
+    public void titleScreenUI() {
+        stopArticulation();
+        // setting up the stage
+        this.stage.setTitle("group_39's Adventure Game");
+
+
+        // Buttons
+        newGameButton = new Button("New Game");
+        newGameButton.setId("New Game");
+        customizeButton2(newGameButton, 100, 100);
+        makeButtonAccessible(newGameButton, "New Game Button", "This button plays a new game.", "This button plays a new game. Click it to create a new save slot and play a new game.");
+        addNewGameEvent();
+
+        loadGameButton = new Button("Load Game");
+        loadGameButton.setId("Load Game");
+        customizeButton2(loadGameButton, 100, 100);
+        makeButtonAccessible(loadGameButton, "Load Game Button", "This button plays a previous played game.", "This button plays a previously played game. Click it to choose from your save slots.");
+        addLoadGameEvent();
+
+        titleScreenSettingsButton = new Button("Settings");
+        titleScreenSettingsButton.setId("Settings");
+        customizeButton2(titleScreenSettingsButton, 100, 100);
+        makeButtonAccessible(titleScreenSettingsButton, "Settings Button", "This button opens the settings.", "This button opens the settings. Click it to edit your preferences for more suitable gameplay.");
+        addTitleSettingsEvent();
+
+        gameSummaryButton = new Button("Game Instructions");
+        gameSummaryButton.setId("Game Summary");
+        customizeButton2(gameSummaryButton, 100, 100);
+        makeButtonAccessible(gameSummaryButton, "Game Summary Button", "This button provides a summary of the game.", "This button provides a summary of the game. Click it to learn how to play.");
+        addGameSummaryEvent();
+
+        gameTitleLabel.setStyle("-fx-text-fill: #801906;");
+        gameTitleLabel.setFont(new Font("Chiller", 130));
+
+        VBox vboxButtons = new VBox();
+        vboxButtons.setAlignment(Pos.CENTER);
+        vboxButtons.setPadding(new Insets(100));
+        vboxButtons.setSpacing(25);
+        newGameButton.setPrefWidth(300);
+        loadGameButton.setPrefWidth(300);
+        titleScreenSettingsButton.setPrefWidth(300);
+        gameSummaryButton.setPrefWidth(300);
+        vboxButtons.getChildren().addAll(newGameButton, loadGameButton, titleScreenSettingsButton, gameSummaryButton);
+
+        HBox hboxTitle = new HBox();
+        hboxTitle.setAlignment(Pos.CENTER);
+        hboxTitle.getChildren().add(gameTitleLabel);
+
+        VBox vboxMain = new VBox();
+//       IMAGE FROM https://tenor.com/view/fnkgif-haunted-house-lightening-storm-is-coming-scary-gif-13292679
+        BackgroundImage background = new BackgroundImage(
+                new Image("https://media.tenor.com/YYaBvE0VgxsAAAAC/fnkgif-haunted-house.gif",1000,800
+                        ,false,true),
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                BackgroundSize.DEFAULT);
+        vboxMain.setBackground(new Background(background));
+
+        vboxMain.getChildren().addAll(hboxTitle,vboxButtons);
+        vboxMain.setPadding(new Insets(50, 50, 50, 50));
+        titleScene = new Scene(vboxMain, 1000, 800);
+        titleScene.setFill(Color.BLACK);
+        this.stage.setScene(titleScene);
+        this.stage.setResizable(false);
+        this.stage.show();
+    }
+
+    /**
+     * This method handles the event related to the
+     * title summary button.
+     */
+    private void addGameSummaryEvent() {
+        gameSummaryButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            OverviewView summaryView = new OverviewView(this);
+        });    }
+
+    /**
+     * This method handles the event related to the
+     * title settings button.
+     */
+    private void addTitleSettingsEvent() {
+        titleScreenSettingsButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            SettingsView settingsView = new SettingsView(this);
+        });
+    }
+
+    /**
+     * This method handles the event related to the
+     * title laod game button.
+     */
+    private void addLoadGameEvent() {
+        loadGameButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            TitleLoadView titleLoadView = new TitleLoadView(model, this);
+        });
+    }
+
+    /**
+     * This method handles the event related to the
+     * select game button.
+     */
+    public void changeSceneToGameEvent() {
+        gridPane.requestFocus();
+        stage.setScene(mainGameScene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    /**
+     * This method handles the event related to the
+     * title new game button.
+     */
+    private void addNewGameEvent() {
+        newGameButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            stage.setScene(mainGameScene);
+            stage.setResizable(false);
+            AdventureGame game = null;
+            try {
+                game = LoadView.loadGame("Games/Saved/" + "NewGameSave.ser");
+                model = game;
+                updateScene("");
+                updateItems();
+                stage.show();
+            } catch (IOException | ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+
+        });    }
 
 
     /**
@@ -87,6 +244,7 @@ public class AdventureGameView {
 //        Inventory + Room items
         objectsInInventory.setSpacing(20);
         objectsInInventory.setAlignment(Pos.TOP_CENTER);
+        objectsInInventory.setStyle("-fx-background-color: #000000;");
 //        objectsInRoom.setSpacing(10);
 //        objectsInRoom.setAlignment(Pos.TOP_CENTER);
 
@@ -122,65 +280,87 @@ public class AdventureGameView {
         // Buttons
         saveButton = new Button("Save");
         saveButton.setId("Save");
-        customizeButton(saveButton, 100, 100);
+        customizeButton2(saveButton, 100, 100);
         makeButtonAccessible(saveButton, "Save Button", "This button saves the game.", "This button saves the game. Click it in order to save your current progress, so you can play more later.");
         addSaveEvent();
 
 
         loadButton = new Button("Load");
         loadButton.setId("Load");
-        customizeButton(loadButton, 100, 100);
+        customizeButton2(loadButton, 100, 100);
         makeButtonAccessible(loadButton, "Load Button", "This button loads a game from a file.", "This button loads the game from a file. Click it in order to load a game that you saved at a prior date.");
         addLoadEvent();
 
 
         helpButton = new Button("Instructions");
         helpButton.setId("Instructions");
-        customizeButton(helpButton, 100, 100);
+        customizeButton2(helpButton, 100, 100);
         makeButtonAccessible(helpButton, "Help Button", "This button gives game instructions.", "This button gives instructions on the game controls. Click it to learn how to play.");
         addInstructionEvent();
 
 
+        replayButton = new Button(" Audio \nReplay");
+        replayButton.setId("Audio Replay");
+        customizeButton2(replayButton, 100, 100);
+        makeButtonAccessible(replayButton, "Audio Replay Button", "This button gives replays room audio", "This button gives replays room description dictation audio.");
+        addReplayEvent();
+
+
         settingsButton = new Button("Settings");
         settingsButton.setId("Settings");
-        customizeButton(settingsButton, 100, 100);
+        customizeButton2(settingsButton, 100, 100);
         makeButtonAccessible(settingsButton, "Settings Button", "This button gives access to other buttons related to settings", "This button gives access to other buttons related to settings. Click it to get access.");
         addSettingsEvent();
 
 
         settingsBackButton = new Button("Back");
         settingsBackButton.setId("Back");
-        customizeButton(settingsBackButton, 100, 100);
+        customizeButton2(settingsBackButton, 100, 100);
         makeButtonAccessible(settingsBackButton, "Settings Back Button", "This button will return to the view before pressing 'Settings'", "This button will return to the view before pressing 'Settings'. Click it to return.");
         addSettingsBackEvent();
 
 
         inventoryButton = new Button("Inventory");
         inventoryButton.setId("Inventory");
-        customizeButton(inventoryButton, 100, 100);
+        customizeButton2(inventoryButton, 100, 100);
         makeButtonAccessible(inventoryButton, "Inventory Button", "This button gives access to player's inventory", "This button gives access to images of the items in the player's inventory. Click it to get access.");
         addInventoryEvent();
 
 
         inventoryBackButton = new Button("Back");
         inventoryBackButton.setId("Back");
-        customizeButton(inventoryBackButton, 100, 100);
+        inventoryBackButton.setStyle("-fx-background-color: #000000;");
+        customizeButton2(inventoryBackButton, 100, 100);
         makeButtonAccessible(inventoryBackButton, "Inventory Back Button", "This button will return to the view before pressing 'Inventory'", "This button will return to the view before pressing 'Inventory'. Click it to return.");
         addInventoryBackEvent();
 
 
         summaryButton = new Button("Summary");
         summaryButton.setId("Summary");
-        customizeButton(summaryButton, 100, 100);
+        customizeButton2(summaryButton, 100, 100);
         makeButtonAccessible(summaryButton, "Summary Button", "This button opens the summary tab", "This button opens the summary tab, which will show what's happened in the game so far. Click to open the menu.");
         addSummaryEvent();
 
 
         summaryBackButton = new Button("Back");
         summaryBackButton.setId("SummaryBack");
-        customizeButton(summaryBackButton, 100, 100);
+        customizeButton2(summaryBackButton, 100, 100);
         makeButtonAccessible(summaryBackButton, "Summary Back Button", "This button closes the summary tab", "This button closes the summary tab and reverts the button UI to the default. Click to close the menu.");
         addSummaryBackEvent();
+
+        titleBackButton = new Button("Return to Title Screen");
+        titleBackButton.setId("Return to Title Screen");
+        titleBackButton.setWrapText(true);
+        customizeButton2(titleBackButton, 100, 100);
+        makeButtonAccessible(titleBackButton, "Return to Title Screen Button", "This button will return to the title screen.", "This button will return to the title screen. Click it to return.");
+        addTitleReturnEvent();
+
+
+        textSpeedButton = new Button("Text\nSpeed\nToggle");
+        textSpeedButton.setId("TextSpeed");
+        customizeButton2(textSpeedButton, 100, 100);
+        makeButtonAccessible(textSpeedButton, "Text Speed Toggle Button", "This button allows you to toggle text speed.", "This button opens the menu in which you can toggle the speed that the text moves. Click to open the menu.");
+        addTextSpeedEvent();
 
 
         inputTextField = new TextField();
@@ -210,15 +390,86 @@ public class AdventureGameView {
 
 
         // Render everything
-        var scene = new Scene( gridPane ,  1000, 800);
-        scene.setFill(Color.BLACK);
-        this.stage.setScene(scene);
-        this.stage.setResizable(false);
-        this.stage.show();
+        mainGameScene = new Scene( gridPane ,  1000, 800);
+        mainGameScene.setFill(Color.BLACK);
+//        this.stage.setScene(scene);
+//        this.stage.setResizable(false);
+//        this.stage.show();
 
 
     }
 
+    /**
+     * This method handles the event related to the
+     * return to title button.
+     */
+    private void addTitleReturnEvent() {
+        titleBackButton.setOnAction(e -> {
+            stopArticulation(); //if speaking, stop
+            int width = 300;
+            int roomNumber = model.player.getCurrentRoom().getRoomNumber();
+
+            stage.requestFocus();
+            Stage namingStage = new Stage();
+            namingStage.initModality(Modality.APPLICATION_MODAL);
+
+            namingStage.setTitle("Save?");
+
+            Label namingLabel = new Label("Would you like to save? \n Name your save slot:");
+            namingLabel.setId("NamingLabel");
+            namingLabel.setStyle("-fx-text-fill: white;");
+            namingLabel.setFont(new Font("Arial", 20));
+
+            TextField namingTextField = new TextField("Untitled Save");
+            namingTextField.setPromptText("Name your save here.");
+
+            Button yesButton = new Button("Yes");
+            yesButton.setId("Yes");
+            customizeButton2(yesButton, width, 50);
+            makeButtonAccessible(yesButton, "Yes Button", "This button names the save slot base on the text input.", "This button names the save slot base on the text input. Click it return.");
+
+            yesButton.setOnAction(e1 -> {
+                namingStage.requestFocus();
+                SaveView.SaveGameWithName(model, namingTextField.getText());
+                namingStage.close();
+                stage.setScene(titleScene);
+                stage.setResizable(false);
+                stage.show();
+            });
+
+            Button noButton = new Button("No");
+            noButton.setId("No");
+            customizeButton2(noButton, width, 50);
+            makeButtonAccessible(noButton, "No Button", "This button denies naming the save slot.", "This button denies naming the save slot. Click it return.");
+
+            noButton.setOnAction(e1 -> {
+                namingStage.requestFocus();
+                namingStage.close();
+                stage.setScene(titleScene);
+                stage.setResizable(false);
+                stage.show();
+            });
+
+            HBox buttonsHBox = new HBox();
+            buttonsHBox.getChildren().addAll(yesButton, noButton);
+            buttonsHBox.setSpacing(10);
+
+            VBox namingVBbox = new VBox();
+            namingVBbox.setSpacing(10);
+            namingVBbox.setPadding(new Insets(10, 10, 10, 10));
+            namingVBbox.setMaxWidth(width);
+            namingVBbox.setStyle("-fx-background-color: #121212;");
+            namingVBbox.getChildren().addAll(namingLabel, namingTextField, buttonsHBox);
+
+            Scene namingScene = new Scene(namingVBbox, 300, 120);
+            namingScene.setFill(Color.BLACK);
+            namingStage.setScene(namingScene);
+            namingStage.setResizable(false);
+            namingStage.show();
+
+//            SaveView.quickSaveGame(model);
+        });
+    }
 
 
 
@@ -256,6 +507,20 @@ public class AdventureGameView {
         inputButton.setStyle("-fx-background-color: #17871b; -fx-text-fill: white;");
     }
 
+    /**
+     * customizeButton2
+     * __________________________
+     *
+     * @param inputButton the button to make stylish :)
+     * @param w width
+     * @param h height
+     */
+    private void customizeButton2(Button inputButton, int w, int h) {
+        inputButton.setPrefSize(w, h);
+        inputButton.setFont(new Font("Arial", 16));
+        inputButton.setStyle("-fx-background-color: #cc872d; -fx-text-fill: white;");
+    }
+
 
     /**
      * addTextHandlingEvent
@@ -273,7 +538,9 @@ public class AdventureGameView {
      * graph by invoking requestFocus method.
      */
     private void addTextHandlingEvent() {
-        EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {
+        if (inventoryToggle) {
+            showInventory();
+        } EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode().equals(KeyCode.ENTER)) {
@@ -289,10 +556,25 @@ public class AdventureGameView {
 
     }
 
-
+    /**
+     *
+     * This method is the helper function for the submitEvent method. This method handles consecutive forced events.
+     */
     private void forcedHelper() {
+        if (inventoryToggle) {
+            showInventory();
+        }
         List<Passage> passages = model.player.getCurrentRoom().getMotionTable().getDirection();
-        PauseTransition pause = new PauseTransition(Duration.seconds(5));
+
+        int temp = this.pause_duration;
+        if (model.player.getCurrentRoom().getRoomNumber() == 30) {
+            this.pause_duration = 15;
+        }
+
+        PauseTransition pause = new PauseTransition(Duration.seconds((double) model.player.getCurrentRoom().getRoomDescription().length() / 10 * this.pause_duration));
+        this.pause_duration = temp;
+
+
         pause.setOnFinished(event -> {
 //            model.movePlayer("FORCED");
             submitEvent("FORCED");
@@ -304,6 +586,17 @@ public class AdventureGameView {
                 pause.play();
             }
         }
+
+        EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode().equals(KeyCode.RIGHT)){
+                    submitEvent("FORCED");
+                    inputTextField.setText("");
+                }
+            }
+        };
+        this.inputTextField.addEventHandler(KeyEvent.KEY_RELEASED, eventHandler);
     }
     /**
      * submitEvent
@@ -312,6 +605,9 @@ public class AdventureGameView {
      * @param text the command that needs to be processed
      */
     private void submitEvent(String text) {
+        if (inventoryToggle) {
+            showInventory();
+        }
 
 
         text = text.strip(); //get rid of white space
@@ -336,15 +632,17 @@ public class AdventureGameView {
         String output = this.model.interpretAction(text); //process the command!
 
         if (output == null || (!output.equals("GAME OVER") && !output.equals("FORCED") && !output.equals("HELP"))) {
-            updateScene(output);
-            updateItems();
-        } else if (output.equals("INVENTORY!")) {
-            if (settingsToggle) {
-                showSettings();
+            if (output == null){
+                updateScene(output);
+                updateItems();
+            } else if (output.equals("INVENTORY!")){
+                if (settingsToggle) {
+                    showSettings();
+                }
+                showInventory();
+            } else if (output.equals("SAVE!")) {
+                SaveView.quickSaveGame(model);
             }
-            showInventory();
-        } else if (output.equals("SAVE!")) {
-            SaveView.quickSaveGame(model);
         } else if (output.equals("GAME OVER")) {
             updateScene("");
             updateItems();
@@ -398,6 +696,7 @@ public class AdventureGameView {
      *
      * @param textToDisplay the text to display below the image.
      */
+
     public void updateScene(String textToDisplay) {
         // find room image
         javafx.scene.Node j = null;
@@ -410,6 +709,14 @@ public class AdventureGameView {
         gridPane.getChildren().remove(j);
 
         getRoomImage(); //get the image of the current room
+        check.set(false);
+        num.set(num.get()+1);
+
+        getPfpImage(); // get the image of the current pfp if applicable
+        roomDescLabel.setText("");
+        check.set(false);
+        num.set(num.get()+1);
+
         formatText(textToDisplay); //format the text to display
         roomDescLabel.setPrefWidth(555);
         roomDescLabel.setPrefHeight(400);
@@ -437,8 +744,6 @@ public class AdventureGameView {
         gridPane.add(roomPane, 0, 0, 2, 1);
         gridPane.add(bottomthang, 0, 1, 2, 1);
         stage.sizeToScene();
-
-
         //finally, articulate the description
         if (textToDisplay == null || textToDisplay.isBlank()) articulateRoomDescription();
     }
@@ -452,16 +757,110 @@ public class AdventureGameView {
      *
      * @param textToDisplay the text to be formatted for display.
      */
-    private void formatText(String textToDisplay) {
-        if (textToDisplay == null || textToDisplay.isBlank()) {
-            String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
-            String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
-            if (objectString != null && !objectString.isEmpty()) roomDescLabel.setText(roomDesc + "\n\nObjects in this room:\n" + objectString);
-            else roomDescLabel.setText(roomDesc);
-        } else roomDescLabel.setText(textToDisplay);
+    public void formatText(String textToDisplay) {
+        String roomText;
+        String otherText;
+        //if (textToDisplay == null || textToDisplay.isBlank()) {
+//            String roomDesc = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
+//            String objectString = this.model.getPlayer().getCurrentRoom().getObjectString();
+//            if (objectString != null && !objectString.isEmpty()) roomText = roomDesc + "\n\nObjects in this room:\n" + objectString;
+//            else roomText = roomDesc;
+            //roomText = "";
+            //roomText = this.model.getPlayer().getCurrentRoom().getRoomDescription() + "\n";
+            //Room room = this.model.getPlayer().getCurrentRoom();
+            //System.out.println(room.getRoomNumber());
+            //System.out.println(roomText);
+        //} else
+            roomText = this.model.getPlayer().getCurrentRoom().getRoomDescription();
+
+        //roomDescLabel.setText(textToDisplay);
         roomDescLabel.setStyle("-fx-text-fill: white;");
         roomDescLabel.setFont(new Font("Arial", 16));
-        roomDescLabel.setAlignment(Pos.CENTER);
+        roomDescLabel.setAlignment(Pos.CENTER_LEFT);
+
+        IntegerProperty i = new SimpleIntegerProperty(0);
+
+
+        check.set(false);
+        IntegerProperty comparenum = num;
+
+        line.getKeyFrames().removeAll(keyFramefast, keyFrameslow, keyFramemed);
+        if (speed.equals("SLOW")) {
+            line.stop();
+            this.keyFrameslow = new KeyFrame(
+                    Duration.seconds(.5),
+                    event -> {
+                        if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
+                            line.stop();
+                        } else {
+                            try{
+                                roomDescLabel.setText((roomText.substring(0, i.get())));
+                                i.set(i.get() + 1);
+                            } catch (Exception e){
+                                roomDescLabel.setText(roomText);
+                                i.set(i.get() + 1);
+                            }
+                        }
+                    });
+            line.getKeyFrames().add(keyFrameslow);
+            System.out.println("slow");
+        }
+        if (speed.equals("MEDIUM")) {
+            line.stop();
+            this.keyFramemed = new KeyFrame(
+                    Duration.seconds(.07),
+                    event -> {
+                        if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
+                            line.stop();
+                        } else {
+                            try{
+                                roomDescLabel.setText((roomText.substring(0, i.get())));
+                                i.set(i.get() + 1);
+                            } catch (Exception e){
+                                roomDescLabel.setText(roomText);
+                                i.set(i.get() + 1);
+                            }
+                        }
+                    });
+            line.getKeyFrames().add(keyFramemed);
+            System.out.println("med");
+        }
+        if (speed.equals("FAST")){
+            line.stop();
+            this.keyFramefast = new KeyFrame(
+                    Duration.seconds(.02),
+                    event -> {
+                        if (i.get() >= roomText.length() && (comparenum.get() != num.get())) {
+                            line.stop();
+                        } else {
+                            try{
+                                roomDescLabel.setText((roomText.substring(0, i.get())));
+                                i.set(i.get() + 1);
+                            } catch (Exception e){
+                                roomDescLabel.setText(roomText);
+                                i.set(i.get() + 1);
+                            }
+                        }
+                    });
+            line.getKeyFrames().add(keyFramefast);
+            System.out.println("fast");
+        }
+
+        line.setCycleCount(Animation.INDEFINITE);
+        line.play();
+
+        EventHandler<KeyEvent> eventHandler = new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode().equals(KeyCode.SPACE)){
+                    //String roomt = roomDescLabel.getText();
+                        line.stop();
+                        roomDescLabel.setText(roomText);
+                        inputTextField.setText("");
+                }
+            }
+        };
+        this.inputTextField.addEventHandler(KeyEvent.KEY_RELEASED, eventHandler);
     }
 
 
@@ -502,9 +901,15 @@ public class AdventureGameView {
         roomImageView.setFocusTraversable(true);
     }
 
-
+    /**
+     * getButtons
+     * Gets the buttons to display as objects
+     * @param objs list of objects
+     * @param yes true for room objects, false for inventory objects
+     * @return
+     */
     private ArrayList<Button> getButtons(ArrayList<AdventureObject> objs, boolean yes) {
-        ArrayList<Button> buttons = new ArrayList<Button>();
+        ArrayList<Button> buttons = new ArrayList<>();
         String[] objects = model.player.getCurrentRoom().getObjectString().split(", ");
         for (AdventureObject object: objs) {
             String o = object.getName();
@@ -512,7 +917,8 @@ public class AdventureGameView {
             ImageView objectImageView = new ImageView(objectImageFile);
             Button objectButton = new Button();
             objectImageView.setPreserveRatio(true);
-            objectImageView.setFitWidth(100);
+            objectImageView.setFitWidth(80);
+            objectButton.setAlignment(Pos.CENTER);
             objectButton.setGraphic(objectImageView);
             objectButton.setStyle("-fx-background-color: #000000;");
 
@@ -574,16 +980,16 @@ public class AdventureGameView {
         //this.model.getDirectoryName() + "/objectImages/" + objectName + ".jpg";
 
 
-        ScrollPane scO = new ScrollPane(objectsInInventory);
-        scO.setFitToWidth(true);
-        scO.setStyle("-fx-background: #000000; -fx-background-color:transparent;");
+
         VBox box = new VBox();
-        box.setSpacing(10);
-        box.setPadding(new Insets(10));
+        box.setSpacing(0);
+        box.setPadding(new Insets(0));
         for (Button button: buttonsInventory) {
             box.getChildren().add(button);
         }
-        scO.setContent(box);
+        ScrollPane scO = new ScrollPane(box);
+        scO.setFitToWidth(true);
+        scO.setStyle("-fx-background: #000000; -fx-background-color:black;");
         inventory = scO;
 
 
@@ -592,14 +998,17 @@ public class AdventureGameView {
         ////////////////////////////////////
         ScrollPane scI = new ScrollPane();
         scI.setFitToWidth(true);
-        scI.setStyle("-fx-background: #000000; -fx-background-color:transparent;");
+        scI.setStyle("-fx-background: #000000; -fx-background-color:black;");
         gridPane.add(scI,2,0, 1, 2);
         VBox box2 = new VBox();
-        box2.setSpacing(10);
-        box2.setPadding(new Insets(10));
+        if (box2.getChildren().isEmpty()) {
+            box2.setSpacing(10);
+            box2.setPadding(new Insets(10));
+        }
         box2.getChildren().add(settingsButton);
         box2.getChildren().add(inventoryButton);
         box2.getChildren().add(summaryButton);
+        box2.getChildren().add(replayButton);
         if (settingsToggle) {
             settingsToggle = false;
             addSettingsBackEvent();
@@ -646,14 +1055,19 @@ public class AdventureGameView {
             imageNode = n;
             gridPane.getChildren().remove(n);
             Label label = new Label(model.getInstructions());
-            label.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
+            label.setStyle("-fx-text-fill: white;-fx-background-color: #121212;");
             label.setFont(new Font("Arial", 12));
             label.setAlignment(Pos.CENTER);
             label.setPrefWidth(735);
-            label.setPrefHeight(421);
+//            label.setPrefHeight(800);
             label.setTextOverrun(OverrunStyle.CLIP);
             label.setWrapText(true);
-            gridPane.add(label, 0, 0);
+
+            ScrollPane sp = new ScrollPane();
+            sp.setPrefHeight(400);
+            sp.setContent(label);
+
+            gridPane.add(sp, 0, 0);
             helpToggle = true;
         } else {
             gridPane.getChildren().remove(n);
@@ -675,7 +1089,9 @@ public class AdventureGameView {
         });
     }
 
-
+    /**
+     * This method shows the inventory.
+     */
     public void showInventory() {
         javafx.scene.Node n = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
@@ -687,8 +1103,8 @@ public class AdventureGameView {
             Column = n;
             gridPane.getChildren().remove(n);
             VBox invent = new VBox(inventoryBackButton, inventory);
-            invent.setSpacing(10);
-            invent.setPadding(new Insets(11));
+            invent.setSpacing(11);
+            invent.setPadding(new Insets(11, 11, 11, 11));
             gridPane.add(invent, 2, 0, 1, 2);
             inventoryToggle = true;
         } else {
@@ -722,7 +1138,9 @@ public class AdventureGameView {
         });
     }
 
-
+    /**
+     * This method shows the settings.
+     */
     public void showSettings() {
         javafx.scene.Node n = null;
         for (javafx.scene.Node node : gridPane.getChildren()) {
@@ -736,10 +1154,8 @@ public class AdventureGameView {
             VBox box = new VBox();
             box.setSpacing(10);
             box.setPadding(new Insets(11));
-            box.getChildren().add(settingsBackButton);
-            box.getChildren().add(saveButton);
-            box.getChildren().add(helpButton);
-            box.getChildren().add(loadButton);
+            textSpeedButton.setPrefSize(100, 100);
+            box.getChildren().addAll(settingsBackButton, saveButton, helpButton, textSpeedButton, titleBackButton);
             gridPane.add(box, 2, 0, 1, 2);
             settingsToggle = true;
         } else {
@@ -795,7 +1211,10 @@ public class AdventureGameView {
         // replace room image with summary
 
         // create Label (for ScrollPane)
-        Label summary_text = new Label(model.getSummaryText());
+        if (this.model.getSummaryText().isEmpty()) {
+            this.model.addToSummaryText("Beginning of game.");
+        }
+        Label summary_text = new Label(this.model.getSummaryText());
         summary_text.setStyle("-fx-text-fill: white;-fx-background-color: #000000;");
         summary_text.setFont(new Font("Arial", 12));
         summary_text.setAlignment(Pos.CENTER);
@@ -825,7 +1244,6 @@ public class AdventureGameView {
         for (javafx.scene.Node node : gridPane.getChildren()) {
             if (GridPane.getRowIndex(node).equals(0) && GridPane.getColumnIndex(node).equals(2)) {
                 k = node;
-                // ask matthew why tf break here no good
             }
         }
 
@@ -862,6 +1280,17 @@ public class AdventureGameView {
         });
     }
 
+    /**
+     * This method handles the event related to the
+     * replay button.
+     */
+    public void addReplayEvent() {
+        replayButton.setOnAction(e -> {
+            stopArticulation(); //if speaking, stop
+            articulateRoomDescription();
+        });
+    }
+
 
     /**
      * This method handles the event related to the
@@ -882,10 +1311,50 @@ public class AdventureGameView {
     public void addSaveEvent() {
         saveButton.setOnAction(e -> {
             gridPane.requestFocus();
-            SaveView saveView = new SaveView(this);
+//            SaveView.quickSaveGame(model);
+            int width = 300;
+            Stage namingStage = new Stage();
+            namingStage.initModality(Modality.APPLICATION_MODAL);
+
+            namingStage.setTitle("Name your save slot!");
+
+            Label namingLabel = new Label("Name your save slot:");
+            namingLabel.setId("NamingLabel");
+            namingLabel.setStyle("-fx-text-fill: white;");
+            namingLabel.setFont(new Font("Arial", 20));
+
+            TextField namingTextField = new TextField("Untitled Save");
+            namingTextField.setPromptText("Name your save here.");
+
+            Button confirmButton = new Button("Confirm");
+            confirmButton.setId("Confirm");
+            customizeButton2(confirmButton, width, 50);
+            makeButtonAccessible(confirmButton, "Confirm Button", "This button renames the save slot base on the text input.", "This button renames the save slot base on the text input. Click it return.");
+
+            confirmButton.setOnAction(e1 -> {
+                namingStage.requestFocus();
+                SaveView.SaveGameWithName(model, namingTextField.getText());
+                namingStage.close();
+            });
+
+            VBox namingVBbox = new VBox();
+            namingVBbox.setSpacing(10);
+            namingVBbox.setPadding(new Insets(10,10,10,10));
+            namingVBbox.setMaxWidth(width);
+            namingVBbox.setStyle("-fx-background-color: #121212;");
+            namingVBbox.getChildren().addAll(namingLabel, namingTextField, confirmButton);
+
+            Scene namingScene = new Scene(namingVBbox, 300, 120);
+            namingScene.setFill(Color.BLACK);
+            namingStage.setScene(namingScene);
+            namingStage.setResizable(false);
+            namingStage.show();
         });
     }
 
+    /**
+     * Save event used for non button clicks
+     */
     public void addSaveEvent2() {
         gridPane.requestFocus();
         SaveView saveView = new SaveView(this);
@@ -934,24 +1403,19 @@ public class AdventureGameView {
      * This method articulates Room Descriptions
      */
     public void articulateRoomDescription() {
-//        String musicFile;
-//        String adventureName = this.model.getDirectoryName();
-//        String roomName = this.model.getPlayer().getCurrentRoom().getRoomName();
-//
-//
-//        if (!this.model.getPlayer().getCurrentRoom().getVisited()) musicFile = "./" + adventureName + "/sounds/" + roomName.toLowerCase() + "-long.mp3" ;
-//        else musicFile = "./" + adventureName + "/sounds/" + roomName.toLowerCase() + "-short.mp3" ;
-//        musicFile = musicFile.replace(" ","-");
-//
-//
-//        Media sound = new Media(new File(musicFile).toURI().toString());
-//
-//
-//        mediaPlayer = new MediaPlayer(sound);
-//        mediaPlayer.play();
-//        mediaPlaying = true;
+        stopArticulation();
+        String musicFile;
+        String adventureName = this.model.getDirectoryName();
+        Integer roomNumber_ = this.model.getPlayer().getCurrentRoom().getRoomNumber();
+        String roomNumber = roomNumber_.toString();
 
+        musicFile = "./" + adventureName + "/sounds/" + roomNumber + ".mp3" ;
 
+        Media sound = new Media(new File(musicFile).toURI().toString());
+
+        mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
+        mediaPlaying = true;
     }
 
 
@@ -964,6 +1428,45 @@ public class AdventureGameView {
             mediaPlayer.stop(); //shush!
             mediaPlaying = false;
         }
+    }
+
+    /**
+     * getPfpImage
+     * __________________________
+     *
+     * Get the image for the current headshot and place
+     * it in the pfp
+     */
+    private void getPfpImage() {
+        int roomNumber = this.model.getPlayer().getCurrentRoom().getRoomNumber();
+        if (100 < roomNumber && roomNumber < 200) {
+            String roomImage = this.model.getDirectoryName() + "/headshots/" + roomNumber + ".jpg";
+            Image roomImageFile = new Image(roomImage);
+            pfp = new ImageView(roomImageFile);
+            pfp.setPreserveRatio(false);
+            pfp.setFitWidth(200);
+            pfp.setFitHeight(200);
+        } else {
+            String roomImage = this.model.getDirectoryName() + "/headshots/" + "1000" + ".jpg";
+            Image roomImageFile = new Image(roomImage);
+            pfp = new ImageView(roomImageFile);
+            pfp.setPreserveRatio(false);
+            pfp.setFitWidth(200);
+            pfp.setFitHeight(200);
+        }
+
+    }
+
+    /**
+     * addTextSpeedEvent
+     *
+     * This button opens the text speed toggle menu from settings.
+     */
+    public void addTextSpeedEvent() {
+        textSpeedButton.setOnAction(e -> {
+            gridPane.requestFocus();
+            TextSpeedView textSpeedView = new TextSpeedView(this);
+        });
     }
 }
 

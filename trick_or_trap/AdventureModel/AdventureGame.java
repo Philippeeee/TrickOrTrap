@@ -13,7 +13,7 @@ public class AdventureGame implements Serializable {
     private HashMap<String,String> synonyms = new HashMap<>(); //A HashMap to store synonyms of commands.
     private final String[] actionVerbs = {"QUIT","INVENTORY","TAKE","DROP"}; //List of action verbs (other than motions) that exist in all games. Motion vary depending on the room and game.
     public Player player; //The Player of the game.
-    private String summaryText = ""; // A variable to store the Summary text of the game. This text is displayed when the user clicks the "Summary" button.
+    private String summaryText; // A variable to store the Summary text of the game. This text is displayed when the user clicks the "Summary" button.
     private int numSumTextLines = 0; // A counter to store the number of lines of text in the Summary, in order to scale the ScrollPane appropriately
 
     /**
@@ -44,6 +44,8 @@ public class AdventureGame implements Serializable {
             FileOutputStream outfile = new FileOutputStream(file);
             ObjectOutputStream oos = new ObjectOutputStream(outfile);
             oos.writeObject(this);
+            oos.close();
+            outfile.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,7 +64,7 @@ public class AdventureGame implements Serializable {
         loader.loadGame();
 
         // set up the player's current location
-        this.player = new Player(this.rooms.get(1));
+        this.player = new Player(this.rooms.get(101));
     }
 
     /**
@@ -183,12 +185,16 @@ public class AdventureGame implements Serializable {
                 addToSummaryText("You quit the game.");
 
                 return "GAME OVER"; //time to stop!
+            } else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() == 0) {
+                return "INVENTORY!";
+            } else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() > 0) {
+                return "INVENTORY!";
+            } else if(inputArray[0].equals("TAKE") && inputArray.length < 2) {
+                return "THE TAKE COMMAND REQUIRES AN OBJECT";
             }
-            else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() == 0) return "INVENTORY IS EMPTY";
-            else if(inputArray[0].equals("INVENTORY") && this.player.getInventory().size() > 0) return "THESE OBJECTS ARE IN YOUR INVENTORY:\n" + this.player.getInventory().toString();
-            else if(inputArray[0].equals("TAKE") && inputArray.length < 2) return "THE TAKE COMMAND REQUIRES AN OBJECT";
-            else if(inputArray[0].equals("DROP") && inputArray.length < 2) return "THE DROP COMMAND REQUIRES AN OBJECT";
-            else if(inputArray[0].equals("TAKE") && inputArray.length == 2) {
+//            else if(inputArray[0].equals("DROP") && inputArray.length < 2) {
+//                return "THE DROP COMMAND REQUIRES AN OBJECT";
+             else if(inputArray[0].equals("TAKE") && inputArray.length == 2) {
                 if(this.player.getCurrentRoom().checkIfObjectInRoom(inputArray[1])) {
                     this.player.takeObject(inputArray[1]);
 
@@ -200,18 +206,18 @@ public class AdventureGame implements Serializable {
                     return "THIS OBJECT IS NOT HERE:\n " + inputArray[1];
                 }
             }
-            else if(inputArray[0].equals("DROP") && inputArray.length == 2) {
-                if(this.player.checkIfObjectInInventory(inputArray[1])) {
-                    this.player.dropObject(inputArray[1]);
-
-                    // added for summary feature
-                    addToSummaryText("You dropped: "+ inputArray[1] + " in " + this.player.getCurrentRoom().getRoomName() + ".");
-
-                    return "YOU HAVE DROPPED:\n " + inputArray[1];
-                } else {
-                    return "THIS OBJECT IS NOT IN YOUR INVENTORY:\n " + inputArray[1];
-                }
-            }
+//            else if(inputArray[0].equals("DROP") && inputArray.length == 2) {
+//                if(this.player.checkIfObjectInInventory(inputArray[1])) {
+//                    this.player.dropObject(inputArray[1]);
+//
+//                    // added for summary feature
+//                    addToSummaryText("You dropped: "+ inputArray[1] + " in " + this.player.getCurrentRoom().getRoomName() + ".");
+//
+//                    return "YOU HAVE DROPPED:\n " + inputArray[1];
+//                } else {
+//                    return "THIS OBJECT IS NOT IN YOUR INVENTORY:\n " + inputArray[1];
+//                }
+//            }
         }
         return "INVALID COMMAND.";
     }
@@ -279,7 +285,7 @@ public class AdventureGame implements Serializable {
      * getSummaryText
      * __________________________
      * Getter method for summaryText
-     * @return summaryText
+     * @return summaryText a string with everything that's happened so far
      */
     public String getSummaryText() {return this.summaryText;}
 
