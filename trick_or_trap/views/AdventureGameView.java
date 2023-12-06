@@ -566,7 +566,8 @@ public class AdventureGameView {
             this.pause_duration = 15;
         }
 
-        PauseTransition pause = new PauseTransition(Duration.seconds(this.pause_duration));
+        System.out.println(model.player.getCurrentRoom().getRoomDescription().length());
+        PauseTransition pause = new PauseTransition(Duration.seconds((double) model.player.getCurrentRoom().getRoomDescription().length() / 10 * this.pause_duration));
         this.pause_duration = temp;
 
 
